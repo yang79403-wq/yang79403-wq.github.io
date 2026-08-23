@@ -7,14 +7,41 @@
 <title>洪盛集藏资讯网 · CMS</title>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script src="https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js"></script>
+<style>
+html,body{margin:0;min-height:100%;background:#f7f2e7;color:#3a2f22;font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+.loading{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
+.box{max-width:560px;background:#fffdf8;border:1px solid #e8ddc4;border-radius:14px;padding:28px;box-shadow:0 10px 35px rgba(58,47,34,.08)}
+.title{font-size:24px;font-weight:700;color:#6b1414;margin-bottom:8px}.sub{color:#8a7a5f;font-size:13px;line-height:1.8}.btn{margin-top:18px;border:0;border-radius:7px;padding:12px 18px;background:#8f1d1d;color:#fff;font-weight:700;cursor:pointer}
+</style>
 </head>
 <body>
+<div id="loading" class="loading"><div class="box"><div class="title">洪盛集藏资讯网</div><div class="sub">正在加载内容管理系统……</div><button id="login" class="btn" type="button">登录 / 授权</button></div></div>
 <script>
-window.addEventListener('load', function(){
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.init({autologin:false});
+(function(){
+  var login=document.getElementById('login');
+  function boot(){
+    if(!window.CMS){return setTimeout(boot,100);}
+    if(window.netlifyIdentity){
+      window.netlifyIdentity.on('login',function(){window.location.reload();});
+      window.netlifyIdentity.on('logout',function(){window.location.reload();});
+      window.netlifyIdentity.init({autologin:false});
+    }
+    try{
+      window.CMS.init();
+      var loading=document.getElementById('loading');
+      if(loading) loading.style.display='none';
+    }catch(e){
+      var sub=document.querySelector('.sub');
+      if(sub) sub.textContent='CMS加载失败，请刷新页面后重试。';
+      console.error(e);
+    }
   }
-});
+  login.addEventListener('click',function(){
+    if(window.netlifyIdentity){window.netlifyIdentity.open('login');}
+    else{alert('认证组件尚未加载，请刷新页面。');}
+  });
+  boot();
+})();
 </script>
 </body>
 </html>
