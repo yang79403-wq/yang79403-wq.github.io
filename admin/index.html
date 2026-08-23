@@ -4,26 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#6b1414" />
-  <title>洪盛集藏资讯网 · 可视化管理后台</title>
+  <title>洪盛集藏资讯网 · 内容管理</title>
   <style>
     *{box-sizing:border-box}
     body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f7f2e7;color:#3a2f22;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:20px}
-    .box{background:#fffdf8;border:1px solid #e8ddc4;border-radius:14px;padding:32px;max-width:680px;width:100%;box-shadow:0 8px 30px rgba(58,47,34,.08)}
+    .box{background:#fffdf8;border:1px solid #e8ddc4;border-radius:14px;padding:32px;max-width:720px;width:100%;box-shadow:0 8px 30px rgba(58,47,34,.08)}
     .logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
     .emblem{width:52px;height:52px;border-radius:50%;background:#6b1414;color:#e8cf9a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;border:2px solid #c9a35a}
     h1{color:#6b1414;margin:0;font-size:26px}
     .sub{margin:4px 0 0;color:#8a7a5f;font-size:13px}
     p{line-height:1.8;color:#6f634f}
     .actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
-    .btn{display:block;background:#8f1d1d;color:#fff;padding:13px 16px;border-radius:7px;text-decoration:none;text-align:center;font-weight:600}
+    .btn{display:block;background:#8f1d1d;color:#fff;padding:13px 16px;border-radius:7px;text-decoration:none;text-align:center;font-weight:600;border:none;cursor:pointer}
     .btn.secondary{background:#c9a35a;color:#5a3d0a}
     .tip{background:#f3ead8;border:1px solid #e4d6b7;border-radius:8px;padding:12px 14px;font-size:13px;margin-top:18px}
+    .status{margin-top:18px;padding:12px 14px;border-radius:8px;background:#eef7ef;border:1px solid #cfe4d1;color:#365d3a;font-size:13px;line-height:1.8}
     code{background:#f1e8d7;padding:2px 6px;border-radius:4px}
-    @media(max-width:600px){
-      .actions{grid-template-columns:1fr}
-      h1{font-size:22px}
-      .box{padding:24px}
-    }
+    @media(max-width:600px){.actions{grid-template-columns:1fr}h1{font-size:22px}.box{padding:24px}}
   </style>
 </head>
 <body>
@@ -36,18 +33,56 @@
       </div>
     </div>
 
-    <p>后台内容配置已准备完成。点击进入 CMS 后台后，可通过 GitHub 授权管理收藏资讯、每日行情、网站设置及后续内容。</p>
+    <p>后台采用 Netlify Identity + Git Gateway + Decap CMS。登录后可以管理收藏资讯、每日行情、福建钱币、收藏学院、藏品图库和网站设置。</p>
 
     <div class="actions">
-      <a class="btn" href="https://app.netlify.com/start/deploy?repository=https://github.com/yang79403-wq/yang79403-wq.github.io" target="_blank" rel="noopener">配置 Netlify 认证</a>
+      <button class="btn" id="open-cms">进入内容管理</button>
       <a class="btn secondary" href="../">返回网站首页</a>
     </div>
 
+    <div class="status" id="status">正在检查身份认证状态……</div>
+
     <div class="tip">
-      <strong>后台配置文件：</strong><code>/admin/config.yml</code><br>
-      <strong>内容目录：</strong><code>_news</code>、<code>_market</code><br>
+      <strong>后台配置：</strong><code>/admin/config.yml</code><br>
+      <strong>行情内容：</strong><code>_market</code><br>
+      <strong>收藏资讯：</strong><code>_news</code><br>
       <strong>图片目录：</strong><code>images/uploads</code>
     </div>
   </main>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    const status = document.getElementById('status');
+    const cmsUrl = 'https://app.netlify.com/sites/fastidious-belekoy-41f5b9/identity';
+
+    function updateStatus(message){ status.textContent = message; }
+
+    document.getElementById('open-cms').addEventListener('click', function(){
+      window.location.href = './?cms=1';
+    });
+
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function(user){
+        if(user){
+          updateStatus('已检测到 Netlify Identity 登录状态。正在准备内容管理入口。');
+        }else{
+          updateStatus('尚未登录。点击“进入内容管理”后将进入登录流程。');
+        }
+      });
+
+      window.netlifyIdentity.on('login', function(){
+        updateStatus('登录成功。正在打开内容管理界面……');
+        setTimeout(function(){ window.location.href='./?cms=1'; }, 500);
+      });
+
+      window.netlifyIdentity.on('error', function(err){
+        updateStatus('认证服务返回错误：' + (err && err.message ? err.message : '请稍后重试。'));
+      });
+
+      window.netlifyIdentity.init({autologin:false});
+    } else {
+      updateStatus('认证组件加载失败，请检查网络连接后刷新页面。');
+    }
+  </script>
 </body>
 </html>
