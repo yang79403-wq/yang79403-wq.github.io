@@ -11,6 +11,10 @@ public_folder: "/images/uploads"
 site_url: "https://yang79403-wq.github.io/"
 display_url: "https://yang79403-wq.github.io/"
 
+publish_mode: simple
+media_library:
+  name: uploadcare
+
 collections:
   - name: "news"
     label: "收藏资讯"
