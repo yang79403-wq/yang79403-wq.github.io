@@ -32,3 +32,14 @@ collections:
       - { label: "品类", name: "category", widget: "select", options: ["银元", "古钱币", "纸币", "福建钱币", "纪念币", "机制币"] }
       - { label: "日期", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "行情内容", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "网站设置"
+    files:
+      - label: "联系方式与客服"
+        name: "contact"
+        file: "content/settings/contact.json"
+        fields:
+          - { label: "客服电话", name: "phone", widget: "string" }
+          - { label: "微信号", name: "wechat", widget: "string" }
+          - { label: "微信客服二维码", name: "qrcode", widget: "image", required: false }
