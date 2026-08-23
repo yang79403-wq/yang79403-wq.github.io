@@ -1,88 +1,49 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#6b1414" />
-  <title>洪盛集藏资讯网 · 内容管理</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#6b1414">
+  <title>洪盛集藏资讯网 · 内容管理后台</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <style>
-    *{box-sizing:border-box}
-    body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f7f2e7;color:#3a2f22;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:20px}
-    .box{background:#fffdf8;border:1px solid #e8ddc4;border-radius:14px;padding:32px;max-width:720px;width:100%;box-shadow:0 8px 30px rgba(58,47,34,.08)}
-    .logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-    .emblem{width:52px;height:52px;border-radius:50%;background:#6b1414;color:#e8cf9a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;border:2px solid #c9a35a}
-    h1{color:#6b1414;margin:0;font-size:26px}
-    .sub{margin:4px 0 0;color:#8a7a5f;font-size:13px}
-    p{line-height:1.8;color:#6f634f}
-    .actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
-    .btn{display:block;background:#8f1d1d;color:#fff;padding:13px 16px;border-radius:7px;text-decoration:none;text-align:center;font-weight:600;border:none;cursor:pointer}
-    .btn.secondary{background:#c9a35a;color:#5a3d0a}
-    .tip{background:#f3ead8;border:1px solid #e4d6b7;border-radius:8px;padding:12px 14px;font-size:13px;margin-top:18px}
-    .status{margin-top:18px;padding:12px 14px;border-radius:8px;background:#eef7ef;border:1px solid #cfe4d1;color:#365d3a;font-size:13px;line-height:1.8}
-    code{background:#f1e8d7;padding:2px 6px;border-radius:4px}
-    @media(max-width:600px){.actions{grid-template-columns:1fr}h1{font-size:22px}.box{padding:24px}}
+    *{box-sizing:border-box}body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f7f2e7;color:#3a2f22;min-height:100vh}.wrap{max-width:900px;margin:0 auto;padding:32px 18px}.card{background:#fffdf8;border:1px solid #e8ddc4;border-radius:16px;box-shadow:0 10px 35px rgba(58,47,34,.08);padding:28px}.brand{display:flex;align-items:center;gap:14px}.emblem{width:54px;height:54px;border-radius:50%;background:#6b1414;color:#e8cf9a;border:2px solid #c9a35a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px}.brand h1{margin:0;color:#6b1414;font-size:25px}.brand p{margin:4px 0 0;color:#8a7a5f}.status{margin:22px 0;padding:14px 16px;border-radius:10px;background:#f3ead8;border:1px solid #e4d6b7;line-height:1.7}.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{display:block;border:0;border-radius:8px;padding:14px 16px;text-align:center;text-decoration:none;font-size:15px;font-weight:700;cursor:pointer;background:#8f1d1d;color:#fff}.btn.secondary{background:#c9a35a;color:#5a3d0a}.hint{margin-top:18px;font-size:13px;color:#6f634f;line-height:1.8;background:#fff8ea;border:1px solid #ead9b8;border-radius:10px;padding:14px}.error{background:#fff1f1;border-color:#e7b4b4;color:#7b2020}.ok{background:#eef8ef;border-color:#cae3cc;color:#315b37}@media(max-width:640px){.wrap{padding:16px 12px}.card{padding:22px}.actions{grid-template-columns:1fr}.brand h1{font-size:21px}.status{font-size:14px}}
   </style>
 </head>
 <body>
-  <main class="box">
-    <div class="logo">
-      <div class="emblem">洪</div>
-      <div>
-        <h1>洪盛集藏资讯网</h1>
-        <div class="sub">可视化内容管理后台</div>
-      </div>
-    </div>
-
-    <p>后台采用 Netlify Identity + Git Gateway + Decap CMS。登录后可以管理收藏资讯、每日行情、福建钱币、收藏学院、藏品图库和网站设置。</p>
-
-    <div class="actions">
-      <button class="btn" id="open-cms">进入内容管理</button>
-      <a class="btn secondary" href="../">返回网站首页</a>
-    </div>
-
-    <div class="status" id="status">正在检查身份认证状态……</div>
-
-    <div class="tip">
-      <strong>后台配置：</strong><code>/admin/config.yml</code><br>
-      <strong>行情内容：</strong><code>_market</code><br>
-      <strong>收藏资讯：</strong><code>_news</code><br>
-      <strong>图片目录：</strong><code>images/uploads</code>
-    </div>
-  </main>
-
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    const status = document.getElementById('status');
-    const cmsUrl = 'https://app.netlify.com/sites/fastidious-belekoy-41f5b9/identity';
-
-    function updateStatus(message){ status.textContent = message; }
-
-    document.getElementById('open-cms').addEventListener('click', function(){
-      window.location.href = './?cms=1';
-    });
-
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', function(user){
-        if(user){
-          updateStatus('已检测到 Netlify Identity 登录状态。正在准备内容管理入口。');
-        }else{
-          updateStatus('尚未登录。点击“进入内容管理”后将进入登录流程。');
-        }
-      });
-
-      window.netlifyIdentity.on('login', function(){
-        updateStatus('登录成功。正在打开内容管理界面……');
-        setTimeout(function(){ window.location.href='./?cms=1'; }, 500);
-      });
-
-      window.netlifyIdentity.on('error', function(err){
-        updateStatus('认证服务返回错误：' + (err && err.message ? err.message : '请稍后重试。'));
-      });
-
-      window.netlifyIdentity.init({autologin:false});
-    } else {
-      updateStatus('认证组件加载失败，请检查网络连接后刷新页面。');
-    }
-  </script>
+<div class="wrap"><div class="card">
+  <div class="brand"><div class="emblem">洪</div><div><h1>洪盛集藏资讯网</h1><p>可视化内容管理后台</p></div></div>
+  <div id="status" class="status">正在检测 Netlify Identity……</div>
+  <div class="actions">
+    <button id="login" class="btn">登录 / 授权</button>
+    <a class="btn secondary" href="../">返回网站首页</a>
+  </div>
+  <div class="hint">
+    登录后进入 Decap CMS，可管理：收藏资讯、每日行情、藏品图库、收藏学院、福建钱币、网站设置。<br>
+    配置文件：<code>/admin/config.yml</code>　图片目录：<code>/images/uploads</code>
+  </div>
+  <div id="fallback" class="hint" style="display:none;margin-top:12px">认证组件未加载。请确认当前 Netlify 站点已开启 Identity 与 Git Gateway，并重新刷新本页。</div>
+</div></div>
+<script>
+(function(){
+  const status=document.getElementById('status');
+  const login=document.getElementById('login');
+  const fallback=document.getElementById('fallback');
+  function setStatus(t,cls){status.className='status '+(cls||'');status.textContent=t}
+  function openCms(){window.location.href='/admin/cms.html'}
+  login.addEventListener('click',function(){
+    if(window.netlifyIdentity){window.netlifyIdentity.open('login')}else{setStatus('认证组件尚未加载，请稍后刷新。','error')}
+  });
+  if(!window.netlifyIdentity){fallback.style.display='block';return}
+  window.netlifyIdentity.on('init',function(user){
+    if(user){setStatus('已登录：'+(user.email||'管理员')+'。点击下方进入内容管理。','ok');login.textContent='进入内容管理';login.onclick=openCms}
+    else{setStatus('尚未登录。点击“登录 / 授权”完成管理员登录。')}
+  });
+  window.netlifyIdentity.on('login',function(){setStatus('登录成功，正在进入内容管理……','ok');setTimeout(openCms,400)});
+  window.netlifyIdentity.on('logout',function(){setStatus('已退出登录。')});
+  window.netlifyIdentity.on('error',function(err){setStatus('认证错误：'+(err&&err.message?err.message:'请稍后重试。'),'error')});
+  window.netlifyIdentity.init({autologin:false});
+})();
+</script>
 </body>
 </html>
