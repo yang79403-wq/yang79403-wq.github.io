@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: yang79403-wq/yang79403-wq.github.io
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: "https://yang79403-wq.github.io/"
+display_url: "https://yang79403-wq.github.io/"
+
+collections:
+  - name: "news"
+    label: "收藏资讯"
+    folder: "_news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "分类", name: "category", widget: "select", options: ["银元", "古钱币", "纸币", "福建钱币", "评级知识", "收藏学院", "市场行情"] }
+      - { label: "日期", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "封面图", name: "image", widget: "image", required: false }
+      - { label: "正文", name: "body", widget: "markdown" }
+
+  - name: "market"
+    label: "每日行情"
+    folder: "_market"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "品类", name: "category", widget: "select", options: ["银元", "古钱币", "纸币", "福建钱币", "纪念币", "机制币"] }
+      - { label: "日期", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "行情内容", name: "body", widget: "markdown" }
