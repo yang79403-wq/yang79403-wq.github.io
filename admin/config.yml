@@ -1,9 +1,5 @@
 backend:
-  name: github
-  repo: yang79403-wq/yang79403-wq.github.io
-  branch: main
-  base_url: https://auth.decapbridge.com
-  auth_endpoint: auth
+  name: git-gateway
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -12,8 +8,6 @@ site_url: "https://yang79403-wq.github.io/"
 display_url: "https://yang79403-wq.github.io/"
 
 publish_mode: simple
-media_library:
-  name: uploadcare
 
 collections:
   - name: "news"
