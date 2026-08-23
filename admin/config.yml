@@ -2,6 +2,8 @@ backend:
   name: github
   repo: yang79403-wq/yang79403-wq.github.io
   branch: main
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
@@ -33,6 +35,39 @@ collections:
       - { label: "日期", name: "date", widget: "datetime", format: "YYYY-MM-DD" }
       - { label: "行情内容", name: "body", widget: "markdown" }
 
+  - name: "gallery"
+    label: "藏品图库"
+    folder: "content/gallery"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "分类", name: "category", widget: "select", options: ["银元", "古钱币", "纸币", "福建钱币", "纪念币", "机制币"] }
+      - { label: "实物图片", name: "image", widget: "image" }
+      - { label: "说明", name: "body", widget: "markdown", required: false }
+
+  - name: "school"
+    label: "收藏学院"
+    folder: "content/school"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "分类", name: "category", widget: "select", options: ["收藏入门", "银元基础", "古钱基础", "纸币基础", "评级知识", "藏品保存", "风险提示"] }
+      - { label: "正文", name: "body", widget: "markdown" }
+      - { label: "配图", name: "image", widget: "image", required: false }
+
+  - name: "fujian"
+    label: "福建钱币"
+    folder: "content/fujian"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "分类", name: "category", widget: "select", options: ["福建龙洋", "福建铜元", "福建银毫", "福建机制币", "泉州收藏文化"] }
+      - { label: "正文", name: "body", widget: "markdown" }
+      - { label: "实物图片", name: "image", widget: "image", required: false }
+
   - name: "settings"
     label: "网站设置"
     files:
@@ -42,4 +77,5 @@ collections:
         fields:
           - { label: "客服电话", name: "phone", widget: "string" }
           - { label: "微信号", name: "wechat", widget: "string" }
+          - { label: "联系地址", name: "address", widget: "string" }
           - { label: "微信客服二维码", name: "qrcode", widget: "image", required: false }
