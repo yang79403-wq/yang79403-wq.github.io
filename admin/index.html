@@ -3,22 +3,51 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#6b1414" />
   <title>洪盛集藏资讯网 · 可视化管理后台</title>
   <style>
-    body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f7f2e7;color:#3a2f22;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0}
-    .box{background:#fffdf8;border:1px solid #e8ddc4;border-radius:12px;padding:32px;max-width:620px;width:calc(100% - 32px);box-shadow:0 8px 30px rgba(58,47,34,.08)}
-    h1{color:#6b1414;margin:0 0 12px}
+    *{box-sizing:border-box}
+    body{font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:#f7f2e7;color:#3a2f22;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:20px}
+    .box{background:#fffdf8;border:1px solid #e8ddc4;border-radius:14px;padding:32px;max-width:680px;width:100%;box-shadow:0 8px 30px rgba(58,47,34,.08)}
+    .logo{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .emblem{width:52px;height:52px;border-radius:50%;background:#6b1414;color:#e8cf9a;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;border:2px solid #c9a35a}
+    h1{color:#6b1414;margin:0;font-size:26px}
+    .sub{margin:4px 0 0;color:#8a7a5f;font-size:13px}
     p{line-height:1.8;color:#6f634f}
-    .btn{display:inline-block;background:#8f1d1d;color:#fff;padding:12px 20px;border-radius:6px;text-decoration:none}
+    .actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .btn{display:block;background:#8f1d1d;color:#fff;padding:13px 16px;border-radius:7px;text-decoration:none;text-align:center;font-weight:600}
+    .btn.secondary{background:#c9a35a;color:#5a3d0a}
+    .tip{background:#f3ead8;border:1px solid #e4d6b7;border-radius:8px;padding:12px 14px;font-size:13px;margin-top:18px}
     code{background:#f1e8d7;padding:2px 6px;border-radius:4px}
+    @media(max-width:600px){
+      .actions{grid-template-columns:1fr}
+      h1{font-size:22px}
+      .box{padding:24px}
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>洪盛集藏资讯网 · 内容管理</h1>
-    <p>后台配置已准备完成。您可以通过 GitHub 授权后管理“收藏资讯”和“每日行情”内容。</p>
-    <p>配置文件：<code>/admin/config.yml</code></p>
-    <p><a class="btn" href="../">返回网站首页</a></p>
-  </div>
+  <main class="box">
+    <div class="logo">
+      <div class="emblem">洪</div>
+      <div>
+        <h1>洪盛集藏资讯网</h1>
+        <div class="sub">可视化内容管理后台</div>
+      </div>
+    </div>
+
+    <p>后台内容配置已准备完成。点击进入 CMS 后台后，可通过 GitHub 授权管理收藏资讯、每日行情、网站设置及后续内容。</p>
+
+    <div class="actions">
+      <a class="btn" href="https://app.netlify.com/start/deploy?repository=https://github.com/yang79403-wq/yang79403-wq.github.io" target="_blank" rel="noopener">配置 Netlify 认证</a>
+      <a class="btn secondary" href="../">返回网站首页</a>
+    </div>
+
+    <div class="tip">
+      <strong>后台配置文件：</strong><code>/admin/config.yml</code><br>
+      <strong>内容目录：</strong><code>_news</code>、<code>_market</code><br>
+      <strong>图片目录：</strong><code>images/uploads</code>
+    </div>
+  </main>
 </body>
 </html>
