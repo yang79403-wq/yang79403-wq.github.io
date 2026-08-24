@@ -1,0 +1,42 @@
+name: Sync admin menu with current website
+on:
+  push:
+    paths:
+      - '.admin-menu-sync-trigger'
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Align admin menu labels
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('admin/content-editor.html')
+          s=p.read_text(encoding='utf-8')
+          old='<nav class="tabs"><button class="tab on" data-tab="content">📰 内容</button><button class="tab" data-tab="market">📊 行情</button><button class="tab" data-tab="config">🏠 配置</button></nav>'
+          new='''<nav class="tabs" aria-label="网站栏目管理"><button class="tab on" data-tab="content">🏠 首页</button><button class="tab" data-tab="market">📈 每日行情</button><button class="tab" data-tab="silver">🥈 银元</button><button class="tab" data-tab="ancient">🏺 古钱币</button><button class="tab" data-tab="paper">💴 纸币</button><button class="tab" data-tab="fujian">🇨🇳 福建钱币</button><button class="tab" data-tab="commemorative">🪙 纪念币</button><button class="tab" data-tab="rating">🏅 评级知识</button><button class="tab" data-tab="academy">📚 收藏学院</button><button class="tab" data-tab="about">ℹ️ 关于我们</button></nav>'''
+          if old not in s:
+              raise SystemExit('target admin navigation not found')
+          s=s.replace(old,new,1)
+          marker='<section id="config" class="hide">'
+          extra='''<section id="silver" class="hide"><section class="card"><h2>🥈 银元</h2><p class="muted">对应当前网站「银元」栏目。内容数据使用 data/content/yinyuan_jizhibi.json。</p></section></section><section id="ancient" class="hide"><section class="card"><h2>🏺 古钱币</h2><p class="muted">对应当前网站「古钱币」栏目。内容数据使用 data/content/tongqian.json。</p></section></section><section id="paper" class="hide"><section class="card"><h2>💴 纸币</h2><p class="muted">对应当前网站「纸币」栏目。内容数据使用 data/content/zhibi.json。</p></section></section><section id="fujian" class="hide"><section class="card"><h2>🇨🇳 福建钱币</h2><p class="muted">对应当前网站「福建钱币」栏目。内容数据使用 data/content/fujian.json。</p></section></section><section id="commemorative" class="hide"><section class="card"><h2>🪙 纪念币</h2><p class="muted">对应当前网站「纪念币」栏目。此处保留栏目入口，不改变现有数据文件。</p></section></section><section id="rating" class="hide"><section class="card"><h2>🏅 评级知识</h2><p class="muted">对应当前网站「评级知识」栏目。内容数据使用 data/content/knowledge.json。</p></section></section><section id="academy" class="hide"><section class="card"><h2>📚 收藏学院</h2><p class="muted">对应当前网站「收藏学院」栏目。内容数据使用 data/content/appreciation.json。</p></section></section><section id="about" class="hide"><section class="card"><h2>ℹ️ 关于我们</h2><p class="muted">对应当前网站「关于我们」栏目。保持当前前台内容，不修改网站设计。</p></section></section>'''
+          if marker not in s:
+              raise SystemExit('config marker not found')
+          s=s.replace(marker,extra+marker,1)
+          old_js="['content','market','config'].forEach(id=>$('#'+id).classList.add('hide'))"
+          new_js="['content','market','config','silver','ancient','paper','fujian','commemorative','rating','academy','about'].forEach(id=>{const e=$('#'+id);if(e)e.classList.add('hide')})"
+          if old_js not in s:
+              raise SystemExit('tab switcher not found')
+          s=s.replace(old_js,new_js,1)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add admin/content-editor.html
+          git commit -m '同步后台栏目菜单与当前网站' || exit 0
+          git push
