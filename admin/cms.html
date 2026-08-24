@@ -4,50 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#6b1414">
-<title>洪盛集藏资讯网 · 内容管理</title>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<style>
-:root{--red:#8f1d1d;--red2:#6b1414;--gold:#c9a35a;--gold-light:#e8cf9a;--cream:#f7f2e7;--card:#fffdf8;--border:#e8ddc4;--text:#3a2f22;--muted:#8a7a5f}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--cream);color:var(--text);font-family:"PingFang SC","Microsoft YaHei",sans-serif}body{display:flex;align-items:center;justify-content:center;padding:16px}.box{width:min(760px,100%);background:var(--card);border:1px solid var(--border);border-radius:16px;padding:30px 24px;box-shadow:0 12px 40px rgba(58,47,34,.09);text-align:center}.emblem{width:58px;height:58px;border-radius:50%;margin:0 auto 14px;background:var(--red2);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold-light);font-size:24px;font-weight:700}.title{font-size:27px;font-weight:700;color:var(--red2);letter-spacing:1px}.sub{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.8}.btn{display:inline-block;margin-top:20px;border:0;border-radius:8px;padding:13px 28px;background:var(--red);color:#fff;font-weight:700;font-size:16px;cursor:pointer}.btn.secondary{background:var(--gold);color:#5a3d0a;margin-left:8px}.status{margin-top:18px;padding:12px;border-radius:8px;background:#f3ead8;color:#6f634f;font-size:12px;line-height:1.7}.error{margin-top:12px;color:var(--red);font-size:12px;line-height:1.7;word-break:break-word}.hide{display:none!important}@media(max-width:520px){.box{padding:24px 16px}.title{font-size:23px}.btn{display:block;width:100%}.btn.secondary{margin:10px 0 0}}
-</style>
+<title>洪盛集藏 · 网站管理</title>
+<meta http-equiv="refresh" content="0;url=./content-manager-v14.html">
+<style>body{margin:0;background:#f7f2e7;color:#6b1414;font-family:"PingFang SC","Microsoft YaHei",sans-serif;display:grid;place-items:center;min-height:100vh}.box{padding:32px;text-align:center;background:#fffdf8;border:1px solid #e8ddc4;border-radius:12px}.btn{display:inline-block;margin-top:18px;padding:12px 24px;background:#6b1414;color:#fff;text-decoration:none;border-radius:6px;font-weight:700}</style>
 </head>
 <body>
-<div id="loading" class="box">
-  <div class="emblem">洪</div>
-  <div class="title">洪盛集藏资讯网</div>
-  <div class="sub" id="status">正在启动内容管理系统……</div>
-  <button id="login" class="btn" type="button">登录 / 授权</button>
-  <a class="btn secondary" href="../">返回网站</a>
-  <div id="error" class="error"></div>
-</div>
-<script>
-(function(){
-  var status=document.getElementById('status');
-  var error=document.getElementById('error');
-  var login=document.getElementById('login');
-  var tried=false;
-  var urls=[
-    'https://cdn.jsdelivr.net/npm/decap-cms@3.8.2/dist/decap-cms.js',
-    'https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js'
-  ];
-  function showError(message){status.textContent='CMS 暂时无法启动。';error.textContent=message;error.classList.remove('hide')}
-  function openLogin(){if(window.netlifyIdentity){window.netlifyIdentity.open('login')}else{showError('Netlify Identity 未加载，请刷新页面后重试。')}}
-  login.addEventListener('click',openLogin);
-  if(window.netlifyIdentity){
-    window.netlifyIdentity.on('login',function(){status.textContent='登录成功，正在加载内容管理……';setTimeout(function(){location.reload()},300)});
-    window.netlifyIdentity.on('error',function(err){showError('认证错误：'+(err&&err.message?err.message:'请稍后重试。'))});
-    window.netlifyIdentity.init({autologin:false});
-  }
-  function startCms(){
-    if(!window.CMS||!window.CMS.init){showError('Decap CMS 已加载但没有初始化接口，请重试。');return}
-    try{window.CMS.init({config:'./config.yml'})}catch(e){console.error(e);showError('CMS 初始化失败：'+(e&&e.message?e.message:'未知错误'))}
-  }
-  function loadScript(i){
-    if(i>=urls.length){showError('Decap CMS 脚本加载失败。请刷新页面后重试。');return}
-    var s=document.createElement('script');s.src=urls[i];s.async=true;s.onload=startCms;s.onerror=function(){loadScript(i+1)};document.head.appendChild(s)
-  }
-  loadScript(0);
-})();
-</script>
+<div class="box"><h2>洪盛集藏网站管理中心</h2><p>正在切换到与当前网站实际数据架构同步的管理工具……</p><a class="btn" href="./content-manager-v14.html">立即进入</a></div>
+<script>location.replace('./content-manager-v14.html');</script>
 </body>
 </html>
