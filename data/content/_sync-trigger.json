@@ -1,0 +1,13 @@
+[
+  {
+    "id": "sync_trigger_20260824",
+    "title": "首页同步触发器",
+    "date": "2026-08-24",
+    "kind": "system",
+    "note": "系统同步触发文件，不在前台发布。",
+    "content": "system sync trigger",
+    "status": "draft",
+    "groupId": "system",
+    "images": []
+  }
+]
