@@ -6,6 +6,7 @@ on:
     paths:
       - 'data/content/**'
       - 'data/market/**'
+      - 'app/sync_homepage.py'
       - '.github/workflows/sync-homepage.yml'
   workflow_dispatch:
 
