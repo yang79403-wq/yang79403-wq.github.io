@@ -2,8 +2,8 @@
 const E=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const q=new URLSearchParams(location.search),cat=q.get('cat'),id=q.get('id'),marketTitle=q.get('marketTitle'),box=document.getElementById('detail');
 function records(d){if(Array.isArray(d))return d;if(!d||typeof d!=='object')return[];for(const k of ['records','items','data','articles'])if(Array.isArray(d[k]))return d[k];return[]}
-function imgList(x){return (Array.isArray(x?.images)?x.images:[]).filter(Boolean)}
-function imageUrl(v){let s=String(v||'').trim();if(!s)return'';if(/^https?:\/\//i.test(s))return s;if(s.startsWith('//'))return location.protocol+s;if(s.startsWith('/'))s=s.slice(1);return new URL(s,location.origin+'/').href}
+function imgList(x){return(Array.isArray(x?.images)?x.images:[]).filter(Boolean)}
+function imageUrl(v){let s=String(v||'').trim();if(!s)return'';if(/^https?:\/\//i.test(s))return s;if(s.startsWith('//'))return location.protocol+s;s=s.replace(/^\/+/, '');if(/^assets\//i.test(s)||/^data\//i.test(s))return 'https://raw.githubusercontent.com/yang79403-wq/yang79403-wq.github.io/main/'+s;return new URL(s,location.origin+'/').href}
 async function loadJson(path){const r=await fetch(path+'?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw Error('HTTP '+r.status);return r.json()}
 async function findById(folder,file,id){try{const d=await loadJson(folder+'/'+file+'.json');return records(d).find(v=>String(v?.id)===String(id))||null}catch{return null}}
 async function findByTitle(folder,file,title){try{const d=await loadJson(folder+'/'+file+'.json');return records(d).find(v=>String(v?.title||v?.name||v?.品种||'')===String(title))||null}catch{return null}}
