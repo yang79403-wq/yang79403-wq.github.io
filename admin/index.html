@@ -4,25 +4,27 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#6b1414">
-<title>洪盛集藏资讯网 · 管理后台</title>
+<title>洪盛集藏资讯网 · 内容管理</title>
 <style>
-:root{--red:#8f1d1d;--gold:#c9a35a;--cream:#f7f2e7;--ink:#3a2f22}
-*{box-sizing:border-box}body{margin:0;font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:var(--cream);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-.card{width:min(720px,100%);background:#fffdf8;border:1px solid #e8ddc4;border-radius:16px;box-shadow:0 10px 32px rgba(58,47,34,.08);padding:28px}
-.brand{display:flex;align-items:center;gap:14px}.emblem{width:54px;height:54px;border-radius:50%;background:var(--red);color:#e8cf9a;display:flex;align-items:center;justify-content:center;font-size:23px;font-weight:700;border:2px solid var(--gold)}
-h1{margin:0;color:#6b1414;font-size:26px}.sub{margin-top:4px;color:#8a7a5f;font-size:13px}p{line-height:1.8;color:#6f634f}.actions{display:grid;gap:12px;margin-top:20px}.btn{display:block;text-align:center;padding:14px 16px;border-radius:8px;text-decoration:none;font-weight:700;font-size:16px;border:0;cursor:pointer}.primary{background:var(--red);color:#fff}.secondary{background:var(--gold);color:#5a3d0a}.status{margin-top:16px;padding:12px 14px;border-radius:8px;background:#eef7ef;border:1px solid #cfe4d1;color:#365d3a;font-size:13px;line-height:1.7}.tip{margin-top:16px;background:#f3ead8;border:1px solid #e4d6b7;border-radius:8px;padding:12px 14px;font-size:12.5px;line-height:1.8}code{background:#efe6d3;padding:2px 6px;border-radius:4px}@media(max-width:600px){body{padding:12px}.card{padding:22px}.actions{gap:10px}h1{font-size:22px}}
+:root{--red-dark:#6b1414;--red:#8f1d1d;--gold:#c9a35a;--gold-light:#e8cf9a;--cream:#f7f2e7;--card:#fffdf8;--border:#e8ddc4;--text:#3a2f22;--muted:#8a7a5f}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",sans-serif;background:var(--cream);color:var(--text)}a{text-decoration:none;color:inherit}.top{height:38px;background:var(--red-dark);color:#f1dcc0;display:flex;align-items:center;justify-content:space-between;padding:0 28px;font-size:12px}.top .right{display:flex;gap:18px}.header{background:var(--card);border-bottom:1px solid var(--border);padding:18px 28px;display:flex;justify-content:space-between;align-items:center}.brand{display:flex;align-items:center;gap:12px}.emblem{width:50px;height:50px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#a83232,var(--red-dark) 70%);color:var(--gold-light);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:700}.brand h1{margin:0;color:var(--red-dark);font-size:22px;letter-spacing:1px}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}.back{border:1px solid var(--border);padding:8px 14px;border-radius:4px;color:var(--red-dark);background:#fff8ea;font-size:13px}.nav{background:var(--red-dark);padding:0 28px;display:flex;gap:0}.nav a{color:#f4e6cf;padding:12px 18px;font-size:13px}.nav a.active{background:var(--gold);color:var(--red-dark);font-weight:700}.wrap{max-width:1200px;margin:0 auto;padding:28px 24px}.hero{background:linear-gradient(135deg,#fffdf8,#f3ead8);border:1px solid var(--border);border-radius:6px;padding:26px;margin-bottom:20px}.hero h2{margin:0;color:var(--red-dark);font-size:24px}.hero p{color:var(--muted);font-size:13px;line-height:1.8;margin:8px 0 0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--border);border-radius:5px;padding:20px;transition:.15s}.card:hover{border-color:var(--gold);transform:translateY(-1px)}.icon{width:42px;height:42px;border-radius:8px;background:var(--red);color:var(--gold-light);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}.card h3{margin:0 0 5px;color:var(--red-dark);font-size:16px}.card p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}.card .go{display:inline-block;margin-top:12px;color:var(--red);font-size:12px;font-weight:700}.foot{text-align:center;color:var(--muted);font-size:11px;padding:20px 0 35px}@media(max-width:760px){.top{padding:0 12px}.top .right{display:none}.header{padding:14px 12px}.brand h1{font-size:19px}.nav{padding:0 8px;overflow-x:auto;white-space:nowrap}.nav a{padding:11px 13px}.wrap{padding:16px 12px}.grid{grid-template-columns:1fr 1fr}.hero{padding:20px}.hero h2{font-size:20px}}@media(max-width:460px){.grid{grid-template-columns:1fr}.back{font-size:11px;padding:7px 9px}}
 </style>
 </head>
 <body>
-<main class="card">
-  <div class="brand"><div class="emblem">洪</div><div><h1>洪盛集藏资讯网</h1><div class="sub">可视化内容管理后台</div></div></div>
-  <p>登录后进入真正的内容管理界面，可发布、修改和删除收藏资讯、每日行情、福建钱币、收藏学院内容，并管理图片与网站设置。</p>
-  <div class="actions">
-    <a class="btn primary" href="./cms.html">进入内容管理</a>
-    <a class="btn secondary" href="../">返回网站首页</a>
-  </div>
-  <div class="status">后台服务：Netlify Identity + Git Gateway + Decap CMS</div>
-  <div class="tip"><strong>管理入口：</strong><code>/admin/</code>　<strong>内容配置：</strong><code>/admin/config.yml</code></div>
+<div class="top"><div>欢迎进入洪盛集藏内容管理中心 · 收藏 · 鉴赏 · 研究 · 交流</div><div class="right"><span>公益收藏交流平台</span><a href="../">返回前台</a></div></div>
+<header class="header"><div class="brand"><div class="emblem">洪</div><div><h1>洪盛集藏资讯网</h1><p>专业的钱币收藏资讯与交流内容管理平台</p></div></div><a class="back" href="../">返回网站首页</a></header>
+<nav class="nav"><a class="active" href="#content">内容管理</a><a href="./cms.html">CMS编辑器</a><a href="../#market">每日行情</a><a href="../#research">收藏研究</a><a href="../#fujian">福建钱币</a></nav>
+<main class="wrap" id="content">
+<section class="hero"><h2>洪盛集藏 · 内容管理中心</h2><p>保持前台网站的红金钱币收藏视觉体系。这里统一管理资讯、行情、图库、学院、福建钱币和网站设置，发布后的内容继续使用洪盛集藏现有首页设计展示。</p></section>
+<section class="grid">
+<a class="card" href="./cms.html"><div class="icon">📰</div><h3>收藏资讯</h3><p>发布、编辑、删除银元、古钱币、纸币、机制币及市场资讯。</p><span class="go">进入编辑 →</span></a>
+<a class="card" href="./cms.html"><div class="icon">📈</div><h3>每日行情</h3><p>维护银元、古钱币、纸币、纪念币、机制币等行情内容。</p><span class="go">进入编辑 →</span></a>
+<a class="card" href="./cms.html"><div class="icon">📷</div><h3>藏品图库</h3><p>上传和管理藏品图片，保持网站统一的收藏展示风格。</p><span class="go">进入编辑 →</span></a>
+<a class="card" href="./cms.html"><div class="icon">📚</div><h3>收藏学院</h3><p>维护收藏入门、版别、评级、保存及风险提示等知识内容。</p><span class="go">进入编辑 →</span></a>
+<a class="card" href="./cms.html"><div class="icon">🏮</div><h3>福建钱币</h3><p>维护福建龙洋、铜元、银毫、机制币及泉州收藏文化内容。</p><span class="go">进入编辑 →</span></a>
+<a class="card" href="./cms.html"><div class="icon">⚙</div><h3>网站设置</h3><p>统一管理客服电话、微信号、联系地址和客服二维码。</p><span class="go">进入编辑 →</span></a>
+</section>
+<div class="foot">洪盛集藏资讯网 · 公益收藏交流平台 · 内容仅供收藏学习、知识交流与市场参考</div>
 </main>
 </body>
 </html>
