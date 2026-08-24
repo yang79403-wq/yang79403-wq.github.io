@@ -85,20 +85,20 @@ def make_latest_panel(soup,contents):
     body.append(ul); panel.append(body); return panel
 
 
-def make_customer_qr(soup):
-    marker='hongsheng-customer-qr'
-    old=soup.find(id=marker)
+def add_hero_qr(soup):
+    hero=soup.find('section',class_='hero')
+    if not hero:
+        return
+    old=hero.find(id='hongsheng-hero-qr')
     if old: old.decompose()
-    section=soup.new_tag('section',id=marker)
-    section['style']='background:#fffdf8;border:1px solid var(--border);border-radius:4px;margin:24px 0;padding:22px 24px;display:flex;align-items:center;justify-content:center;gap:28px'
+    box=soup.new_tag('div',id='hongsheng-hero-qr')
+    box['style']='position:absolute;right:8%;top:50%;transform:translateY(-50%);z-index:5;width:190px;padding:12px 12px 10px;background:rgba(28,12,8,.72);border:1px solid #c9a35a;border-radius:6px;box-shadow:0 8px 28px rgba(0,0,0,.32);text-align:center;backdrop-filter:blur(2px)'
     img=soup.new_tag('img',src=QR,alt='微信客服二维码')
-    img['style']='width:150px;height:150px;object-fit:contain;background:#fff;border:6px solid #fff;border-radius:4px;box-shadow:0 2px 10px rgba(0,0,0,.08)'
-    box=soup.new_tag('div'); box['style']='max-width:520px'
-    h=soup.new_tag('h3'); h.string='📱 微信客服'; h['style']='color:var(--red-dark);font-size:18px;margin-bottom:8px'; box.append(h)
-    p=soup.new_tag('p'); p.string='扫码联系客服，进行公益收藏知识交流与咨询。'; p['style']='font-size:13px;color:var(--text-light);line-height:1.8;margin:0'; box.append(p)
-    p2=soup.new_tag('p'); p2.string='免费咨询 · 鉴赏交流 · 行情资料 · 收藏研究'; p2['style']='font-size:12px;color:var(--text);line-height:1.8;margin:6px 0 0'; box.append(p2)
-    section.append(img); section.append(box)
-    return section
+    img['style']='width:150px;height:150px;margin:0 auto;object-fit:contain;background:#fff;border:5px solid #fff;border-radius:3px'
+    box.append(img)
+    title=soup.new_tag('div'); title.string='📱 微信客服'; title['style']='margin-top:8px;color:#f3d99a;font-size:15px;font-weight:700;letter-spacing:1px'; box.append(title)
+    sub=soup.new_tag('div'); sub.string='扫码联系客服'; sub['style']='margin-top:3px;color:#eadcc4;font-size:11px'; box.append(sub)
+    hero.append(box)
 
 
 def add_footer_qr(soup):
@@ -116,16 +116,7 @@ def add_footer_qr(soup):
     footer.insert(0,box)
 
 
-def find_insert_target(soup):
-    market=soup.find(id='market')
-    if market:return market
-    hero=soup.find(class_='hero')
-    if hero:return hero
-    return soup.body
-
-
 def make_static_market_links(soup,ul):
-    """没有结构化行情数据时，不删除首页现有行情，而是把每一行变成可点击详情。"""
     from urllib.parse import quote
     for li in ul.find_all('li',recursive=False):
         if li.find('a'): continue
@@ -137,9 +128,16 @@ def make_static_market_links(soup,ul):
         li.clear(); li.append(a)
 
 
+def remove_legacy_qr(soup):
+    for marker in ('hongsheng-customer-qr',):
+        old=soup.find(id=marker)
+        if old: old.decompose()
+
+
 def main():
     soup=BeautifulSoup(INDEX.read_text(encoding='utf-8'),'html.parser')
     contents=all_content()[:20]; markets=all_market()
+    remove_legacy_qr(soup)
 
     for heading in soup.find_all(['h2','h3','h4']):
         if '最新资讯' in text(heading):
@@ -151,14 +149,11 @@ def main():
                     for item in contents: ul.append(make_article(soup,item))
             break
 
-    target=find_insert_target(soup); latest=make_latest_panel(soup,contents)
-    if target and target.name=='div' and target.get('id')=='market': target.insert_after(latest)
-    elif target and target.name=='section' and 'hero' in (target.get('class') or []): target.insert_after(latest)
+    target=soup.find(id='market')
+    latest=make_latest_panel(soup,contents)
+    if target: target.insert_after(latest)
 
-    if not soup.find(id='hongsheng-customer-qr'):
-        nav=soup.find('nav',class_='mainnav')
-        if nav: nav.insert_after(make_customer_qr(soup))
-        else: soup.body.insert(0,make_customer_qr(soup))
+    add_hero_qr(soup)
 
     for heading in soup.find_all(['h2','h3','h4']):
         if '行情' in text(heading) and '最新' not in text(heading):
