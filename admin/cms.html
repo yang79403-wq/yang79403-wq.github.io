@@ -2,78 +2,68 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#6b1414">
 <title>洪盛集藏资讯网 · 内容管理</title>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script src="https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js"></script>
 <style>
-html,body{margin:0;min-height:100%;background:#f7f2e7;color:#3a2f22;font-family:"PingFang SC","Microsoft YaHei",sans-serif}
-#loading{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center}
-.box{max-width:560px;background:#fffdf8;border:1px solid #e8ddc4;border-radius:14px;padding:28px;box-shadow:0 10px 35px rgba(58,47,34,.08)}
-.title{font-size:24px;font-weight:700;color:#6b1414;margin-bottom:8px}.sub{color:#8a7a5f;font-size:13px;line-height:1.8}.btn{margin-top:18px;border:0;border-radius:7px;padding:12px 18px;background:#8f1d1d;color:#fff;font-weight:700;cursor:pointer}
-#error{display:none;margin-top:12px;color:#8f1d1d;font-size:12px;line-height:1.6}
+:root{--red:#8f1d1d;--red2:#6b1414;--gold:#c9a35a;--cream:#f7f2e7;--card:#fffdf8;--border:#e8ddc4;--text:#3a2f22;--muted:#8a7a5f}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--cream);color:var(--text);font-family:"PingFang SC","Microsoft YaHei",sans-serif}body{display:flex;align-items:center;justify-content:center;padding:16px}.box{width:min(720px,100%);background:var(--card);border:1px solid var(--border);border-radius:16px;padding:30px 24px;box-shadow:0 12px 40px rgba(58,47,34,.09);text-align:center}.emblem{width:58px;height:58px;border-radius:50%;margin:0 auto 14px;background:var(--red2);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;color:#e8cf9a;font-size:24px;font-weight:700}.title{font-size:27px;font-weight:700;color:var(--red2);letter-spacing:1px}.sub{margin-top:8px;color:var(--muted);font-size:14px;line-height:1.8}.btn{display:inline-block;margin-top:20px;border:0;border-radius:8px;padding:13px 28px;background:var(--red);color:#fff;font-weight:700;font-size:16px;cursor:pointer}.btn.secondary{background:var(--gold);color:#5a3d0a;margin-left:8px}.status{margin-top:18px;padding:12px;border-radius:8px;background:#f3ead8;color:#6f634f;font-size:12px;line-height:1.7}.error{margin-top:12px;color:var(--red);font-size:12px;line-height:1.7;word-break:break-word}.hide{display:none!important}@media(max-width:520px){.box{padding:24px 16px}.title{font-size:23px}.btn{display:block;width:100%}.btn.secondary{margin:10px 0 0}}
 </style>
 </head>
 <body>
-<div id="loading"><div class="box"><div class="title">洪盛集藏资讯网</div><div class="sub" id="status">正在加载内容管理系统……</div><button id="login" class="btn" type="button">登录 / 授权</button><div id="error"></div></div></div>
+<div id="loading" class="box">
+  <div class="emblem">洪</div>
+  <div class="title">洪盛集藏资讯网</div>
+  <div class="sub" id="status">正在启动内容管理系统……</div>
+  <button id="login" class="btn" type="button">登录 / 授权</button>
+  <a class="btn secondary" href="../">返回网站</a>
+  <div class="status">后台用于发布、修改、删除：收藏资讯 · 每日行情 · 藏品图库 · 收藏学院 · 福建钱币 · 网站设置</div>
+  <div id="error" class="error hide"></div>
+</div>
 <script>
 (function(){
-  var status=document.getElementById('status');
-  var error=document.getElementById('error');
-  var login=document.getElementById('login');
-  var cmsStarted=false;
-  var waitStart=Date.now();
-
-  function showError(message){
-    status.textContent='CMS 暂时无法启动。';
-    error.style.display='block';
-    error.textContent=message;
+  'use strict';
+  var status=document.getElementById('status'), error=document.getElementById('error'), login=document.getElementById('login');
+  var started=false;
+  function msg(t){status.textContent=t}
+  function fail(t){error.textContent=t;error.classList.remove('hide')}
+  function loginNow(){
+    if(window.netlifyIdentity){window.netlifyIdentity.open('login')}
+    else fail('Netlify Identity 未加载。请刷新页面，或检查 Netlify 的 Identity 设置。')
   }
-
-  function openLogin(){
-    if(window.netlifyIdentity){window.netlifyIdentity.open('login');}
-    else{showError('Netlify Identity 未加载，请刷新页面后重试。');}
+  function identity(){
+    if(!window.netlifyIdentity)return;
+    window.netlifyIdentity.on('login',function(){msg('授权成功，正在打开内容管理……');setTimeout(boot,250)})
+    window.netlifyIdentity.on('logout',function(){location.reload()})
+    window.netlifyIdentity.on('error',function(e){fail('认证错误：'+(e&&e.message?e.message:'请稍后重试'))})
+    window.netlifyIdentity.init({autologin:false})
   }
-
-  function initIdentity(){
-    if(!window.netlifyIdentity) return;
-    window.netlifyIdentity.on('login',function(){
-      status.textContent='登录成功，正在加载内容管理……';
-      setTimeout(function(){window.location.reload();},300);
-    });
-    window.netlifyIdentity.on('logout',function(){window.location.reload();});
-    window.netlifyIdentity.on('error',function(err){
-      showError('认证错误：'+(err&&err.message?err.message:'请稍后重试。'));
-    });
-    window.netlifyIdentity.init({autologin:false});
+  function loadCMS(url,done){
+    var s=document.createElement('script');s.src=url;s.async=false;s.onload=function(){done(true)};s.onerror=function(){done(false)};document.head.appendChild(s)
   }
-
-  function boot(){
-    if(window.netlifyIdentity) initIdentity();
-    if(!window.CMS){
-      if(Date.now()-waitStart>10000){
-        showError('Decap CMS 脚本加载超时。请检查网络连接或稍后刷新。');
-        return;
-      }
-      setTimeout(boot,100);
-      return;
-    }
-    if(cmsStarted) return;
-    cmsStarted=true;
+  function startCMS(){
+    if(started)return; started=true;
     try{
+      if(!window.CMS)throw new Error('CMS 库未加载');
       window.CMS.init({config:'./config.yml'});
-      setTimeout(function(){
-        var loading=document.getElementById('loading');
-        if(loading) loading.style.display='none';
-      },600);
-    }catch(e){
-      console.error(e);
-      showError('CMS 初始化失败：'+(e&&e.message?e.message:'未知错误'));
-    }
+      msg('内容管理系统已启动，正在进入编辑器……');
+      setTimeout(function(){document.getElementById('loading').classList.add('hide')},700);
+    }catch(e){started=false;fail('CMS 启动失败：'+(e&&e.message?e.message:'未知错误')+'。请刷新后重试。')}
   }
-
-  login.addEventListener('click',openLogin);
+  function boot(){
+    identity();
+    if(window.CMS){startCMS();return}
+    msg('正在加载内容管理工具……');
+    loadCMS('https://cdn.jsdelivr.net/npm/decap-cms@3.8.2/dist/decap-cms.js',function(ok){
+      if(ok){startCMS();return}
+      loadCMS('https://unpkg.com/decap-cms@3.8.2/dist/decap-cms.js',function(ok2){
+        if(ok2)startCMS();else fail('Decap CMS 加载失败。两个公共 CDN 均无法连接，请检查当前网络后刷新。')
+      })
+    })
+  }
+  login.addEventListener('click',loginNow);
+  if(window.netlifyIdentity)identity();
   boot();
 })();
 </script>
