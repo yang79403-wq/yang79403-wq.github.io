@@ -6,6 +6,7 @@ on:
     paths:
       - 'data/content/**'
       - 'data/market/**'
+      - '.github/workflows/sync-homepage.yml'
   workflow_dispatch:
 
 permissions:
