@@ -41,3 +41,5 @@ jobs:
             git commit -m "同步最新资讯与行情到首页"
             git push
           fi
+
+# 客服二维码由 app/sync_homepage.py 统一维护，避免后台发布时被覆盖
