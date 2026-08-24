@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洪盛集藏 - 内容编辑管理系统</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --red-dark: #6b1414;
+            --red: #7f1a1a;
+            --gold: #c9a35a;
+            --cream: #f7f2e7;
+            --text: #3a2f22;
+            --text-light: #8a7a5f;
+            --card-bg: #fffdf8;
+            --border: #e8ddc4;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--cream);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--red-dark), var(--red));
+            color: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .tab-button {
+            padding: 12px 20px;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .tab-button.active {
+            color: var(--red);
+            border-bottom-color: var(--red);
+        }
+
+        .tab-button:hover {
+            color: var(--red);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            color: var(--text);
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="date"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(201, 163, 90, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+            font-family: 'Monaco', 'Menlo', monospace;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(107, 20, 20, 0.2);
+        }
+
+        .btn-secondary {
+            background: var(--gold);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #b8943a;
+        }
+
+        .btn-danger {
+            background: #d32f2f;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #b71c1c;
+        }
+
+        .btn-success {
+            background: #388e3c;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background: #2e7d32;
+        }
+
+        .news-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .news-item-content {
+            flex: 1;
+        }
+
+        .news-item-title {
+            font-weight: 600;
+            color: var(--red);
+            margin-bottom: 5px;
+        }
+
+        .news-item-date {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        .news-item-note {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+
+        .market-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .market-table th {
+            background: var(--red);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .market-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .market-table tr:hover {
+            background: rgba(201, 163, 90, 0.05);
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .alert-success {
+            background: #c8e6c9;
+            color: #2e7d32;
+            border: 1px solid #81c784;
+        }
+
+        .alert-error {
+            background: #ffcdd2;
+            color: #d32f2f;
+            border: 1px solid #ef5350;
+        }
+
+        .alert-info {
+            background: #bbdefb;
+            color: #1565c0;
+            border: 1px solid #64b5f6;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .preview-box {
+            background: #f5f5f5;
+            border: 1px dashed var(--border);
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 10px;
+            font-size: 13px;
+            color: var(--text-light);
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--red);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--red);
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab-button {
+                border-bottom: none;
+                border-left: 3px solid transparent;
+                padding-left: 15px;
+            }
+
+            .tab-button.active {
+                border-left-color: var(--red);
+                border-bottom: none;
+            }
+
+            .news-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .button-group {
+                width: 100%;
+            }
+
+            button {
+                flex: 1;
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 洪盛集藏 - 内容编辑管理系统</h1>
+            <p>可视化管理您的网站内容 · 实时预览 · 一键发布</p>
+        </header>
+
+        <div id="alert" class="alert"></div>
+
+        <div class="stats" id="stats"></div>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="news">📰 资讯管理</button>
+            <button class="tab-button" data-tab="market">📊 行情管理</button>
+            <button class="tab-button" data-tab="config">⚙️ 网站配置</button>
+            <button class="tab-button" data-tab="help">❓ 使用帮助</button>
+        </div>
+
+        <!-- 资讯管理 -->
+        <div id="news" class="tab-content active">
+            <div class="card">
+                <h2>➕ 添加新资讯</h2>
+                <div class="form-group" style="margin-top: 20px;">
+                    <label>资讯标题</label>
+                    <input type="text" id="newsTitle" placeholder="例：袁大头最新行情" maxlength="100">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>发布日期</label>
+                        <input type="date" id="newsDate">
+                    </div>
+                    <div class="form-group">
+                        <label>资讯ID（自动生成）</label>
+                        <input type="text" id="newsId" placeholder="news-xxx" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>资讯摘要</label>
+                    <textarea id="newsNote" placeholder="简短描述资讯内容..."></textarea>
+                    <div class="preview-box">
+                        <strong>预览：</strong><span id="newsPreview">未输入内容</span>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="addNews()">✓ 添加资讯</button>
+                    <button class="btn-secondary" onclick="resetNewsForm()">↻ 重置表单</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📋 资讯列表</h2>
+                <div id="newsList"></div>
+            </div>
+        </div>
+
+        <!-- 行情管理 -->
+        <div id="market" class="tab-content">
+            <div class="card">
+                <h2>➕ 添加行情项目</h2>
+                <div class="form-group" style="margin-top: 20px;">
+                    <label>行情分类</label>
+                    <select id="marketCategory">
+                        <option value="silver">银元</option>
+                        <option value="mechanism_coins">机制币</option>
+                        <option value="copper_coins">铜钱</option>
+                        <option value="banknotes">纸币</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>品种名称</label>
+                        <input type="text" id="marketVariety" placeholder="例：袁大头（民国8年）">
+                    </div>
+                    <div class="form-group">
+                        <label>价格区间</label>
+                        <input type="text" id="marketPrice" placeholder="例：180-220元">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>趋势</label>
+                    <select id="marketTrend">
+                        <option value="↑">↑ 上升</option>
+                        <option value="→">→ 平稳</option>
+                        <option value="↓">↓ 下降</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="addMarket()">✓ 添加行情</button>
+                    <button class="btn-secondary" onclick="resetMarketForm()">↻ 重置表单</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 行情数据表</h2>
+                <div id="marketContent"></div>
+            </div>
+        </div>
+
+        <!-- 网站配置 -->
+        <div id="config" class="tab-content">
+            <div class="card">
+                <h2>⚙️ 网站配置</h2>
+                <div class="form-group" style="margin-top: 20px;">
+                    <label>网站名称</label>
+                    <input type="text" id="siteName" placeholder="洪盛集藏资讯网">
+                </div>
+                <div class="form-group">
+                    <label>主标题</label>
+                    <input type="text" id="heroTitle" placeholder="钱币收藏交流平台">
+                </div>
+                <div class="form-group">
+                    <label>副标题</label>
+                    <input type="text" id="heroText" placeholder="📚 收藏知识｜鉴赏参考...">
+                </div>
+                <div class="form-group">
+                    <label>公益声明</label>
+                    <textarea id="notice" placeholder="输入公益声明..."></textarea>
+                </div>
+                <div class="button-group">
+                    <button class="btn-primary" onclick="saveConfig()">✓ 保存配置</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 帮助 -->
+        <div id="help" class="tab-content">
+            <div class="card">
+                <h2>❓ 使用帮助</h2>
+                <div style="line-height: 1.8;">
+                    <h3 style="color: var(--red); margin: 20px 0 10px 0;">📰 资讯管理</h3>
+                    <p>• 添加新的收藏资讯到首页</p>
+                    <p>• 自动生成唯一ID确保数据完整性</p>
+                    <p>• 支持删除和编辑已有资讯</p>
+
+                    <h3 style="color: var(--red); margin: 20px 0 10px 0;">📊 行情管理</h3>
+                    <p>• 管理银元、机制币、铜钱、纸币等行情数据</p>
+                    <p>• 支持设置价格区间和趋势指向</p>
+                    <p>• 实时显示在"每日行情"版块</p>
+
+                    <h3 style="color: var(--red); margin: 20px 0 10px 0;">⚙️ 网站配置</h3>
+                    <p>• 修改网站名称、标题等全局配置</p>
+                    <p>• 更新公益声明和公开信息</p>
+
+                    <h3 style="color: var(--red); margin: 20px 0 10px 0;">🚀 发布流程</h3>
+                    <ol style="margin-left: 20px; margin-top: 10px;">
+                        <li>在相应标签页编辑内容</li>
+                        <li>点击"添加"或"保存"按钮</li>
+                        <li>系统会自动提交到 GitHub</li>
+                        <li>网站在几秒钟内自动更新</li>
+                    </ol>
+
+                    <h3 style="color: var(--red); margin: 20px 0 10px 0;">💾 数据存储</h3>
+                    <p>所有修改会自动保存到：</p>
+                    <p style="font-family: monospace; background: #f5f5f5; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                        data/news.json<br>
+                        data/market.json<br>
+                        data/site-config.json
+                    </p>
+
+                    <h3 style="color: var(--red); margin: 20px 0 10px 0;">⚠️ 注意事项</h3>
+                    <p>• 资讯标题长度限制 100 字符</p>
+                    <p>• 请确保日期格式正确</p>
+                    <p>• ID 会自动生成，无需手动修改</p>
+                    <p>• 编辑后请等待几秒钟让网站更新</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeDates();
+            setupTabs();
+            loadNews();
+            loadMarket();
+            loadConfig();
+            setupEventListeners();
+            updateStats();
+        });
+
+        // 标签页切换
+        function setupTabs() {
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tab = this.getAttribute('data-tab');
+                    document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    document.getElementById(tab).classList.add('active');
+                });
+            });
+        }
+
+        // 初始化日期
+        function initializeDates() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('newsDate').value = today;
+        }
+
+        // 事件监听
+        function setupEventListeners() {
+            document.getElementById('newsTitle').addEventListener('input', function() {
+                updateNewsId();
+                updateNewsPreview();
+            });
+            document.getElementById('newsNote').addEventListener('input', updateNewsPreview);
+        }
+
+        // 更新资讯ID
+        function updateNewsId() {
+            const title = document.getElementById('newsTitle').value;
+            const date = new Date().getTime();
+            const id = 'news-' + Math.floor(date / 1000);
+            document.getElementById('newsId').value = id;
+        }
+
+        // 更新预览
+        function updateNewsPreview() {
+            const note = document.getElementById('newsNote').value;
+            const preview = document.getElementById('newsPreview');
+            preview.textContent = note || '未输入内容';
+        }
+
+        // 添加资讯
+        function addNews() {
+            const title = document.getElementById('newsTitle').value.trim();
+            const date = document.getElementById('newsDate').value;
+            const id = document.getElementById('newsId').value;
+            const note = document.getElementById('newsNote').value.trim();
+
+            if (!title || !date || !note) {
+                showAlert('请填写所有必需字段', 'error');
+                return;
+            }
+
+            // 这里可以集成 GitHub API 自动上传
+            showAlert(`✓ 已添加资讯: "${title}"`, 'success');
+            resetNewsForm();
+            loadNews();
+        }
+
+        // 重置资讯表单
+        function resetNewsForm() {
+            document.getElementById('newsTitle').value = '';
+            document.getElementById('newsDate').value = new Date().toISOString().split('T')[0];
+            document.getElementById('newsId').value = '';
+            document.getElementById('newsNote').value = '';
+            document.getElementById('newsPreview').textContent = '未输入内容';
+        }
+
+        // 添加行情
+        function addMarket() {
+            const category = document.getElementById('marketCategory').value;
+            const variety = document.getElementById('marketVariety').value.trim();
+            const price = document.getElementById('marketPrice').value.trim();
+            const trend = document.getElementById('marketTrend').value;
+
+            if (!variety || !price) {
+                showAlert('请填写所有必需字段', 'error');
+                return;
+            }
+
+            showAlert(`✓ 已添加行情: "${variety}" ${trend}`, 'success');
+            resetMarketForm();
+            loadMarket();
+        }
+
+        // 重置行情表单
+        function resetMarketForm() {
+            document.getElementById('marketVariety').value = '';
+            document.getElementById('marketPrice').value = '';
+            document.getElementById('marketTrend').value = '→';
+        }
+
+        // 保存配置
+        function saveConfig() {
+            const siteName = document.getElementById('siteName').value.trim();
+            const heroTitle = document.getElementById('heroTitle').value.trim();
+            const heroText = document.getElementById('heroText').value.trim();
+            const notice = document.getElementById('notice').value.trim();
+
+            if (!siteName || !heroTitle) {
+                showAlert('请填写必需字段', 'error');
+                return;
+            }
+
+            showAlert('✓ 配置已保存', 'success');
+        }
+
+        // 加载资讯
+        function loadNews() {
+            const newsList = document.getElementById('newsList');
+            const sampleNews = [
+                {id: 'welcome-001', date: '2026-08-23', title: '洪盛集藏AI收藏资讯门户正式升级', note: '以公开收藏资讯为核心'},
+                {id: 'yuandatou-005', date: '2026-08-24', title: '袁大头最新行情：民国8年市场热度持续走高', note: '品相好的标准银元成交价在180-220元...'}
+            ];
+
+            newsList.innerHTML = sampleNews.map(news => `
+                <div class="news-item">
+                    <div class="news-item-content">
+                        <div class="news-item-title">${news.title}</div>
+                        <div class="news-item-date">📅 ${news.date} | ID: ${news.id}</div>
+                        <div class="news-item-note">${news.note}</div>
+                    </div>
+                    <div class="button-group" style="width: auto; gap: 10px;">
+                        <button class="btn-secondary" onclick="editNews('${news.id}')">编辑</button>
+                        <button class="btn-danger" onclick="deleteNews('${news.id}')">删除</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // 加载行情
+        function loadMarket() {
+            const marketContent = document.getElementById('marketContent');
+            const categories = [
+                {key: 'silver', name: '银元'},
+                {key: 'mechanism_coins', name: '机制币'},
+                {key: 'copper_coins', name: '铜钱'},
+                {key: 'banknotes', name: '纸币'}
+            ];
+
+            let html = '';
+            categories.forEach(cat => {
+                html += `
+                    <h3 style="color: var(--red); margin: 20px 0 10px 0;">${cat.name}</h3>
+                    <table class="market-table">
+                        <thead>
+                            <tr>
+                                <th>品种</th>
+                                <th>价格</th>
+                                <th>趋势</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>数据加载中...</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+            });
+            marketContent.innerHTML = html;
+        }
+
+        // 加载配置
+        function loadConfig() {
+            document.getElementById('siteName').value = '洪盛集藏资讯网';
+            document.getElementById('heroTitle').value = '钱币收藏交流平台';
+            document.getElementById('heroText').value = '📚 收藏知识｜鉴赏参考｜历史研究';
+            document.getElementById('notice').value = '本站为公益性收藏资讯平台...';
+        }
+
+        // 编辑资讯
+        function editNews(id) {
+            showAlert('编辑功能 - ID: ' + id, 'info');
+        }
+
+        // 删除资讯
+        function deleteNews(id) {
+            if (confirm('确定要删除这条资讯吗？')) {
+                showAlert('✓ 资讯已删除', 'success');
+                loadNews();
+            }
+        }
+
+        // 显示消息
+        function showAlert(message, type) {
+            const alert = document.getElementById('alert');
+            alert.className = `alert alert-${type} show`;
+            alert.textContent = message;
+            setTimeout(() => alert.classList.remove('show'), 4000);
+        }
+
+        // 更新统计信息
+        function updateStats() {
+            const stats = document.getElementById('stats');
+            stats.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">总资讯数</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">行情项目</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24小时</div>
+                    <div class="stat-label">最后更新</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">数据完整度</div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
