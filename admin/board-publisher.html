@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>洪盛集藏｜分类发布各板块</title>
+<style>
+:root{--r:#6b1414;--r2:#861b12;--g:#c9a35a;--bg:#f7f2e7;--ink:#3a2f22;--line:#e5d8bf;--card:#fffdf8}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+.top{background:linear-gradient(135deg,var(--r),var(--r2));color:#f5d887;padding:18px 4vw}.top h1{margin:0;font-size:24px}.top p{margin:7px 0 0;color:#f1dcc0;font-size:13px}
+.wrap{width:min(1500px,96vw);margin:16px auto}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px;margin-bottom:14px}.title{font-weight:800;color:var(--r);margin-bottom:10px}
+.groups{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.group{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fffaf3}.group h3{margin:0 0 9px;font-size:15px;color:var(--r)}
+.btn{border:1px solid var(--line);border-radius:8px;background:#fff;padding:9px 11px;margin:3px;cursor:pointer;color:#4a3025;font-weight:700}.btn:hover{background:#f5ead5;border-color:var(--g)}.btn.active{background:var(--r);color:#fff;border-color:var(--r)}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap}.status{padding:9px 11px;background:#fff5dd;border:1px solid #dfc18a;border-radius:8px;font-size:13px}.frame{width:100%;height:calc(100vh - 310px);min-height:760px;border:1px solid var(--line);border-radius:12px;background:#fff}
+@media(max-width:1050px){.groups{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.groups{grid-template-columns:1fr}.frame{height:850px}}
+</style>
+</head>
+<body>
+<header class="top"><h1>🏮 洪盛集藏｜分类发布各板块</h1><p>先选网站板块，再进入统一编辑器发布。每个分类对应正式网站自己的数据文件，不修改首页版面与二维码。</p></header>
+<main class="wrap">
+<section class="card">
+<div class="title">📌 内容发布分类</div>
+<div class="groups">
+<div class="group"><h3>🪙 钱币收藏</h3><button class="btn" data-type="a" data-file="yinyuan_jizhibi.json">银元 / 机制币</button><button class="btn" data-type="a" data-file="tongqian.json">古钱币</button><button class="btn" data-type="a" data-file="tongyuan.json">铜元</button><button class="btn" data-type="a" data-file="zhibi.json">纸币</button></div>
+<div class="group"><h3>📍 福建钱币</h3><button class="btn" data-type="a" data-file="fujian.json">福建钱币</button><button class="btn" data-type="m" data-file="fujian_yinyuan.json">福建银元行情</button><button class="btn" data-type="m" data-file="fujian_tongqian.json">福建铜钱行情</button><button class="btn" data-type="m" data-file="fujian_tongyuan.json">福建铜元行情</button></div>
+<div class="group"><h3>📚 学习研究</h3><button class="btn" data-type="a" data-file="appreciation.json">收藏学院</button><button class="btn" data-type="a" data-file="history.json">钱币历史</button><button class="btn" data-type="a" data-file="knowledge.json">评级知识</button></div>
+<div class="group"><h3>📈 每日行情</h3><button class="btn" data-type="m" data-file="yinyuan.json">银元行情</button><button class="btn" data-type="m" data-file="yinyuan_jizhibi.json">银元 / 机制币行情</button><button class="btn" data-type="m" data-file="tongqian.json">古钱币行情</button><button class="btn" data-type="m" data-file="tongyuan.json">铜元行情</button><button class="btn" data-type="m" data-file="zhibi.json">纸币行情</button></div>
+</div>
+</section>
+<section class="card">
+<div class="title">🧭 后台工具</div>
+<div class="toolbar"><button class="btn" id="allA">📚 全部内容板块</button><button class="btn" id="allM">📈 全部行情板块</button><button class="btn" id="home">🏠 首页公共内容</button><a class="btn" href="management-center.html">⚙️ 管理中心</a><a class="btn" href="../" target="_blank">🌐 查看网站</a></div>
+<div id="status" class="status">请选择上方具体板块开始发布。</div>
+</section>
+<section class="card"><iframe id="editor" class="frame" src="all-sections-editor.html#articles" title="洪盛集藏统一板块编辑器"></iframe></section>
+</main>
+<script>
+const frame=document.getElementById('editor'),status=document.getElementById('status');
+function openEditor(type,file,label){
+ document.querySelectorAll('.btn[data-file]').forEach(x=>x.classList.remove('active'));
+ const hit=[...document.querySelectorAll('.btn[data-file]')].find(x=>x.dataset.file===file&&x.dataset.type===type);if(hit)hit.classList.add('active');
+ const pane=type==='m'?'markets':'articles';
+ status.textContent='正在打开：'+label+' ……';
+ frame.src='all-sections-editor.html#'+pane;
+ frame.onload=()=>{
+   try{
+    const doc=frame.contentWindow.document;
+    const sel=doc.getElementById(type==='m'?'mSection':'aSection');
+    if(sel){sel.value=file;sel.dispatchEvent(new Event('change',{bubbles:true}));}
+    status.textContent='已进入「'+label+'」发布界面。请填写标题、正文、图片并点击“保存 / 发布”。';
+   }catch(e){status.textContent='已进入编辑器，请在“发布到具体板块”中选择：'+label;}
+ };
+}
+document.querySelectorAll('.btn[data-file]').forEach(b=>b.onclick=()=>openEditor(b.dataset.type,b.dataset.file,b.textContent.trim()));
+document.getElementById('allA').onclick=()=>{frame.src='all-sections-editor.html#articles';status.textContent='已打开全部内容板块。';};
+document.getElementById('allM').onclick=()=>{frame.src='all-sections-editor.html#markets';status.textContent='已打开全部行情板块。';};
+document.getElementById('home').onclick=()=>{frame.src='all-sections-editor.html#home';status.textContent='已打开首页公共内容。';};
+</script>
+</body></html>
