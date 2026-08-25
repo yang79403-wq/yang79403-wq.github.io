@@ -6,26 +6,27 @@
 <title>洪盛集藏｜全站内容管理</title>
 <style>
 :root{--r:#6b1414;--g:#c9a35a;--bg:#f7f2e7;--ink:#3a2f22;--card:#fffdf8;--line:#e5d8bf}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}.top{background:linear-gradient(135deg,#5a0f0f,#861b12);color:#f5d887;padding:18px 4vw}.top h1{margin:0;font-size:24px}.top p{margin:6px 0 0;color:#f1dcc0}.menu{display:flex;gap:8px;flex-wrap:wrap;padding:12px 4vw;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.menu button,.menu a{border:1px solid var(--line);background:#fffaf3;color:var(--r);border-radius:999px;padding:9px 14px;font-weight:700;text-decoration:none;cursor:pointer}.menu button:hover,.menu a:hover{background:#f5ead5}.wrap{width:min(1400px,94vw);margin:16px auto}.notice{background:#fff8e8;border:1px solid #dfc18a;border-radius:10px;padding:12px;line-height:1.7}.frame{width:100%;height:calc(100vh - 190px);min-height:720px;border:1px solid var(--line);border-radius:12px;background:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}.top{background:linear-gradient(135deg,#5a0f0f,#861b12);color:#f5d887;padding:18px 4vw}.top h1{margin:0;font-size:24px}.top p{margin:6px 0;color:#f1dcc0}.menu{display:flex;gap:8px;flex-wrap:wrap;padding:12px 4vw;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.menu button,.menu a{border:1px solid var(--line);background:#fffaf3;color:var(--r);border-radius:999px;padding:9px 14px;font-weight:700;text-decoration:none;cursor:pointer}.menu button:hover,.menu a:hover{background:#f5ead5}.wrap{width:min(1400px,94vw);margin:16px auto}.notice{background:#fff8e8;border:1px solid #dfc18a;border-radius:10px;padding:12px;line-height:1.7}.frame{width:100%;height:calc(100vh - 190px);min-height:720px;border:1px solid var(--line);border-radius:12px;background:#fff}
 </style>
 </head>
 <body>
-<header class="top"><h1>🏮 洪盛集藏｜全站内容管理中心</h1><p>全中文菜单｜新增内容可选择具体网站板块｜与正式网站使用同一数据源｜不修改首页稳定版布局</p></header>
+<header class="top"><h1>🏮 洪盛集藏｜全站内容管理中心</h1><p>全中文菜单｜新增内容可选择具体网站板块｜标题可统一管理｜与正式网站使用同一数据源｜不修改首页稳定版布局</p></header>
 <nav class="menu">
 <button onclick="openPanel('articles')">📚 收藏内容</button>
 <button onclick="openPanel('markets')">📈 每日行情</button>
 <button onclick="openPanel('home')">🏠 首页内容</button>
 <button onclick="openPanel('raw')">🗂️ 数据文件</button>
 <button onclick="openPanel('images')">🖼️ 图片管理</button>
+<a href="title-manager.html">📝 板块标题</a>
 <a href="../" target="_blank">🌐 查看网站</a>
 </nav>
 <main class="wrap">
-<div class="notice">🔒 <b>正式稳定版保护：</b>后台只修改网站数据，不修改首页版面、导航布局和二维码位置。发布新内容时必须先选择具体网站板块；保存后写入对应的 <code>data/content/</code> 或 <code>data/market/</code> 数据文件，前台读取同一份数据。</div>
+<div class="notice">🔒 <b>正式稳定版保护：</b>后台只修改网站数据，不修改首页版面、导航布局和二维码位置。发布新内容时必须先选择具体网站板块；标题管理只针对网站标题元素。</div>
 <section class="notice" style="margin-top:12px;background:#fffdf8">
 <b>📌 新内容发布规则</b><br>
 新增文章：选择具体板块后发布，例如「福建钱币」「古钱币」「纸币」「银元 / 机制币」「评级知识」「收藏学院」「钱币历史」。<br>
 新增行情：选择具体行情板块后发布，例如「福建银元行情」「古钱币行情」「铜元行情」「纸币行情」「银元 / 机制币行情」。<br>
-这样发布后，内容会进入对应板块，不会混到其他栏目。
+新增「📝 板块标题」：读取正式网站首页现有标题，可逐项修改或删除，保存后直接更新网站首页对应标题。
 </section>
 <iframe id="panel" class="frame" src="all-sections-editor.html" title="全站内容管理"></iframe>
 </main>
