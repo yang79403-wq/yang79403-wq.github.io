@@ -34,7 +34,7 @@ jobs:
           if [ -d "admin" ]; then cp -r admin _site/admin; fi
           if [ -f "index.html" ]; then cp index.html _site/index.html; fi
 
-          # 稳定版：发布前直接给首页所有板块安装真实跳转，不改变原首页视觉布局。
+          # 稳定版：发布前给首页所有板块入口安装真实跳转，不改变原首页视觉布局。
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -65,31 +65,46 @@ jobs:
               const key = Object.keys(MAP).find(k => t === k || t.includes(k));
               return key ? 'section.html?group=' + encodeURIComponent(MAP[key]) : null;
             };
-            const cardSelectors = '.service-card,.research-card,.fujian-card,.rate-card,.m-item';
+            function setTarget(el, url) {
+              if (!el || !url) return;
+              el.setAttribute('data-hs-url', url);
+              el.style.cursor = 'pointer';
+              el.setAttribute('role','link');
+              el.setAttribute('tabindex','0');
+              if (el.tagName === 'A') el.setAttribute('href', url);
+            }
             function install() {
-              document.querySelectorAll(cardSelectors).forEach(card => {
-                const url = urlFor(card.innerText || card.textContent);
-                if (!url) return;
-                card.setAttribute('data-hs-url', url);
-                card.style.cursor = 'pointer';
-                card.setAttribute('role','link');
-                card.setAttribute('tabindex','0');
+              document.querySelectorAll('.service-card,.research-card,.fujian-card,.rate-card,.m-item').forEach(card => {
+                setTarget(card, urlFor(card.innerText || card.textContent));
               });
-              document.querySelectorAll('.header-icons li').forEach(item => {
-                const url = urlFor(item.innerText || item.textContent);
-                if (url) { item.setAttribute('data-hs-url', url); item.style.cursor='pointer'; }
+              document.querySelectorAll('.header-icons li,.notice-icons li').forEach(item => {
+                setTarget(item, urlFor(item.innerText || item.textContent));
               });
-              document.querySelectorAll('.notice-icons li').forEach(item => {
-                const url = urlFor(item.innerText || item.textContent);
-                if (url) { item.setAttribute('data-hs-url', url); item.style.cursor='pointer'; }
+
+              // 板块标题本身直接绑定，不依赖父级卡片事件。
+              document.querySelectorAll('.panel-head h3').forEach(title => {
+                const url = urlFor(title.innerText || title.textContent);
+                if (url) setTarget(title, url);
+              });
+              document.querySelectorAll('.panel-head .more').forEach(more => {
+                const head = more.closest('.panel-head');
+                const url = head ? urlFor(head.innerText || head.textContent) : null;
+                if (url) setTarget(more, url);
               });
               document.querySelectorAll('.panel-head').forEach(head => {
                 const url = urlFor(head.innerText || head.textContent);
-                if (url) { head.setAttribute('data-hs-url', url); head.style.cursor='pointer'; }
+                if (url) setTarget(head, url);
               });
+
+              // 每日行情内部分类标签也可以直接进入对应内容。
+              document.querySelectorAll('.tabs li').forEach(tab => {
+                const url = urlFor(tab.innerText || tab.textContent);
+                if (url) setTarget(tab, url);
+              });
+
               document.querySelectorAll('.mainnav a').forEach(a => {
                 const url = urlFor(a.innerText || a.textContent);
-                if (url && clean(a.innerText || a.textContent) !== '首页') a.href = url;
+                if (url && clean(a.innerText || a.textContent) !== '首页') setTarget(a, url);
               });
             }
             function go(el) {
@@ -98,9 +113,9 @@ jobs:
             }
             document.addEventListener('click', e => {
               const el = e.target.closest('[data-hs-url]');
-              if (!el || e.target.closest('a[href]')) return;
+              if (!el) return;
               e.preventDefault();
-              e.stopPropagation();
+              e.stopImmediatePropagation();
               go(el);
             }, true);
             document.addEventListener('keydown', e => {
