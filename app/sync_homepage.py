@@ -8,21 +8,18 @@ DATA = ROOT / 'data' / 'content'
 MARKET = ROOT / 'data' / 'market'
 QR = '/assets/wechat-customer-qr.svg'
 
-# 首页母版保持不变：主视觉二维码 + 页脚二维码同时保留。
+# 首页母版保持不变：二维码只放在主视觉右侧，同时保留页脚二维码。
 
 def read_records(path):
     try:
         data = json.loads(path.read_text(encoding='utf-8'))
     except Exception:
         return []
-    if isinstance(data, list):
-        return data
+    if isinstance(data, list): return data
     if isinstance(data, dict):
-        for key in ('records', 'items', 'data', 'articles'):
-            if isinstance(data.get(key), list):
-                return data[key]
+        for key in ('records','items','data','articles'):
+            if isinstance(data.get(key), list): return data[key]
     return []
-
 
 def all_content():
     out=[]
@@ -33,7 +30,6 @@ def all_content():
     out.sort(key=lambda x:x.get('date',''),reverse=True)
     return out
 
-
 def all_market():
     out=[]
     for p in sorted(MARKET.glob('*.json')):
@@ -42,14 +38,9 @@ def all_market():
                 y=dict(x); y['_file']=p.stem; out.append(y)
     return out[:20]
 
+def text(el): return el.get_text(' ',strip=True) if el else ''
 
-def text(el):
-    return el.get_text(' ',strip=True) if el else ''
-
-
-def detail_href(item):
-    return f"detail.html?cat={item.get('_file','content')}&id={item.get('id','')}"
-
+def detail_href(item): return f"detail.html?cat={item.get('_file','content')}&id={item.get('id','')}"
 
 def make_article(soup,item):
     li=soup.new_tag('li')
@@ -57,18 +48,14 @@ def make_article(soup,item):
     a['style']='display:block;color:inherit;text-decoration:none;cursor:pointer'
     li.append(a); return li
 
-
 def make_market_li(soup,item):
     li=soup.new_tag('li')
-    a=soup.new_tag('a',href=detail_href(item)); a['class']='title'
-    a['style']='display:block;flex:1;color:inherit;text-decoration:none;cursor:pointer'
-    a.string=item.get('title') or item.get('name') or item.get('品种') or '行情资料'
-    li.append(a)
+    a=soup.new_tag('a',href=detail_href(item)); a['class']='title'; a['style']='display:block;flex:1;color:inherit;text-decoration:none;cursor:pointer'
+    a.string=item.get('title') or item.get('name') or item.get('品种') or '行情资料'; li.append(a)
     price=item.get('price') or item.get('价格') or item.get('value')
     if price not in (None,''):
         p=soup.new_tag('span',**{'class':'date'}); p.string=str(price); li.append(p)
     return li
-
 
 def make_latest_panel(soup,contents):
     old=soup.find(id='latest-content')
@@ -85,11 +72,12 @@ def make_latest_panel(soup,contents):
         li=soup.new_tag('li'); li.string='暂无已发布内容'; ul.append(li)
     body.append(ul); panel.append(body); return panel
 
-
 def add_hero_qr(soup):
     hero=soup.find('section',class_='hero')
-    if not hero:
-        return
+    if not hero: return
+    # 关键：让 absolute 坐标以 Hero 主视觉为基准，二维码绝不跑到顶部导航区域。
+    current=hero.get('style','')
+    if 'position:' not in current: hero['style']=(current+';position:relative').strip(';')
     old=hero.find(id='hongsheng-hero-qr')
     if old: old.decompose()
     box=soup.new_tag('div',id='hongsheng-hero-qr')
@@ -101,21 +89,16 @@ def add_hero_qr(soup):
     sub=soup.new_tag('div'); sub.string='扫码联系客服'; sub['style']='margin-top:3px;color:#eadcc4;font-size:11px'; box.append(sub)
     hero.append(box)
 
-
 def add_footer_qr(soup):
     footer=soup.find('footer')
     if not footer: return
-    marker='hongsheng-footer-qr'
-    old=footer.find(id=marker)
+    old=footer.find(id='hongsheng-footer-qr')
     if old: old.decompose()
-    box=soup.new_tag('div',id=marker)
+    box=soup.new_tag('div',id='hongsheng-footer-qr')
     box['style']='display:flex;flex-direction:column;align-items:center;gap:8px;min-width:150px'
-    img=soup.new_tag('img',src=QR,alt='微信客服二维码')
-    img['style']='width:110px;height:110px;object-fit:contain;background:#fff;border:6px solid #fff;border-radius:4px'
-    box.append(img)
+    img=soup.new_tag('img',src=QR,alt='微信客服二维码'); img['style']='width:110px;height:110px;object-fit:contain;background:#fff;border:6px solid #fff;border-radius:4px'; box.append(img)
     p=soup.new_tag('div'); p.string='📱 扫一扫联系客服'; p['style']='font-size:12px;color:#e8cf9a;text-align:center'; box.append(p)
     footer.insert(0,box)
-
 
 def make_static_market_links(soup,ul):
     from urllib.parse import quote
@@ -123,23 +106,17 @@ def make_static_market_links(soup,ul):
         if li.find('a'): continue
         title=text(li)
         if not title: continue
-        a=soup.new_tag('a',href='detail.html?marketTitle='+quote(title,safe=''))
-        a['class']='title'; a['style']='display:block;flex:1;color:inherit;text-decoration:none;cursor:pointer'
-        a.string=title
+        a=soup.new_tag('a',href='detail.html?marketTitle='+quote(title,safe='')); a['class']='title'; a['style']='display:block;flex:1;color:inherit;text-decoration:none;cursor:pointer'; a.string=title
         li.clear(); li.append(a)
 
-
 def remove_legacy_qr(soup):
-    for marker in ('hongsheng-customer-qr',):
-        old=soup.find(id=marker)
-        if old: old.decompose()
-
+    old=soup.find(id='hongsheng-customer-qr')
+    if old: old.decompose()
 
 def main():
     soup=BeautifulSoup(INDEX.read_text(encoding='utf-8'),'html.parser')
     contents=all_content()[:20]; markets=all_market()
     remove_legacy_qr(soup)
-
     for heading in soup.find_all(['h2','h3','h4']):
         if '最新资讯' in text(heading):
             panel=heading.find_parent(class_='panel'); body=panel.find(class_='panel-body') if panel else None
@@ -149,13 +126,9 @@ def main():
                     ul.clear()
                     for item in contents: ul.append(make_article(soup,item))
             break
-
-    target=soup.find(id='market')
-    latest=make_latest_panel(soup,contents)
+    target=soup.find(id='market'); latest=make_latest_panel(soup,contents)
     if target: target.insert_after(latest)
-
     add_hero_qr(soup)
-
     for heading in soup.find_all(['h2','h3','h4']):
         if '行情' in text(heading) and '最新' not in text(heading):
             panel=heading.find_parent(class_='panel')
@@ -165,10 +138,8 @@ def main():
             if markets:
                 ul.clear()
                 for item in markets[:12]: ul.append(make_market_li(soup,item))
-            else:
-                make_static_market_links(soup,ul)
+            else: make_static_market_links(soup,ul)
             break
-
     add_footer_qr(soup)
     INDEX.write_text(str(soup),encoding='utf-8')
 
