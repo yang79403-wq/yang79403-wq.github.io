@@ -9,7 +9,6 @@ MARKET = ROOT / 'data' / 'market'
 QR = '/assets/wechat-customer-qr.svg'
 
 # 首页母版保持不变：主视觉右侧二维码 + 联系我们原二维码占位框。
-
 def read_records(path):
     try:
         data = json.loads(path.read_text(encoding='utf-8'))
@@ -39,7 +38,6 @@ def all_market():
     return out[:20]
 
 def text(el): return el.get_text(' ',strip=True) if el else ''
-
 def detail_href(item): return f"detail.html?cat={item.get('_file','content')}&id={item.get('id','')}"
 
 def make_article(soup,item):
@@ -81,9 +79,7 @@ def add_hero_qr(soup):
     if old: old.decompose()
     box=soup.new_tag('div',id='hongsheng-hero-qr')
     box['style']='position:absolute;right:8%;top:50%;transform:translateY(-50%);z-index:5;width:190px;padding:12px 12px 10px;background:rgba(28,12,8,.72);border:1px solid #c9a35a;border-radius:6px;box-shadow:0 8px 28px rgba(0,0,0,.32);text-align:center;backdrop-filter:blur(2px)'
-    img=soup.new_tag('img',src=QR,alt='微信客服二维码')
-    img['style']='width:150px;height:150px;margin:0 auto;object-fit:contain;background:#fff;border:5px solid #fff;border-radius:3px'
-    box.append(img)
+    img=soup.new_tag('img',src=QR,alt='微信客服二维码'); img['style']='width:150px;height:150px;margin:0 auto;object-fit:contain;background:#fff;border:5px solid #fff;border-radius:3px'; box.append(img)
     title=soup.new_tag('div'); title.string='📱 微信客服'; title['style']='margin-top:8px;color:#f3d99a;font-size:15px;font-weight:700;letter-spacing:1px'; box.append(title)
     sub=soup.new_tag('div'); sub.string='扫码联系客服'; sub['style']='margin-top:3px;color:#eadcc4;font-size:11px'; box.append(sub)
     hero.append(box)
@@ -93,24 +89,24 @@ def add_footer_qr(soup):
     if not footer: return
     old=footer.find(id='hongsheng-footer-qr')
     if old: old.decompose()
-    # 精确使用“联系我们”原位置的 qr-box，不新增中间列，不改变页脚结构。
+    # 精确替换“联系我们”原来的 qr-box，占位框本身就是最终位置；不新增列、不改变页脚结构。
     contact=footer.find(class_='footer-contact')
     if not contact: return
     old_box=contact.find(class_='qr-box')
     if old_box:
         old_box.clear()
+        old_box['style']='width:150px;height:150px;background:#fff;border-radius:6px;margin:12px 0 8px;display:flex;align-items:center;justify-content:center;border:6px solid #fff;flex:0 0 150px;overflow:hidden;padding:0'
         img=soup.new_tag('img',src=QR,alt='微信客服二维码')
-        img['style']='width:100%;height:100%;object-fit:contain;border-radius:0'
+        img['style']='display:block;width:100%;height:100%;max-width:none;object-fit:contain;margin:0;padding:0'
         old_box.append(img)
-        label=soup.new_tag('div'); label.string='📱 微信客服'; label['style']='margin-top:6px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block'
-        # 用一个包裹元素承载图片和标签，避免标签与二维码重叠。
-        wrap=soup.new_tag('div'); wrap['style']='display:flex;flex-direction:column;align-items:center;gap:6px;width:100%'
-        old_box.clear(); wrap_img=soup.new_tag('img',src=QR,alt='微信客服二维码'); wrap_img['style']='width:100%;height:100%;max-height:100%;object-fit:contain'; wrap.append(wrap_img); wrap.append(label); old_box.append(wrap)
+        label=soup.new_tag('div'); label.string='📱 微信客服'; label['style']='margin:0 0 8px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block'
+        old_box.insert_after(label)
     else:
         box=soup.new_tag('div',**{'class':'qr-box'})
-        box['style']='width:150px;height:150px;background:#fff;border-radius:4px;margin:12px 0 8px;display:flex;align-items:center;justify-content:center;border:6px solid #fff;flex:0 0 150px;overflow:hidden'
-        img=soup.new_tag('img',src=QR,alt='微信客服二维码'); img['style']='width:100%;height:100%;object-fit:contain'; box.append(img)
-        contact.insert(len(contact.contents),box)
+        box['style']='width:150px;height:150px;background:#fff;border-radius:6px;margin:12px 0 8px;display:flex;align-items:center;justify-content:center;border:6px solid #fff;flex:0 0 150px;overflow:hidden;padding:0'
+        img=soup.new_tag('img',src=QR,alt='微信客服二维码'); img['style']='display:block;width:100%;height:100%;max-width:none;object-fit:contain;margin:0;padding:0'; box.append(img)
+        label=soup.new_tag('div'); label.string='📱 微信客服'; label['style']='margin:0 0 8px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block'
+        contact.append(box); contact.append(label)
 
 def make_static_market_links(soup,ul):
     from urllib.parse import quote
