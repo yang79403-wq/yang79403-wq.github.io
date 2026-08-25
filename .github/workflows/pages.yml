@@ -27,6 +27,7 @@ jobs:
           rm -rf _site
           mkdir -p _site
           if [ -d "static" ]; then cp -r static/. _site/; fi
+          if [ -d "assets" ]; then cp -r assets _site/assets; fi
           if [ -d "data" ]; then cp -r data _site/data; fi
           for f in fujian-coin.html section.html detail.html admin.html; do
             if [ -f "$f" ]; then cp "$f" "_site/$f"; fi
@@ -34,15 +35,15 @@ jobs:
           if [ -d "admin" ]; then cp -r admin _site/admin; fi
           if [ -f "index.html" ]; then cp index.html _site/index.html; fi
 
-          # 二维码修复：根首页由仓库根目录 index.html 发布，统一把旧的自引用 SVG 替换成实际 PNG。
+          # 首页二维码使用仓库中真实的 SVG 文件，不再替换成不存在的 PNG。
           python3 - <<'PY'
           from pathlib import Path
           p = Path('_site/index.html')
           if not p.exists():
               raise SystemExit('index.html 不存在')
           s = p.read_text(encoding='utf-8')
-          s = s.replace('/assets/wechat-customer-qr.svg', '/qr-service.png?v=20260825')
-          s = s.replace('assets/wechat-customer-qr.svg', 'qr-service.png?v=20260825')
+          s = s.replace('/qr-service.png?v=20260825', '/assets/wechat-customer-qr.svg?v=20260825')
+          s = s.replace('/qr-service.png', '/assets/wechat-customer-qr.svg?v=20260825')
           p.write_text(s, encoding='utf-8')
           PY
 
