@@ -8,6 +8,7 @@ DATA = ROOT / 'data' / 'content'
 MARKET = ROOT / 'data' / 'market'
 QR = '/assets/wechat-customer-qr.svg'
 
+# 首页母版保持不变：主视觉二维码 + 页脚二维码同时保留。
 
 def read_records(path):
     try:
