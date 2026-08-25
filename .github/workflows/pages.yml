@@ -26,6 +26,9 @@ jobs:
         run: |
           rm -rf _site
           mkdir -p _site
+
+          # static 目录的内容直接发布到站点根目录。
+          # 因此 static/qr-service.png 的实际线上路径是 /qr-service.png。
           if [ -d "static" ]; then cp -r static/. _site/; fi
           if [ -d "assets" ]; then cp -r assets _site/assets; fi
           if [ -d "data" ]; then cp -r data _site/data; fi
@@ -35,119 +38,28 @@ jobs:
           if [ -d "admin" ]; then cp -r admin _site/admin; fi
           if [ -f "index.html" ]; then cp index.html _site/index.html; fi
 
-          # 首页二维码使用仓库中真实的 SVG 文件，不再替换成不存在的 PNG。
+          # 统一首页和底部二维码：两处都使用同一个真实 PNG。
+          # 不改变首页版面，只修复图片资源路径。
           python3 - <<'PY'
           from pathlib import Path
           p = Path('_site/index.html')
           if not p.exists():
               raise SystemExit('index.html 不存在')
           s = p.read_text(encoding='utf-8')
-          s = s.replace('/qr-service.png?v=20260825', '/assets/wechat-customer-qr.svg?v=20260825')
-          s = s.replace('/qr-service.png', '/assets/wechat-customer-qr.svg?v=20260825')
-          p.write_text(s, encoding='utf-8')
-          PY
-
-          # 稳定版：发布前给首页所有板块入口安装真实跳转，不改变原首页视觉布局。
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-          p = Path('_site/index.html')
-          if not p.exists():
-              raise SystemExit('index.html 不存在')
-          s = p.read_text(encoding='utf-8')
-
-          s = re.sub(r'<script[^>]+src=["\']assets/smart-navigation\.js(?:\?[^"\']*)?["\'][^>]*></script>\s*', '', s, flags=re.I)
-          s = re.sub(r'<script[^>]+id=["\']hongsheng-inline-navigation["\'][^>]*>.*?</script>\s*', '', s, flags=re.I|re.S)
-
-          script = r'''<script id="hongsheng-inline-navigation">
-          (() => {
-            'use strict';
-            const MAP = {
-              '收藏交流':'content','鉴赏参考':'content','品相研究':'content','收藏知识':'content',
-              '市场资讯':'market','真伪知识':'content','收藏普及':'content','藏品展示':'content',
-              '鉴赏学习':'content','行情资讯':'market','评级知识':'services',
-              '每日行情':'market','今日热点':'market','银元':'market','古钱币':'content','纸币':'zhibi','福建钱币':'fujian',
-              '福建银元 铜币':'fujian','福建古钱 花钱':'fujian','福建纸币':'fujian','福建货币文化':'fujian',
-              '老银元收藏研究':'content','古钱币版别研究':'content','纸币收藏研究':'zhibi','纪念币研究':'content','机制币版别研究':'content',
-              '评级知识交流':'services','收藏学院':'advisor','藏友交流':'content','银元交流':'content','古钱币交流':'content','纸币交流':'zhibi','纪念币交流':'content','徽章交流':'content','经验分享':'content',
-              '藏品保管建议':'advisor','防潮':'advisor','防氧化':'advisor','存放环境':'advisor','保护盒':'advisor','纸币保护':'zhibi','长期保存':'advisor','关于我们':'about'
-            };
-            const clean = t => String(t || '').replace(/\s+/g,' ').trim();
-            const urlFor = text => {
-              const t = clean(text);
-              const key = Object.keys(MAP).find(k => t === k || t.includes(k));
-              return key ? 'section.html?group=' + encodeURIComponent(MAP[key]) : null;
-            };
-            function setTarget(el, url) {
-              if (!el || !url) return;
-              el.setAttribute('data-hs-url', url);
-              el.style.cursor = 'pointer';
-              el.setAttribute('role','link');
-              el.setAttribute('tabindex','0');
-              if (el.tagName === 'A') el.setAttribute('href', url);
-            }
-            function install() {
-              document.querySelectorAll('.service-card,.research-card,.fujian-card,.rate-card,.m-item').forEach(card => {
-                setTarget(card, urlFor(card.innerText || card.textContent));
-              });
-              document.querySelectorAll('.header-icons li,.notice-icons li').forEach(item => {
-                setTarget(item, urlFor(item.innerText || item.textContent));
-              });
-              document.querySelectorAll('.panel-head h3').forEach(title => {
-                const url = urlFor(title.innerText || title.textContent);
-                if (url) setTarget(title, url);
-              });
-              document.querySelectorAll('.panel-head .more').forEach(more => {
-                const head = more.closest('.panel-head');
-                const url = head ? urlFor(head.innerText || head.textContent) : null;
-                if (url) setTarget(more, url);
-              });
-              document.querySelectorAll('.panel-head').forEach(head => {
-                const url = urlFor(head.innerText || head.textContent);
-                if (url) setTarget(head, url);
-              });
-              document.querySelectorAll('.tabs li').forEach(tab => {
-                const url = urlFor(tab.innerText || tab.textContent);
-                if (url) setTarget(tab, url);
-              });
-              document.querySelectorAll('.mainnav a').forEach(a => {
-                const url = urlFor(a.innerText || a.textContent);
-                if (url && clean(a.innerText || a.textContent) !== '首页') setTarget(a, url);
-              });
-            }
-            function go(el) {
-              const url = el && el.getAttribute('data-hs-url');
-              if (url) window.location.assign(url);
-            }
-            document.addEventListener('click', e => {
-              const el = e.target.closest('[data-hs-url]');
-              if (!el) return;
-              e.preventDefault();
-              e.stopImmediatePropagation();
-              go(el);
-            }, true);
-            document.addEventListener('keydown', e => {
-              if (e.key !== 'Enter' && e.key !== ' ') return;
-              const el = e.target.closest('[data-hs-url]');
-              if (!el) return;
-              e.preventDefault();
-              go(el);
-            }, true);
-            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', install);
-            else install();
-            new MutationObserver(install).observe(document.documentElement,{childList:true,subtree:true});
-          })();
-          </script>'''
-
-          pos = s.lower().rfind('</body>')
-          if pos < 0:
-              s += script
-          else:
-              s = s[:pos] + script + '\n' + s[pos:]
+          replacements = {
+              '/static/qr-service.png': '/qr-service.png?v=20260825',
+              'static/qr-service.png': 'qr-service.png?v=20260825',
+              '/assets/wechat-customer-qr.svg': '/qr-service.png?v=20260825',
+              'assets/wechat-customer-qr.svg': 'qr-service.png?v=20260825',
+              '/qr-service.png?v=20260825': '/qr-service.png?v=20260825'
+          }
+          for old, new in replacements.items():
+              s = s.replace(old, new)
           p.write_text(s, encoding='utf-8')
           PY
 
           touch _site/.nojekyll
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
