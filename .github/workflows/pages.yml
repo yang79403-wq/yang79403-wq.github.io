@@ -34,8 +34,7 @@ jobs:
           if [ -d "admin" ]; then cp -r admin _site/admin; fi
           if [ -f "index.html" ]; then cp index.html _site/index.html; fi
 
-          # 强制把首页导航逻辑直接内置到发布后的 index.html，
-          # 不依赖外部 JS，避免 GitHub Pages 缓存或资源路径导致卡片失效。
+          # 稳定版：发布前直接给首页所有板块安装真实跳转，不改变原首页视觉布局。
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -44,7 +43,6 @@ jobs:
               raise SystemExit('index.html 不存在')
           s = p.read_text(encoding='utf-8')
 
-          # 删除历史 smart-navigation 外链，避免重复事件处理。
           s = re.sub(r'<script[^>]+src=["\']assets/smart-navigation\.js(?:\?[^"\']*)?["\'][^>]*></script>\s*', '', s, flags=re.I)
           s = re.sub(r'<script[^>]+id=["\']hongsheng-inline-navigation["\'][^>]*>.*?</script>\s*', '', s, flags=re.I|re.S)
 
@@ -54,67 +52,63 @@ jobs:
             const MAP = {
               '收藏交流':'content','鉴赏参考':'content','品相研究':'content','收藏知识':'content',
               '市场资讯':'market','真伪知识':'content','收藏普及':'content','藏品展示':'content',
+              '鉴赏学习':'content','行情资讯':'market','评级知识':'services',
+              '每日行情':'market','今日热点':'market','银元':'market','古钱币':'content','纸币':'zhibi','福建钱币':'fujian',
               '福建银元 铜币':'fujian','福建古钱 花钱':'fujian','福建纸币':'fujian','福建货币文化':'fujian',
-              '老银元收藏研究':'content','古钱币版别研究':'content','纸币收藏研究':'content',
-              '纪念币研究':'content','机制币版别研究':'content','评级知识交流':'services',
-              '收藏学院':'advisor','藏友交流':'content','银元交流':'content','古钱币交流':'content',
-              '纸币交流':'content','纪念币交流':'content','徽章交流':'content','经验分享':'content',
-              '藏品保管建议':'advisor','防潮':'advisor','防氧化':'advisor','存放环境':'advisor',
-              '保护盒':'advisor','纸币保护':'advisor','长期保存':'advisor'
+              '老银元收藏研究':'content','古钱币版别研究':'content','纸币收藏研究':'zhibi','纪念币研究':'content','机制币版别研究':'content',
+              '评级知识交流':'services','收藏学院':'advisor','藏友交流':'content','银元交流':'content','古钱币交流':'content','纸币交流':'zhibi','纪念币交流':'content','徽章交流':'content','经验分享':'content',
+              '藏品保管建议':'advisor','防潮':'advisor','防氧化':'advisor','存放环境':'advisor','保护盒':'advisor','纸币保护':'zhibi','长期保存':'advisor','关于我们':'about'
             };
             const clean = t => String(t || '').replace(/\s+/g,' ').trim();
-            const getUrl = el => {
-              if (!el) return null;
-              const text = clean(el.innerText || el.textContent);
-              const key = Object.keys(MAP).find(k => text.includes(k));
+            const urlFor = text => {
+              const t = clean(text);
+              const key = Object.keys(MAP).find(k => t === k || t.includes(k));
               return key ? 'section.html?group=' + encodeURIComponent(MAP[key]) : null;
             };
-            const selectors = '.service-card,.research-card,.fujian-card,.rate-card,.m-item';
+            const cardSelectors = '.service-card,.research-card,.fujian-card,.rate-card,.m-item';
             function install() {
-              document.querySelectorAll(selectors).forEach(card => {
-                const url = getUrl(card);
+              document.querySelectorAll(cardSelectors).forEach(card => {
+                const url = urlFor(card.innerText || card.textContent);
                 if (!url) return;
                 card.setAttribute('data-hs-url', url);
                 card.style.cursor = 'pointer';
                 card.setAttribute('role','link');
                 card.setAttribute('tabindex','0');
               });
-              document.querySelectorAll('.panel-head h3').forEach(h => {
-                const panel = h.closest('.panel,.section-row,.three-col');
-                const text = clean(h.innerText || h.textContent);
-                let url = null;
-                if (text.includes('每日行情')) url = 'section.html?group=market';
-                else if (text.includes('福建钱币专区')) url = 'section.html?group=fujian';
-                else if (text.includes('钱币研究中心')) url = 'section.html?group=content';
-                else if (text.includes('评级知识交流')) url = 'section.html?group=services';
-                else if (text.includes('收藏学院')) url = 'section.html?group=advisor';
-                else if (text.includes('藏友交流')) url = 'section.html?group=content';
-                else if (text.includes('藏品保管建议')) url = 'section.html?group=advisor';
-                if (url && panel) panel.setAttribute('data-hs-panel-url', url);
+              document.querySelectorAll('.header-icons li').forEach(item => {
+                const url = urlFor(item.innerText || item.textContent);
+                if (url) { item.setAttribute('data-hs-url', url); item.style.cursor='pointer'; }
+              });
+              document.querySelectorAll('.notice-icons li').forEach(item => {
+                const url = urlFor(item.innerText || item.textContent);
+                if (url) { item.setAttribute('data-hs-url', url); item.style.cursor='pointer'; }
+              });
+              document.querySelectorAll('.panel-head').forEach(head => {
+                const url = urlFor(head.innerText || head.textContent);
+                if (url) { head.setAttribute('data-hs-url', url); head.style.cursor='pointer'; }
+              });
+              document.querySelectorAll('.mainnav a').forEach(a => {
+                const url = urlFor(a.innerText || a.textContent);
+                if (url && clean(a.innerText || a.textContent) !== '首页') a.href = url;
               });
             }
+            function go(el) {
+              const url = el && el.getAttribute('data-hs-url');
+              if (url) window.location.assign(url);
+            }
             document.addEventListener('click', e => {
-              const card = e.target.closest('[data-hs-url]');
-              if (card) {
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                window.location.href = card.getAttribute('data-hs-url');
-                return;
-              }
-              const panel = e.target.closest('[data-hs-panel-url]');
-              if (panel && !e.target.closest('a')) {
-                e.preventDefault();
-                e.stopImmediatePropagation();
-                window.location.href = panel.getAttribute('data-hs-panel-url');
-              }
+              const el = e.target.closest('[data-hs-url]');
+              if (!el || e.target.closest('a[href]')) return;
+              e.preventDefault();
+              e.stopPropagation();
+              go(el);
             }, true);
             document.addEventListener('keydown', e => {
               if (e.key !== 'Enter' && e.key !== ' ') return;
-              const card = e.target.closest('[data-hs-url]');
-              if (card) {
-                e.preventDefault();
-                window.location.href = card.getAttribute('data-hs-url');
-              }
+              const el = e.target.closest('[data-hs-url]');
+              if (!el) return;
+              e.preventDefault();
+              go(el);
             }, true);
             if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', install);
             else install();
