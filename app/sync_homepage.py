@@ -8,7 +8,7 @@ DATA = ROOT / 'data' / 'content'
 MARKET = ROOT / 'data' / 'market'
 QR = '/assets/wechat-customer-qr.svg'
 
-# 首页母版保持不变：主视觉右侧二维码 + 页脚空白区域二维码。
+# 首页母版保持不变：主视觉右侧二维码 + 联系我们下原白色二维码区域。
 
 def read_records(path):
     try:
@@ -93,16 +93,27 @@ def add_footer_qr(soup):
     if not footer: return
     old=footer.find(id='hongsheng-footer-qr')
     if old: old.decompose()
-    footer_top=footer.find(class_='footer-top')
-    if not footer_top: return
-    footer_top['style']='position:relative;min-height:330px;padding-bottom:24px'
-    box=soup.new_tag('div',id='hongsheng-footer-qr')
-    box['style']='position:absolute;left:52%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;width:150px;z-index:3'
-    img=soup.new_tag('img',src=QR,alt='微信客服二维码')
-    img['style']='width:110px;height:110px;object-fit:contain;background:#fff;border:6px solid #fff;border-radius:4px'
-    box.append(img)
-    p=soup.new_tag('div'); p.string='📱 扫一扫联系客服'; p['style']='font-size:12px;color:#e8cf9a;text-align:center;white-space:nowrap'; box.append(p)
-    footer_top.append(box)
+
+    # 不改 footer 三栏结构。只把真实二维码放进右侧“联系我们”原来的二维码占位框。
+    contact=footer.find(class_='footer-contact')
+    if contact:
+        old_box=contact.find(class_='qr-box')
+        if old_box:
+            old_box.clear()
+            img=soup.new_tag('img',src=QR,alt='微信客服二维码')
+            img['style']='width:100%;height:100%;display:block;object-fit:contain;border-radius:4px'
+            old_box.append(img)
+            old_box['title']='微信客服二维码'
+            return
+
+        # 兼容没有现成占位框的情况：在联系我们内容最末尾添加二维码，但不改变列结构。
+        box=soup.new_tag('div',**{'class':'qr-box'})
+        box['style']='width:90px;height:90px;background:#fff;border-radius:4px;margin:8px 0 0;display:flex;align-items:center;justify-content:center;color:#333;font-size:10px;border:6px solid #fff;overflow:hidden'
+        img=soup.new_tag('img',src=QR,alt='微信客服二维码')
+        img['style']='width:100%;height:100%;display:block;object-fit:contain'
+        box.append(img)
+        contact.append(box)
+        return
 
 def make_static_market_links(soup,ul):
     from urllib.parse import quote
