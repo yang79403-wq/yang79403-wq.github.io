@@ -34,6 +34,18 @@ jobs:
           if [ -d "admin" ]; then cp -r admin _site/admin; fi
           if [ -f "index.html" ]; then cp index.html _site/index.html; fi
 
+          # 二维码修复：根首页由仓库根目录 index.html 发布，统一把旧的自引用 SVG 替换成实际 PNG。
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('_site/index.html')
+          if not p.exists():
+              raise SystemExit('index.html 不存在')
+          s = p.read_text(encoding='utf-8')
+          s = s.replace('/assets/wechat-customer-qr.svg', '/qr-service.png?v=20260825')
+          s = s.replace('assets/wechat-customer-qr.svg', 'qr-service.png?v=20260825')
+          p.write_text(s, encoding='utf-8')
+          PY
+
           # 稳定版：发布前给首页所有板块入口安装真实跳转，不改变原首页视觉布局。
           python3 - <<'PY'
           from pathlib import Path
@@ -80,8 +92,6 @@ jobs:
               document.querySelectorAll('.header-icons li,.notice-icons li').forEach(item => {
                 setTarget(item, urlFor(item.innerText || item.textContent));
               });
-
-              // 板块标题本身直接绑定，不依赖父级卡片事件。
               document.querySelectorAll('.panel-head h3').forEach(title => {
                 const url = urlFor(title.innerText || title.textContent);
                 if (url) setTarget(title, url);
@@ -95,13 +105,10 @@ jobs:
                 const url = urlFor(head.innerText || head.textContent);
                 if (url) setTarget(head, url);
               });
-
-              // 每日行情内部分类标签也可以直接进入对应内容。
               document.querySelectorAll('.tabs li').forEach(tab => {
                 const url = urlFor(tab.innerText || tab.textContent);
                 if (url) setTarget(tab, url);
               });
-
               document.querySelectorAll('.mainnav a').forEach(a => {
                 const url = urlFor(a.innerText || a.textContent);
                 if (url && clean(a.innerText || a.textContent) !== '首页') setTarget(a, url);
