@@ -10,7 +10,7 @@
 </style>
 </head>
 <body>
-<header class="top"><h1>🏮 洪盛集藏｜全站内容管理中心</h1><p>中文统一菜单｜与正式网站数据同步｜不修改首页稳定版布局</p></header>
+<header class="top"><h1>🏮 洪盛集藏｜全站内容管理中心</h1><p>全中文菜单｜新增内容可选择具体网站板块｜与正式网站使用同一数据源｜不修改首页稳定版布局</p></header>
 <nav class="menu">
 <button onclick="openPanel('articles')">📚 收藏内容</button>
 <button onclick="openPanel('markets')">📈 每日行情</button>
@@ -20,7 +20,13 @@
 <a href="../" target="_blank">🌐 查看网站</a>
 </nav>
 <main class="wrap">
-<div class="notice">🔒 <b>正式稳定版保护：</b>后台只修改网站数据，不修改首页版面、导航布局和二维码位置。所有发布、修改、删除的数据均写入网站使用的 <code>data/</code> 数据文件，前台读取同一份数据。</div>
+<div class="notice">🔒 <b>正式稳定版保护：</b>后台只修改网站数据，不修改首页版面、导航布局和二维码位置。发布新内容时必须先选择具体网站板块；保存后写入对应的 <code>data/content/</code> 或 <code>data/market/</code> 数据文件，前台读取同一份数据。</div>
+<section class="notice" style="margin-top:12px;background:#fffdf8">
+<b>📌 新内容发布规则</b><br>
+新增文章：选择具体板块后发布，例如「福建钱币」「古钱币」「纸币」「银元 / 机制币」「评级知识」「收藏学院」「钱币历史」。<br>
+新增行情：选择具体行情板块后发布，例如「福建银元行情」「古钱币行情」「铜元行情」「纸币行情」「银元 / 机制币行情」。<br>
+这样发布后，内容会进入对应板块，不会混到其他栏目。
+</section>
 <iframe id="panel" class="frame" src="all-sections-editor.html" title="全站内容管理"></iframe>
 </main>
 <script>
