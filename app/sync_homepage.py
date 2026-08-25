@@ -89,7 +89,7 @@ def add_footer_qr(soup):
     if not footer: return
     old=footer.find(id='hongsheng-footer-qr')
     if old: old.decompose()
-    # 精确替换“联系我们”原来的 qr-box，占位框本身就是最终位置；不新增列、不改变页脚结构。
+    # 精确使用“联系我们”原 qr-box 位置：二维码只占白色框，标题放在框外下方，绝不重叠。
     contact=footer.find(class_='footer-contact')
     if not contact: return
     old_box=contact.find(class_='qr-box')
@@ -99,13 +99,15 @@ def add_footer_qr(soup):
         img=soup.new_tag('img',src=QR,alt='微信客服二维码')
         img['style']='display:block;width:100%;height:100%;max-width:none;object-fit:contain;margin:0;padding:0'
         old_box.append(img)
-        label=soup.new_tag('div'); label.string='📱 微信客服'; label['style']='margin:0 0 8px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block'
+        label=old_box.find_next_sibling(class_='qr-label')
+        if label: label.decompose()
+        label=soup.new_tag('div',**{'class':'qr-label'}); label.string='📱 微信客服'; label['style']='margin:0 0 8px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block'
         old_box.insert_after(label)
     else:
         box=soup.new_tag('div',**{'class':'qr-box'})
         box['style']='width:150px;height:150px;background:#fff;border-radius:6px;margin:12px 0 8px;display:flex;align-items:center;justify-content:center;border:6px solid #fff;flex:0 0 150px;overflow:hidden;padding:0'
         img=soup.new_tag('img',src=QR,alt='微信客服二维码'); img['style']='display:block;width:100%;height:100%;max-width:none;object-fit:contain;margin:0;padding:0'; box.append(img)
-        label=soup.new_tag('div'); label.string='📱 微信客服'; label['style']='margin:0 0 8px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block'
+        label=soup.new_tag('div',**{'class':'qr-label'}); label.string='📱 微信客服'; label['style']='margin:0 0 8px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block'
         contact.append(box); contact.append(label)
 
 def make_static_market_links(soup,ul):
