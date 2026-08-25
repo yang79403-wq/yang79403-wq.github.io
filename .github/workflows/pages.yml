@@ -26,17 +26,30 @@ jobs:
         run: |
           rm -rf _site
           mkdir -p _site
-          # 复制静态资源
           if [ -d "static" ]; then cp -r static/. _site/; fi
           if [ -d "data" ]; then cp -r data _site/data; fi
-          # 复制网站根目录页面，确保首页、版块、详情页全部进入 Pages artifact
           for f in fujian-coin.html section.html detail.html admin.html; do
             if [ -f "$f" ]; then cp "$f" "_site/$f"; fi
           done
-          # 管理后台
           if [ -d "admin" ]; then cp -r admin _site/admin; fi
-          # 正式网站入口最后复制，避免其他静态入口覆盖新版首页
           if [ -f "index.html" ]; then cp index.html _site/index.html; fi
+          if [ -f "assets/smart-navigation.js" ]; then
+            mkdir -p _site/assets
+            cp assets/smart-navigation.js _site/assets/smart-navigation.js
+            python3 - <<'PY'
+from pathlib import Path
+p=Path('_site/index.html')
+s=p.read_text(encoding='utf-8')
+tag='<script src="assets/smart-navigation.js"></script>'
+if tag not in s:
+    pos=s.lower().rfind('</body>')
+    if pos>=0:
+        s=s[:pos]+tag+'\n'+s[pos:]
+    else:
+        s+=tag
+p.write_text(s,encoding='utf-8')
+PY
+          fi
           touch _site/.nojekyll
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
