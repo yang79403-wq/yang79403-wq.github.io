@@ -7,6 +7,7 @@ on:
       - 'data/content/**'
       - 'data/market/**'
       - 'app/sync_homepage.py'
+      - 'app/fix_footer_qr.py'
       - '.github/workflows/sync-homepage.yml'
   workflow_dispatch:
 
@@ -30,6 +31,9 @@ jobs:
       - name: 根据当前数据同步首页内容
         run: python app/sync_homepage.py
 
+      - name: 恢复原版页脚二维码位置
+        run: python app/fix_footer_qr.py
+
       - name: 提交首页同步结果
         run: |
           git config user.name 'Hongsheng Jicang Homepage Sync'
@@ -38,8 +42,6 @@ jobs:
           if git diff --cached --quiet; then
             echo '首页无需更新'
           else
-            git commit -m "同步最新资讯与行情到首页"
+            git commit -m "同步首页并恢复原版客服二维码位置"
             git push
           fi
-
-# 客服二维码由 app/sync_homepage.py 统一维护，避免后台发布时被覆盖
