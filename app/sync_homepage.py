@@ -8,7 +8,7 @@ DATA = ROOT / 'data' / 'content'
 MARKET = ROOT / 'data' / 'market'
 QR = '/assets/wechat-customer-qr.svg'
 
-# 首页母版保持不变：二维码只放在主视觉右侧，同时保留页脚二维码。
+# 首页母版保持不变：主视觉右侧二维码 + 页脚空白区域二维码。
 
 def read_records(path):
     try:
@@ -75,7 +75,6 @@ def make_latest_panel(soup,contents):
 def add_hero_qr(soup):
     hero=soup.find('section',class_='hero')
     if not hero: return
-    # 关键：让 absolute 坐标以 Hero 主视觉为基准，二维码绝不跑到顶部导航区域。
     current=hero.get('style','')
     if 'position:' not in current: hero['style']=(current+';position:relative').strip(';')
     old=hero.find(id='hongsheng-hero-qr')
@@ -94,11 +93,16 @@ def add_footer_qr(soup):
     if not footer: return
     old=footer.find(id='hongsheng-footer-qr')
     if old: old.decompose()
+    footer_top=footer.find(class_='footer-top')
+    if not footer_top: return
+    footer_top['style']='position:relative;min-height:330px;padding-bottom:24px'
     box=soup.new_tag('div',id='hongsheng-footer-qr')
-    box['style']='display:flex;flex-direction:column;align-items:center;gap:8px;min-width:150px'
-    img=soup.new_tag('img',src=QR,alt='微信客服二维码'); img['style']='width:110px;height:110px;object-fit:contain;background:#fff;border:6px solid #fff;border-radius:4px'; box.append(img)
-    p=soup.new_tag('div'); p.string='📱 扫一扫联系客服'; p['style']='font-size:12px;color:#e8cf9a;text-align:center'; box.append(p)
-    footer.insert(0,box)
+    box['style']='position:absolute;left:52%;bottom:22px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;width:150px;z-index:3'
+    img=soup.new_tag('img',src=QR,alt='微信客服二维码')
+    img['style']='width:110px;height:110px;object-fit:contain;background:#fff;border:6px solid #fff;border-radius:4px'
+    box.append(img)
+    p=soup.new_tag('div'); p.string='📱 扫一扫联系客服'; p['style']='font-size:12px;color:#e8cf9a;text-align:center;white-space:nowrap'; box.append(p)
+    footer_top.append(box)
 
 def make_static_market_links(soup,ul):
     from urllib.parse import quote
