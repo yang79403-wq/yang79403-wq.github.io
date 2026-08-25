@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 from bs4 import BeautifulSoup
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 INDEX = ROOT / 'index.html'
@@ -8,7 +9,25 @@ DATA = ROOT / 'data' / 'content'
 MARKET = ROOT / 'data' / 'market'
 QR = '/assets/wechat-customer-qr.svg'
 
-# 首页母版保持不变：主视觉右侧二维码 + 联系我们原二维码占位框。
+# 首页母版保持不变，只给现有图标、卡片、板块增加真实 href。
+SECTION_MAP = {
+    '收藏交流':'content','鉴赏参考':'content','品相研究':'content','收藏知识':'content',
+    '市场资讯':'market','真伪知识':'content','收藏普及':'content','藏品展示':'content',
+    '鉴赏学习':'content','行情资讯':'market','评级知识':'services',
+    '每日行情':'market','今日热点':'market','银元':'market','古钱币':'content','纸币':'zhibi','福建钱币':'fujian',
+    '福建钱币专区':'fujian','福建银元 铜币':'fujian','福建古钱 花钱':'fujian','福建纸币':'fujian','福建货币文化':'fujian',
+    '钱币研究中心':'content','老银元收藏研究':'content','古钱币版别研究':'content','纸币收藏研究':'zhibi','纪念币研究':'content','机制币版别研究':'content',
+    '评级知识交流':'services','收藏学院':'advisor','藏友交流':'content','银元交流':'content','古钱币交流':'content','纸币交流':'zhibi','纪念币交流':'content','徽章交流':'content','经验分享':'content',
+    '藏品保管建议':'advisor','防潮':'advisor','防氧化':'advisor','存放环境':'advisor','保护盒':'advisor','纸币保护':'zhibi','长期保存':'advisor','关于我们':'about'
+}
+
+def section_href(label):
+    t=' '.join(str(label or '').split())
+    for key,group in SECTION_MAP.items():
+        if t == key or key in t:
+            return 'section.html?group='+quote(group,safe='')
+    return None
+
 def read_records(path):
     try:
         data = json.loads(path.read_text(encoding='utf-8'))
@@ -89,33 +108,18 @@ def add_footer_qr(soup):
     if not footer: return
     contact=footer.find(class_='footer-contact')
     if not contact: return
-
-    # 彻底删除旧二维码框及旧版标签，避免旧 CSS/伪元素再次叠加。
-    for node in list(contact.find_all(class_='qr-box')):
-        node.decompose()
-    for node in list(contact.find_all(class_='qr-label')):
-        node.decompose()
+    for node in list(contact.find_all(class_='qr-box')): node.decompose()
+    for node in list(contact.find_all(class_='qr-label')): node.decompose()
     for node in list(contact.find_all(['div','span','p'])):
         if text(node).strip() in ('📱 微信客服','微信客服','📱 微信二维码','微信二维码'):
             node.decompose()
-
-    # 使用全新的类名，二维码本体只占原白色占位区域，文字放在框外下方。
-    wrap=soup.new_tag('div',**{'class':'hs-footer-qr-wrap'})
-    wrap['style']='width:160px;margin:12px 0 8px;display:block;position:relative'
-    box=soup.new_tag('div',**{'class':'hs-footer-qr-image'})
-    box['style']='width:150px;height:150px;background:#fff;border-radius:6px;border:6px solid #fff;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0;box-sizing:content-box'
-    img=soup.new_tag('img',src=QR,alt='微信客服二维码')
-    img['style']='display:block;width:150px;height:150px;max-width:none;object-fit:contain;margin:0;padding:0;border:0'
-    box.append(img)
-    wrap.append(box)
-    label=soup.new_tag('div')
-    label.string='📱 微信客服'
-    label['style']='margin-top:8px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block;width:162px'
-    wrap.append(label)
+    wrap=soup.new_tag('div',**{'class':'hs-footer-qr-wrap'}); wrap['style']='width:160px;margin:12px 0 8px;display:block;position:relative'
+    box=soup.new_tag('div',**{'class':'hs-footer-qr-image'}); box['style']='width:150px;height:150px;background:#fff;border-radius:6px;border:6px solid #fff;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0;box-sizing:content-box'
+    img=soup.new_tag('img',src=QR,alt='微信客服二维码'); img['style']='display:block;width:150px;height:150px;max-width:none;object-fit:contain;margin:0;padding:0;border:0'; box.append(img); wrap.append(box)
+    label=soup.new_tag('div'); label.string='📱 微信客服'; label['style']='margin-top:8px;color:#e8cf9a;font-size:12px;text-align:center;white-space:nowrap;display:block;width:162px'; wrap.append(label)
     contact.append(wrap)
 
 def make_static_market_links(soup,ul):
-    from urllib.parse import quote
     for li in ul.find_all('li',recursive=False):
         if li.find('a'): continue
         title=text(li)
@@ -126,6 +130,78 @@ def make_static_market_links(soup,ul):
 def remove_legacy_qr(soup):
     old=soup.find(id='hongsheng-customer-qr')
     if old: old.decompose()
+
+def add_real_section_links(soup):
+    # 1. 顶部五个功能图标，图标和文字整个区域都是真实链接。
+    for li in soup.select('.header-icons li'):
+        if li.find('a'): continue
+        href=section_href(text(li))
+        if not href: continue
+        a=soup.new_tag('a',href=href); a['class']='hs-header-link'; a['style']='display:flex;flex-direction:column;align-items:center;gap:6px;color:inherit;text-decoration:none;cursor:pointer'
+        for child in list(li.contents): a.append(child.extract())
+        li.append(a)
+
+    # 2. 服务功能卡片。
+    for card in soup.select('.service-card'):
+        if card.find_parent('a'): continue
+        href=section_href(text(card))
+        if href:
+            a=soup.new_tag('a',href=href); a['class']='hs-click-card'; a['style']='display:block;color:inherit;text-decoration:none;cursor:pointer'
+            card.wrap(a)
+
+    # 3. 福建专区卡片。
+    for card in soup.select('.fujian-card'):
+        if card.find_parent('a'): continue
+        href=section_href(text(card))
+        if href:
+            a=soup.new_tag('a',href=href); a['class']='hs-click-card'; a['style']='display:block;color:inherit;text-decoration:none;cursor:pointer'; card.wrap(a)
+
+    # 4. 钱币研究中心卡片。
+    for card in soup.select('.research-card'):
+        if card.find_parent('a'): continue
+        href=section_href(text(card))
+        if href:
+            a=soup.new_tag('a',href=href); a['class']='hs-click-card'; a['style']='display:block;color:inherit;text-decoration:none;cursor:pointer'; card.wrap(a)
+
+    # 5. 评级知识卡片。
+    for card in soup.select('.rate-card'):
+        if card.find_parent('a'): continue
+        href=section_href(text(card))
+        if href:
+            a=soup.new_tag('a',href=href); a['class']='hs-click-card'; a['style']='display:block;color:inherit;text-decoration:none;cursor:pointer'; card.wrap(a)
+
+    # 6. 学院、藏友交流、保管建议中的每一个小图标。
+    for item in soup.select('.mini-icons .m-item'):
+        if item.find_parent('a'): continue
+        href=section_href(text(item))
+        if href:
+            a=soup.new_tag('a',href=href); a['class']='hs-mini-link'; a['style']='display:block;color:inherit;text-decoration:none;cursor:pointer'; item.wrap(a)
+
+    # 7. 所有板块标题/“更多”区域，点击直接进入对应版块。
+    for head in soup.select('.panel-head'):
+        if head.find_parent('a'): continue
+        href=section_href(text(head))
+        if not href: continue
+        a=soup.new_tag('a',href=href); a['class']='hs-panel-link'; a['style']='display:block;color:inherit;text-decoration:none;cursor:pointer'
+        head.wrap(a)
+
+    # 8. 首页顶部主导航中原本只有锚点的栏目，改成真实版块页面。
+    for a in soup.select('.mainnav a'):
+        href=section_href(text(a))
+        if href and text(a) != '首页': a['href']=href
+
+    # 9. 公益声明区的小图标也可以打开相应内容。
+    for li in soup.select('.notice-icons li'):
+        if li.find('a'): continue
+        href=section_href(text(li))
+        if href:
+            a=soup.new_tag('a',href=href); a['style']='display:flex;flex-direction:column;align-items:center;gap:5px;color:inherit;text-decoration:none;cursor:pointer'
+            for child in list(li.contents): a.append(child.extract())
+            li.append(a)
+
+    # 10. 加入统一可点击反馈，不改变原有版面结构。
+    style=soup.new_tag('style'); style.string='''\n.hs-click-card,.hs-mini-link,.hs-header-link,.hs-panel-link{transition:opacity .15s ease,transform .15s ease}.hs-click-card:hover,.hs-mini-link:hover,.hs-header-link:hover,.hs-panel-link:hover{opacity:.86}.hs-click-card{height:100%}.hs-mini-link{height:100%}.hs-panel-link>.panel-head{width:100%}\n'''
+    if not soup.head.find('style',string=lambda s:s and 'hs-click-card' in s): soup.head.append(style)
 
 def main():
     soup=BeautifulSoup(INDEX.read_text(encoding='utf-8'),'html.parser')
@@ -155,6 +231,7 @@ def main():
             else: make_static_market_links(soup,ul)
             break
     add_footer_qr(soup)
+    add_real_section_links(soup)
     INDEX.write_text(str(soup),encoding='utf-8')
 
 if __name__=='__main__': main()
