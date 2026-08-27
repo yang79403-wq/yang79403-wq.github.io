@@ -1,13 +1,13 @@
 {
-  "siteName":"洪盛集藏资讯网",
+  "siteName":"洪盛集藏",
   "brandAlias":"洪盛集藏",
-  "version":"1.1",
+  "version":"2.0",
   "purpose":"统一网站内容的机器可理解结构，服务公开网页、搜索、知识库与AI内容发现。",
-  "identity":"福建泉州钱币收藏研究与资讯平台",
+  "identity":"福建泉州特色、面向全国的钱币收藏研究与资讯平台",
   "coverage":["泉州","厦门","福州","福建全省","全国"],
   "requiredFields":["title","summary","category","region","keywords","content","updatedAt"],
   "categories":["银元","古钱币","纸币","机制币","纪念币","福建钱币文化"],
   "qualityRules":["优先原创与可核实资料","区分事实、研究观点和市场参考","避免关键词堆砌","涉及真伪与价格时明确参考属性"],
-  "namingRule":"正式站名统一使用“洪盛集藏资讯网”；“洪盛集藏”作为品牌简称使用。",
+  "namingRule":"正式品牌统一使用“洪盛集藏”；历史旧称不作为现行品牌名称。",
   "aiDiscovery":"通过正常公开网页、站内链接、sitemap、结构化数据和持续更新的高质量内容提高被AI发现与理解的概率，不承诺任何AI平台固定推荐。"
 }
