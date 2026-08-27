@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>https://yang79403-wq.github.io/</loc></url>
-<url><loc>https://yang79403-wq.github.io/admin/management-center.html</loc></url>
-<url><loc>https://yang79403-wq.github.io/search.html</loc></url>
+<url><loc>https://yang79403-wq.github.io/ai/</loc></url>
+<url><loc>https://yang79403-wq.github.io/ai/collector-assistant.html</loc></url>
+<url><loc>https://yang79403-wq.github.io/ai/knowledge-api.html</loc></url>
+<url><loc>https://yang79403-wq.github.io/knowledge/</loc></url>
+<url><loc>https://yang79403-wq.github.io/knowledge/coin-index.json</loc></url>
+<url><loc>https://yang79403-wq.github.io/knowledge/areas/fujian.html</loc></url>
+<url><loc>https://yang79403-wq.github.io/knowledge/areas/quanzhou.html</loc></url>
+<url><loc>https://yang79403-wq.github.io/knowledge/areas/xiamen.html</loc></url>
+<url><loc>https://yang79403-wq.github.io/knowledge/areas/fuzhou.html</loc></url>
 </urlset>
