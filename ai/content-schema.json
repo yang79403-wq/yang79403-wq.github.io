@@ -1,0 +1,10 @@
+{
+  "name":"洪盛集藏 AI 内容标准",
+  "version":"1.0",
+  "purpose":"统一网站内容的机器可理解结构，服务搜索、知识库与 AI 内容发现。",
+  "requiredFields":["title","summary","category","region","keywords","content","updatedAt"],
+  "categories":["银元","古钱币","纸币","机制币","纪念币","福建钱币文化"],
+  "regions":["泉州","厦门","福州","福建全省","全国"],
+  "qualityRules":["优先原创与可核实资料","区分事实、研究观点和市场参考","不以堆砌关键词代替内容","涉及真伪与价格时明确风险和参考属性"],
+  "aiDiscovery":"内容应通过正常公开网页、站内链接、sitemap及结构化数据被发现；不承诺任何 AI 平台的固定推荐结果。"
+}
