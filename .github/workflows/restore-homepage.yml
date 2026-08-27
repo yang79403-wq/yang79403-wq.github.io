@@ -1,27 +1,14 @@
-name: Restore original homepage
+name: Homepage restore safeguard
 
 on:
-  push:
-    paths:
-      - .restore-homepage-trigger
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
   restore:
+    if: ${{ false }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout current site
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Restore original homepage design
-        run: |
-          git checkout 890dd89761df3c9e4d5983aab92fa658b401e8af -- index.html
-          rm -f .restore-homepage-trigger
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add index.html .restore-homepage-trigger
-          git commit -m "恢复洪盛集藏原始前台设计" || exit 0
-          git push origin HEAD:main
+      - run: echo "Disabled: homepage upgrades must not be overwritten by an automatic rollback."
