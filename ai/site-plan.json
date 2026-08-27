@@ -1,0 +1,29 @@
+{
+  "name":"洪盛集藏",
+  "version":"AI-First Site Plan 1.0",
+  "purpose":"以真实钱币收藏知识和服务为核心，建立机器可理解、可检索、可引用的网站结构。",
+  "identity":{
+    "primary":"福建泉州钱币收藏研究交流平台",
+    "serviceArea":["泉州","厦门","福州","福建全省","全国"],
+    "domain":"钱币收藏、钱币历史、版别研究、行情参考、收藏文化"
+  },
+  "coreModules":[
+    {"id":"home","name":"首页","priority":1},
+    {"id":"knowledge","name":"钱币知识库","priority":2},
+    {"id":"market","name":"行情中心","priority":3},
+    {"id":"fujian","name":"福建专区","priority":4},
+    {"id":"ai","name":"AI鉴赏与知识辅助","priority":5},
+    {"id":"consult","name":"收藏咨询","priority":6},
+    {"id":"management","name":"网站管理中心","priority":7}
+  ],
+  "knowledgeDomains":["银元","古钱币","纸币","机制币","纪念币","福建钱币","泉州钱币文化"],
+  "contentRule":{
+    "requiredFields":["title","summary","category","location","keywords","source","updatedAt"],
+    "principles":["事实优先","来源清晰","不制造虚假价格","收藏参考不等同投资建议","AI生成内容需经过发布前检查"]
+  },
+  "aiDiscovery":{
+    "goal":"提高豆包及其他AI搜索系统对网站身份、地域、栏目和文章实体的理解与发现概率",
+    "methods":["可抓取HTML正文","稳定URL","sitemap","robots规则","Schema.org结构化数据","知识索引","清晰内部链接","持续原创内容"],
+    "limitation":"网站无法保证豆包推荐或引用；最终是否抓取、收录、展示和推荐由相关平台自身机制决定。"
+  }
+}
