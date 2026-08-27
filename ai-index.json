@@ -1,18 +1,1 @@
-{
-  "site":"洪盛集藏",
-  "brand":"洪盛集藏",
-  "siteType":"AI时代钱币收藏知识与资讯平台",
-  "url":"https://yang79403-wq.github.io/",
-  "summary":"源于福建泉州、面向全国的钱币收藏研究、知识交流与资讯平台。",
-  "sections":[
-    {"name":"银元研究","keywords":["袁大头","船洋","龙洋","银元版别"]},
-    {"name":"古钱币研究","keywords":["先秦钱币","汉唐钱币","宋元明清钱币"]},
-    {"name":"纸币收藏","keywords":["老纸币","人民币收藏"]},
-    {"name":"机制币研究","keywords":["机制币","铜元","地方机制币"]},
-    {"name":"纪念币","keywords":["金银纪念币","普通纪念币"]},
-    {"name":"福建钱币文化","keywords":["福建龙洋","福建铜元","泉州收藏文化"]},
-    {"name":"AI收藏中心","keywords":["AI收藏助手","AI辅助鉴赏","钱币知识检索"]}
-  ],
-  "regions":["泉州","厦门","福州","福建","全国"],
-  "principles":["事实与研究观点分开","行情资料注明时间与来源","AI辅助意见不作为确定鉴定结论"]
-}
+{"site":"洪盛集藏","brand":"洪盛集藏","siteType":"AI时代钱币收藏行业知识媒体平台","url":"https://yang79403-wq.github.io/","identity":"以AI发现与知识服务为核心，把钱币实体、数字档案、研究资料、资讯和地域文化连接成持续增长的收藏知识网络。","origin":"福建泉州","regions":["泉州","厦门","福州","福建全省","全国"],"sections":[{"name":"AI收藏中心","keywords":["AI收藏助手","AI知识检索","AI辅助鉴赏","钱币知识引擎"]},{"name":"钱币知识库","keywords":["银元","古钱币","机制币","纸币","纪念币","钱币文化"]},{"name":"钱币数字档案","keywords":["钱币数字身份","钱币实体","版别档案","历史档案","研究档案"]},{"name":"收藏资讯","keywords":["钱币资讯","收藏动态","市场资料","历史行情"]},{"name":"福建收藏网络","keywords":["泉州钱币","厦门钱币","福州钱币","福建钱币文化"]}],"aiDiscovery":{"publicPages":true,"structuredData":true,"sitemap":"https://yang79403-wq.github.io/sitemap.xml","machineReadableResources":["/ai-index.json","/ai/site-identity.json","/ai/coin-knowledge-engine.json","/knowledge/entities/coins.json"],"goal":"提高公开知识内容被搜索系统和AI正常发现、理解、索引和引用的机会，不承诺任何具体AI平台固定推荐。"},"contentPrinciples":["事实与研究观点分开","市场资料注明日期与来源","AI辅助鉴赏不替代专业鉴定","不以无依据内容确定真伪、价格或投资结论","优先建设稳定、原创、可核实、可持续更新的知识内容"]}
