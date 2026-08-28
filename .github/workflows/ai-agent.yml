@@ -2,6 +2,11 @@ name: 洪盛集藏 AI Agent
 
 on:
   workflow_dispatch:
+    inputs:
+      topic:
+        description: '可选：指定本轮研究主题'
+        required: false
+        default: ''
   schedule:
     - cron: '17 */6 * * *'
 
@@ -20,19 +25,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: Run health and autonomous discovery
+      - name: Run AI Agent
         env:
           AGENT_MODE: scheduled
+          DASHSCOPE_API_KEY: ${{ secrets.DASHSCOPE_API_KEY }}
+          QWEN_MODEL: qwen-turbo
+          AGENT_TOPIC: ${{ inputs.topic }}
         run: |
           python scripts/ai_agent.py
           python scripts/agent_discovery.py
-
       - name: Commit agent outputs
         run: |
           git config user.name 'Hongsheng AI Agent'
@@ -41,6 +46,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No agent changes to commit.'
           else
-            git commit -m 'AI Agent: 自动巡检与内容发现队列'
+            git commit -m 'AI Agent: 自动运行与知识整理'
             git push
           fi
