@@ -1,6 +1,6 @@
 name = "hongsheng-jicang-ai"
 main = "api/worker.js"
-compatibility_date = "2026-08-29"
+compatibility_date = "2026-08-28"
 
 [vars]
 DASHSCOPE_MODEL = "qwen-plus"
