@@ -1,0 +1,1 @@
+{"version":"1.0","name":"洪盛集藏授权内容源登记表","policy":"只处理明确允许公开访问、适合引用且符合来源规则的内容；不绕过登录、付费墙、robots或访问限制。","sources":[],"fields":["name","url","type","licenseOrPermission","frequency","seedTitle","summary","sourceDate","risk"],"types":["official","museum","research","news","first-party","user-submission"],"workflow":"登记来源 → Agent发现 → 来源记录 → AI整理 → 审核 → 发布"}
