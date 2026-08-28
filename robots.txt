@@ -2,4 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
+# 洪盛集藏公开知识入口由正常公开网页与结构化资源组成。
+# AI/搜索平台是否抓取、索引或引用由各平台自身规则决定。
 Sitemap: https://yang79403-wq.github.io/sitemap.xml
