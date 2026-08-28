@@ -1,0 +1,44 @@
+name: 洪盛集藏 AI Agent
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+permissions:
+  contents: write
+
+env:
+  PYTHONUNBUFFERED: '1'
+
+jobs:
+  agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run agent
+        env:
+          AGENT_MODE: scheduled
+        run: python scripts/ai_agent.py
+
+      - name: Commit agent outputs
+        run: |
+          git config user.name 'Hongsheng AI Agent'
+          git config user.email 'actions@users.noreply.github.com'
+          git add ai/runtime.json ai/activity-log.json ai/generated/
+          if git diff --cached --quiet; then
+            echo 'No agent changes to commit.'
+          else
+            git commit -m 'AI Agent: 自动更新内容运行状态'
+            git push
+          fi
