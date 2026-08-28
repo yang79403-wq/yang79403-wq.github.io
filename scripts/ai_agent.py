@@ -1,80 +1,28 @@
-import json
+import json, os, urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-AI = ROOT / 'ai'
-GEN = AI / 'generated'
-GEN.mkdir(parents=True, exist_ok=True)
+ROOT=Path(__file__).resolve().parents[1]
+AI=ROOT/'ai'; GEN=AI/'generated'; GEN.mkdir(parents=True,exist_ok=True)
+KEY=os.environ.get('DASHSCOPE_API_KEY','').strip()
+MODEL=os.environ.get('QWEN_MODEL','qwen-turbo')
+ENDPOINT=os.environ.get('QWEN_ENDPOINT','https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions')
+now=datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
 
-now = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
-
-def read_json(path, default):
+def call_model(topic):
+    if not KEY: return {'status':'skipped','reason':'DASHSCOPE_API_KEY 未配置'}
+    system='你是洪盛集藏AI收藏智能体。只整理可核验的收藏知识。严禁编造。价格、真伪、评级必须注明来源和日期，并明确不确定性。输出JSON：title,summary,facts,questions,sources_needed。'
+    payload={'model':MODEL,'messages':[{'role':'system','content':system},{'role':'user','content':f'请整理研究主题：{topic}'}],'temperature':0.2,'response_format':{'type':'json_object'}}
+    req=urllib.request.Request(ENDPOINT,data=json.dumps(payload,ensure_ascii=False).encode(),headers={'Authorization':'Bearer '+KEY,'Content-Type':'application/json'},method='POST')
     try:
-        if path.exists():
-            value = json.loads(path.read_text(encoding='utf-8'))
-            return value
-    except Exception:
-        pass
-    return default
+        with urllib.request.urlopen(req,timeout=45) as r: data=json.loads(r.read().decode())
+        return {'status':'ok','model':MODEL,'result':json.loads(data['choices'][0]['message']['content'])}
+    except Exception as e: return {'status':'error','error':str(e)[:500]}
 
-# Autonomous collector baseline: inspect the site's own structured knowledge and
-# produce a machine-readable health/report snapshot. External APIs remain optional.
-knowledge_files = []
-for folder in (ROOT / 'data' / 'content', ROOT / 'data' / 'market', ROOT / 'knowledge' / 'entities'):
-    if folder.exists():
-        knowledge_files.extend(sorted(str(p.relative_to(ROOT)) for p in folder.glob('*.json')))
-
-manifest = read_json(AI / 'discovery-manifest.json', {})
-model = read_json(AI / 'industry-model.json', {})
-report = {
-    'generatedAt': now,
-    'agent': '洪盛集藏 AI Agent',
-    'mode': 'autonomous-safe',
-    'site': '洪盛集藏',
-    'cycle': 'scheduled',
-    'checks': {
-        'discoveryManifest': bool(manifest),
-        'industryModel': bool(model),
-        'knowledgeFileCount': len(knowledge_files),
-        'knowledgeFiles': knowledge_files[:200],
-        'publicSearch': (ROOT / 'search.html').exists(),
-        'archive': (ROOT / 'archive' / 'index.html').exists(),
-        'knowledgeBase': (ROOT / 'knowledge' / 'index.html').exists(),
-    },
-    'nextActions': [
-        '发现授权公开内容源',
-        '提取新资料并记录来源与日期',
-        'AI分类与去重',
-        '生成审核队列',
-        '审核通过后发布并更新索引'
-    ]
-}
-(AI / 'runtime-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-
-runtime = read_json(AI / 'runtime.json', {})
-runtime.update({
-    'brand': '洪盛集藏',
-    'mode': 'autonomous-safe',
-    'cycle': 'scheduled',
-    'lastRun': now,
-    'status': 'ok',
-    'tasks': [
-        '检查公开AI发现资源',
-        '检查知识库与数字档案',
-        '生成运行健康报告',
-        '维护运行日志'
-    ],
-    'nextLayer': '连接经过授权的公开内容源与AI模型后，生成内容审核队列'
-})
-(AI / 'runtime.json').write_text(json.dumps(runtime, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-
-log_path = AI / 'activity-log.json'
-logs = read_json(log_path, [])
-if not isinstance(logs, list):
-    logs = []
-logs.append({'time': now, 'event': 'agent_cycle_completed', 'status': 'ok', 'mode': 'autonomous-safe', 'knowledgeFiles': len(knowledge_files)})
-log_path.write_text(json.dumps(logs[-100:], ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-
-(GEN / 'README.md').write_text('''# 洪盛集藏 AI Agent 输出区\n\nAgent 每轮运行产生运行报告和后续任务状态。\n\n自动发布前必须经过来源、版权、时效性和内容质量检查；AI不单独作出真伪、评级或正式报价结论。\n''', encoding='utf-8')
-print(f'洪盛集藏 AI Agent cycle completed: {now}')
+def main():
+    topics=['中国钱币收藏基础知识','银元基础研究','古钱币基础研究','福建钱币文化']
+    topic=os.environ.get('AGENT_TOPIC','').strip() or topics[datetime.now(timezone.utc).day%len(topics)]
+    out={'agent':'洪盛集藏 AI 收藏智能体','generatedAt':now,'topic':topic,**call_model(topic)}
+    (GEN/'latest.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps(out,ensure_ascii=False,indent=2))
+if __name__=='__main__': main()
