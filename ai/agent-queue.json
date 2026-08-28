@@ -1,0 +1,1 @@
+{"version":"1.0","name":"洪盛集藏AI Agent审核队列","description":"Agent发现和生成的候选内容统一进入队列，不直接覆盖核心知识库。","items":[],"statusValues":["pending","approved","rejected","published"],"requiredFields":["title","summary","type","source","sourceDate","createdAt","risk","status"],"riskLevels":["low","medium","high"],"rules":["无来源内容不得发布","时效资讯必须记录日期","价格资料必须记录日期和来源","真伪鉴定不得由AI单独下确定结论","高风险内容必须人工审核"]}
