@@ -1,9 +1,0 @@
-/* 洪盛集藏字体风格层：只负责字体，不改变网站布局与功能 */
-:root{--hs-font-display:"STKaiti","Kaiti SC","KaiTi","Songti SC","Noto Serif CJK SC","Source Han Serif SC","Microsoft YaHei",serif;--hs-font-body:"Songti SC","STSong","Noto Serif CJK SC","Source Han Serif SC","Microsoft YaHei",sans-serif;--hs-font-number:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue","Microsoft YaHei",sans-serif}
-body{font-family:var(--hs-font-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-.brand-text h1,.brand-slogan,.hero-content h2,.hero-content h3,.panel-head h3,.section-head h3,.fujian-card h4,.footer-brand h4{font-family:var(--hs-font-display)}
-.brand-text h1,.hero-content h2{font-weight:700;letter-spacing:2px}
-.panel-head h3,.section-head h3,.fujian-card h4{font-weight:600;letter-spacing:1.5px}
-.service-card h4,.research-card h4{font-family:var(--hs-font-display);font-weight:600;letter-spacing:1px}
-.market-list .date,.rate-card .lg,.market-list .title{font-family:var(--hs-font-number)}
-.hero-content .tagline,.notice-text,.seo-text{font-family:var(--hs-font-body)}
