@@ -1,108 +1,15 @@
 {
-  "updated_at": "2026-08-17T01:52:02+00:00",
-  "policy": "中国大陆来源优先；台湾地区网站不进入自动采集池；受版权保护图片不直接复制。",
+  "updated_at": "2026-08-29T12:39:07+00:00",
   "sources": [
     {
-      "name": "中国国家博物馆",
-      "url": "https://www.chnmuseum.cn/",
-      "type": "博物馆公开资料",
-      "priority": 1,
-      "topics": [
-        "清代钱币"
-      ],
-      "status": "ok",
-      "page_title": "中国国家博物馆官方网站",
-      "image_count": 96,
-      "image_index": [
-        "https://www.chnmuseum.cn/images/guobo202509_logo.png",
-        "https://www.chnmuseum.cn/images/guobo202509_logo_m.png",
-        "https://www.chnmuseum.cn/shxg/syzt/202511/W020260319361634446473.jpg",
-        "https://www.chnmuseum.cn/shxg/syzt/202604/W020260408559949674197.jpg",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020251109794806451082.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020251109794806451082.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020251109794806451082.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020251109794806451082.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202604/W020260410498415153155.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020251109794034269652.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020251109793612947042.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020260410490887768645.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202604/W020260531508801369625.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202604/W020260531508911690371.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202604/W020260531509020157333.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202604/W020260531509136569768.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202604/W020260531503663702111.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202604/W020260531509254053723.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202604/W020260531509382735366.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202603/W020260410490774845694.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020260410482155772862.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202605/W020260526290260147117.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202605/W020260531509656066424.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202606/W020260629290308576028.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202605/W020260526299860817264.png",
-        "https://www.chnmuseum.cn/shxg/cplb/202511/W020251109794385653089.png",
-        "https://www.chnmuseum.cn/images/guobo202509_inpic3.jpg",
-        "https://www.chnmuseum.cn/images/guobo202509_inpic4.jpg",
-        "https://www.chnmuseum.cn/images/guobo202509_inpic5.jpg",
-        "https://www.chnmuseum.cn/zl/lszl/lswh/202607/P020260718334510537291.jpg"
-      ],
-      "checked_at": "2026-08-17T01:51:55+00:00"
+      "name": "中国金币网",
+      "url": "https://www.chngc.net/common/homep",
+      "category": "纪念币与行业资讯"
     },
     {
-      "name": "中国钱币博物馆",
-      "url": "https://www.cmm.org.cn/",
-      "type": "博物馆公开资料",
-      "priority": 1,
-      "topics": [
-        "古钱币",
-        "清代钱币"
-      ],
-      "status": "error:ConnectionError",
-      "image_count": 0,
-      "image_index": [],
-      "checked_at": "2026-08-17T01:51:56+00:00"
-    },
-    {
-      "name": "国家哲学社会科学文献中心",
-      "url": "https://www.ncpssd.org/",
-      "type": "公开文献资料",
-      "priority": 1,
-      "topics": [
-        "钱币史"
-      ],
-      "status": "ok",
-      "image_count": 29,
-      "image_index": [
-        "https://www.ncpssd.org/images/yasuotupian/icon_fanyi_Azhong.png",
-        "https://www.ncpssd.org/images/logo.png",
-        "https://www.ncpssd.org/images/close2.png",
-        "https://www.ncpssd.org/images/qu.png",
-        "https://www.ncpssd.org/images/add1.png",
-        "https://www.ncpssd.org/images/close2.png",
-        "https://ft.ncpssd.cn/image/get/npssd/column?url=img/1784619617191.jpg",
-        "https://ft.ncpssd.cn/image/get/npssd/column?url=img/1784181616426.jpg",
-        "https://ft.ncpssd.cn/image/get/npssd/column?url=img/1783563552629.jpg",
-        "https://ft.ncpssd.cn/image/get/npssd/topic?url=img/1758001813519.jpg",
-        "https://ft.ncpssd.cn/image/get/npssd/topic?url=img/1763085826266.jpg",
-        "https://www.ncpssd.org/images/word1.png",
-        "https://ft.ncpssd.cn/image/get/qwcover/2026/1/84201X.jpg",
-        "https://ft.ncpssd.cn/image/get/qwcover/2026/2/11118X.jpg",
-        "https://ft.ncpssd.cn/image/get/qwcover/2026/3/83412X.jpg",
-        "https://ft.ncpssd.cn/image/get/qwcover/2026/3/11145X.jpg",
-        "https://ft.ncpssd.cn/image/get/qwcover/2026/4/81374X.jpg",
-        "https://ft.ncpssd.cn/image/get/qwcover/2026/4/95682A.jpg",
-        "https://www.ncpssd.org/images/word3.png",
-        "https://ft.ncpssd.cn/image/get/npssd/topic?url=img/1664433857267.jpg",
-        "https://www.ncpssd.org/images/line.png",
-        "https://www.ncpssd.org/images/line.png",
-        "https://www.ncpssd.org/images/line.png",
-        "https://www.ncpssd.org/images/line.png",
-        "https://ft.ncpssd.cn/image/get/npssd/address?url=img/1644548423530.jpg",
-        "https://ft.ncpssd.cn/image/get/npssd/address?url=img/1650081428558.jpg",
-        "https://ft.ncpssd.cn/image/get/npssd/address?url=img/1644548423505.jpg",
-        "https://ft.ncpssd.cn/image/get/npssd/address?url=img/1730881808693.jpg",
-        "https://hmcdn.baidu.com/static/hmt/icon/21.gif"
-      ],
-      "checked_at": "2026-08-17T01:52:02+00:00"
+      "name": "爱藏收藏新闻",
+      "url": "https://news.airmb.com/",
+      "category": "收藏行业资讯"
     }
   ]
 }
