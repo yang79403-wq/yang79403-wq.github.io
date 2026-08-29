@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
 
 # 洪盛集藏公开知识入口由正常公开网页、JSON数据和LLM说明组成。
 # 是否抓取、索引或引用由各搜索引擎与AI平台自身规则决定。
