@@ -3,22 +3,11 @@
   "source_policy": "初始图鉴来自 Wikimedia Commons 公开分类；正式自动任务会持续筛选可再利用图片，并保存作者与许可证信息。",
   "image_width_target": 1400,
   "topics": [
-    {"topic":"古钱币","count":1},
-    {"topic":"银元","count":1},
-    {"topic":"机制币","count":1},
-    {"topic":"纸币","count":1},
-    {"topic":"纪念币","count":1},
-    {"topic":"金银币","count":1},
-    {"topic":"钱币鉴赏","count":1},
-    {"topic":"版别研究","count":1},
-    {"topic":"福建钱币","count":1},
-    {"topic":"泉州收藏","count":1},
-    {"topic":"收藏资讯","count":1},
-    {"topic":"收藏文化","count":1}
+    {"topic":"古钱币","count":1},{"topic":"银元","count":1},{"topic":"机制币","count":1},{"topic":"纸币","count":1},{"topic":"纪念币","count":1},{"topic":"金银币","count":1},{"topic":"钱币鉴赏","count":1},{"topic":"版别研究","count":1},{"topic":"福建钱币","count":1},{"topic":"泉州收藏","count":1},{"topic":"收藏资讯","count":1},{"topic":"收藏文化","count":1}
   ],
   "items": [
     {"id":"seed-ancient","topic":"古钱币","title":"Ancient Chinese Writing on a Chu State Ant-Nose Coin","image":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Ancient_Chinese_Writing_on_a_Chu_State_Ant-Nose_Coin.jpg","original":"https://commons.wikimedia.org/wiki/File:Ancient_Chinese_Writing_on_a_Chu_State_Ant-Nose_Coin.jpg","width":5184,"height":3456,"author":"Gary Todd","license":"CC0","source":"Wikimedia Commons","source_url":"https://commons.wikimedia.org/wiki/File:Ancient_Chinese_Writing_on_a_Chu_State_Ant-Nose_Coin.jpg","description":"战国时期蚁鼻钱相关图像资料。"},
-    {"id":"seed-silver","topic":"银元","title":"1911 Emperor Xuantong China Silver Dollar","image":"https://commons.wikimedia.org/wiki/Special:Redirect/file/1911_Emperor_Xuantong_(China_Silver_Dollar)_—_L%26M-37_%E2%80%9CNo_Period%E2%80%9D_(NGC_XF40).jpg","original":"https://commons.wikimedia.org/wiki/Category:Coins_of_China","width":485,"height":503,"author":"Wikimedia Commons contributor","license":"许可证见来源页","source":"Wikimedia Commons","source_url":"https://commons.wikimedia.org/wiki/Category:Coins_of_China","description":"中国近代银元图像资料。"},
+    {"id":"seed-silver","topic":"银元","title":"Yuan Shikai Dollar 1921","image":"https://commons.wikimedia.org/wiki/Special:Redirect/file/1_dollar_Yuan_Shikai_10_-_1921.png","original":"https://commons.wikimedia.org/wiki/Category:Yuan_Shikai_on_money","width":2786,"height":1424,"author":"Wikimedia Commons contributor","license":"许可证见来源页","source":"Wikimedia Commons","source_url":"https://commons.wikimedia.org/wiki/Category:Yuan_Shikai_on_money","description":"袁世凯像银元高清图像资料。"},
     {"id":"seed-machine","topic":"机制币","title":"Machine-made Copper Coin, Late Qing","image":"https://commons.wikimedia.org/wiki/Special:Redirect/file/Machine-made_Copper_Coin,_Late_Qing_(9853739574).jpg","original":"https://commons.wikimedia.org/wiki/Category:Coins_of_China","width":5184,"height":3456,"author":"Wikimedia Commons contributor","license":"许可证见来源页","source":"Wikimedia Commons","source_url":"https://commons.wikimedia.org/wiki/Category:Coins_of_China","description":"晚清机制铜币图像资料。"},
     {"id":"seed-banknote","topic":"纸币","title":"Historical Banknotes of China","image":"https://commons.wikimedia.org/wiki/Special:Redirect/file/10_cents_1931.jpg","original":"https://commons.wikimedia.org/wiki/Category:Banknotes_of_China","width":3377,"height":1655,"author":"Wikimedia Commons contributor","license":"许可证见来源页","source":"Wikimedia Commons","source_url":"https://commons.wikimedia.org/wiki/Category:Banknotes_of_China","description":"中国历史纸币图像资料。"},
     {"id":"seed-commemorative","topic":"纪念币","title":"Republic of China Commemorative Coin","image":"https://commons.wikimedia.org/wiki/Special:Redirect/file/1912_Li_Yuanhong_Dollar_Obverse.jpg","original":"https://commons.wikimedia.org/wiki/Category:Commemorative_coins_of_the_Republic_of_China_(1912%E2%80%931949)","width":3000,"height":2995,"author":"Wikimedia Commons contributor","license":"许可证见来源页","source":"Wikimedia Commons","source_url":"https://commons.wikimedia.org/wiki/Category:Commemorative_coins_of_the_Republic_of_China_(1912%E2%80%931949)","description":"民国时期纪念银币图像资料。"},
