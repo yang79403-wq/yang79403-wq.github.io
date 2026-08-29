@@ -22,7 +22,7 @@ jobs:
           python-version: '3.12'
       - name: 安装采集组件
         run: pip install requests beautifulsoup4
-      - name: 自动采集福建钱币公开资料并过滤来源
+      - name: 自动采集公开钱币收藏资讯
         run: python app/unified_collect.py
       - name: 检查并提交新增资料
         run: |
@@ -32,6 +32,6 @@ jobs:
           if git diff --cached --quiet; then
             echo '本次没有新增或变化的资料'
           else
-            git commit -m "自动更新福建钱币资料与公开来源索引"
+            git commit -m "自动更新钱币收藏公开资讯"
             git push
           fi
