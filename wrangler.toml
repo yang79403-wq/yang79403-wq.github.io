@@ -1,7 +1,0 @@
-name = "hongsheng-jicang-ai"
-main = "api/worker.js"
-compatibility_date = "2026-08-28"
-
-[vars]
-DASHSCOPE_MODEL = "qwen-plus"
-ALLOWED_ORIGIN = "https://yang79403-wq.github.io"
