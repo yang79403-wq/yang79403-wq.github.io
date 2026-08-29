@@ -15,63 +15,26 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
-      - name: Prepare root site
+      - name: Prepare complete static site
         run: |
           rm -rf _site
           mkdir -p _site
-
-          # static 目录的内容直接发布到站点根目录。
-          # 因此 static/qr-service.png 的实际线上路径是 /qr-service.png。
-          if [ -d "static" ]; then cp -r static/. _site/; fi
-          if [ -d "assets" ]; then cp -r assets _site/assets; fi
-          if [ -d "data" ]; then cp -r data _site/data; fi
-          for f in fujian-coin.html section.html detail.html admin.html; do
-            if [ -f "$f" ]; then cp "$f" "_site/$f"; fi
-          done
-          if [ -d "admin" ]; then cp -r admin _site/admin; fi
-          if [ -f "index.html" ]; then cp index.html _site/index.html; fi
-
-          # 统一首页和底部二维码：两处都使用同一个真实 PNG。
-          # 不改变首页版面，只修复图片资源路径。
-          python3 - <<'PY'
-          from pathlib import Path
-          p = Path('_site/index.html')
-          if not p.exists():
-              raise SystemExit('index.html 不存在')
-          s = p.read_text(encoding='utf-8')
-          replacements = {
-              '/static/qr-service.png': '/qr-service.png?v=20260825',
-              'static/qr-service.png': 'qr-service.png?v=20260825',
-              '/assets/wechat-customer-qr.svg': '/qr-service.png?v=20260825',
-              'assets/wechat-customer-qr.svg': 'qr-service.png?v=20260825',
-              '/qr-service.png?v=20260825': '/qr-service.png?v=20260825'
-          }
-          for old, new in replacements.items():
-              s = s.replace(old, new)
-          p.write_text(s, encoding='utf-8')
-          PY
-
+          rsync -a --exclude='.git' --exclude='.github' --exclude='app' --exclude='_site' ./ _site/
           touch _site/.nojekyll
-
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
