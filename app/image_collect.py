@@ -1,20 +1,19 @@
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlencode
 import hashlib, json, re, requests
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / 'data'
-HEADERS = {'User-Agent': 'HongshengJicang/6.0 (+public-source-index; educational-use)'}
+HEADERS = {'User-Agent': 'HongshengJicang/6.1 (+public-source-index; educational-use)'}
 API = 'https://commons.wikimedia.org/w/api.php'
 
 # 仅选择 Wikimedia Commons 中明确标注为公共领域或允许再利用的图片。
-# 不下载原图到仓库，保存高清缩略图地址与署名/许可证信息，降低仓库体积并保留来源。
+# 不下载原图到仓库，保存约 1400px 高清缩略图地址与署名/许可证信息，降低仓库体积并保留来源。
 TOPICS = [
     ('古钱币', ['Chinese ancient coins', 'ancient Chinese coin', 'cash coin China']),
     ('银元', ['Chinese silver dollar', 'Yuan Shikai dollar', 'Chinese silver coin']),
     ('机制币', ['Chinese machine struck coin', 'Chinese coin mint', 'Chinese copper coin']),
-    ('纸币', ['Chinese banknote', 'Republic of China banknote', 'Chinese paper money']),
+    ('纸币', ['historical Chinese banknote', 'Republic of China banknote', 'Chinese paper money historical']),
     ('纪念币', ['Chinese commemorative coin', 'China commemorative coin']),
     ('金银币', ['Chinese gold coin', 'Chinese silver commemorative coin']),
     ('钱币鉴赏', ['coin collecting', 'coin grading', 'coin authentication']),
@@ -26,7 +25,8 @@ TOPICS = [
 ]
 
 ALLOWED_LICENSE = ('public domain', 'cc0', 'cc by', 'cc by-sa', 'creative commons attribution')
-BLOCKED_TERMS = ('non-commercial', 'no derivatives', 'nc', 'nd')
+BLOCKED_LICENSE_TERMS = ('non-commercial', 'no derivatives')
+FIFTH_RMB_TERMS = ('第五套人民币','五套人民币','第五版人民币','五版人民币','1999年版人民币','2005年版人民币','2015年版人民币','2019年版人民币','2020年版人民币','fifth series renminbi','fifth series rmb')
 
 
 def now():
@@ -40,9 +40,14 @@ def clean_html(value):
 def license_ok(meta):
     license_name = clean_html(meta.get('LicenseShortName', {}).get('value', ''))
     low = license_name.lower()
-    if not license_name or any(x in low for x in BLOCKED_TERMS):
+    if not license_name or any(x in low for x in BLOCKED_LICENSE_TERMS):
         return False
     return any(x in low for x in ALLOWED_LICENSE)
+
+
+def is_fifth_rmb(text):
+    low = (text or '').lower()
+    return any(term.lower() in low for term in FIFTH_RMB_TERMS)
 
 
 def search_topic(topic, queries, limit_each=2):
@@ -61,18 +66,21 @@ def search_topic(topic, queries, limit_each=2):
             pages = r.json().get('query', {}).get('pages', {}).values()
             for page in pages:
                 info = (page.get('imageinfo') or [{}])[0]
-                width, height = int(info.get('width') or 0), int(info.get('height') or 0)
-                if width < 900 or height < 500 or not info.get('thumburl') or not license_ok(info.get('extmetadata') or {}):
-                    continue
+                meta = info.get('extmetadata') or {}
                 title = page.get('title', '').replace('File:', '').strip()
+                description = clean_html(meta.get('ImageDescription', {}).get('value', ''))
+                combined = f'{title} {description}'
+                width, height = int(info.get('width') or 0), int(info.get('height') or 0)
+                if width < 1200 or height < 500 or not info.get('thumburl'):
+                    continue
+                if is_fifth_rmb(combined) or not license_ok(meta):
+                    continue
                 key = hashlib.sha1(title.encode('utf-8')).hexdigest()[:12]
                 if key in seen:
                     continue
                 seen.add(key)
-                meta = info.get('extmetadata') or {}
                 author = clean_html(meta.get('Artist', {}).get('value', '')) or 'Wikimedia Commons contributor'
                 license_name = clean_html(meta.get('LicenseShortName', {}).get('value', ''))
-                description = clean_html(meta.get('ImageDescription', {}).get('value', ''))
                 found.append({
                     'id': key,
                     'topic': topic,
@@ -99,7 +107,7 @@ def collect():
     DATA.mkdir(parents=True, exist_ok=True)
     payload = {
         'updated_at': now(),
-        'source_policy': 'Wikimedia Commons reusable/public-domain images only; each image retains source, author and license metadata.',
+        'source_policy': 'Wikimedia Commons reusable/public-domain images only; minimum source size 1200px; fifth-series RMB is excluded; each image retains source, author and license metadata.',
         'image_width_target': 1400,
         'topics': [
             {'topic': topic, 'count': sum(1 for x in items if x['topic'] == topic)}
