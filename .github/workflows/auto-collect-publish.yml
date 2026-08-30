@@ -1,4 +1,4 @@
-name: 洪盛集藏自动采集-智能分析-成交价格-图片化-发布
+name: 洪盛集藏自动采集-智能分析-成交价格-评级币-图片化-发布
 
 on:
   schedule:
@@ -26,8 +26,10 @@ jobs:
         run: python app/unified_collect.py
       - name: 自动筛选-编辑-结构化发布
         run: python app/editorial_pipeline.py
-      - name: 每日采集实际成交价格
+      - name: 每日采集各品种实际成交价格
         run: python app/price_pipeline.py
+      - name: 每日采集PMG PCGS NGC 华夏评级成交价格
+        run: python app/grading_prices_collect.py
       - name: 自动生成各功能板块数据
         run: python app/section_pipeline.py
       - name: 严格按钱币品类重新归档子板块
@@ -50,6 +52,6 @@ jobs:
           if git diff --cached --quiet; then
             echo '本次没有新增或变化的资料'
           else
-            git commit -m '每日成交价格自动归档到钱币分类板块'
+            git commit -m '每日成交价格及PMG PCGS NGC 华夏评级成交价自动归档'
             git push
           fi
