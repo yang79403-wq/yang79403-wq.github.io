@@ -1,1 +1,14 @@
-[{"id":"fujian-seed","date":"2026-08-30","title":"福建收藏文化资料库","note":"围绕福建钱币历史、地方铸币与收藏文化建立地域资料索引，重点覆盖泉州、厦门、福州等地区。","category":"福建收藏","source":"洪盛集藏自动资料库","source_url":"","images":[],"status":"published"}]
+[
+  {
+    "id": "福建收藏-a1e55a57f2b3",
+    "date": "2026-08-30",
+    "title": "福建收藏文化资料",
+    "note": "围绕福建钱币历史、地方铸币与收藏文化建立地域资料索引。",
+    "category": "福建收藏",
+    "source": "洪盛集藏资料库",
+    "source_url": "",
+    "images": [],
+    "status": "published",
+    "disclaimer": "公开资料整理，仅供学习、研究与收藏交流参考。"
+  }
+]

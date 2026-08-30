@@ -1,14 +1,144 @@
 {
   "siteName": "洪盛集藏",
-  "updated_at": "2026-08-30T00:00:00+00:00",
-  "policy": "自动整理公开知识与资讯；过滤商业广告、买卖导流、联系方式和第五套人民币资讯；图片不使用外部图床。",
+  "updated_at": "2026-08-30T04:11:03+00:00",
   "groups": {
-    "knowledge": {"title":"钱币知识库","subtitle":"自动整理古钱币、银元、机制币、纸币、纪念币、金银币知识。","items":[{"id":"knowledge_ancient","name":"最新知识资料","enabled":true},{"id":"knowledge_silver","name":"银元资料","enabled":true},{"id":"knowledge_machine","name":"机制币资料","enabled":true},{"id":"knowledge_banknote","name":"纸币资料","enabled":true},{"id":"knowledge_commemorative","name":"纪念币资料","enabled":true},{"id":"knowledge_gold","name":"金银币资料","enabled":true}]},
-    "appraisal": {"title":"在线鉴赏","subtitle":"自动整理钱文、形制、边齿、包浆、真伪研究与品相分析资料，仅供学习交流参考。","items":[{"id":"appraisal_features","name":"特征观察","enabled":true},{"id":"appraisal_auth","name":"真伪研究","enabled":true},{"id":"appraisal_grade","name":"品相分析","enabled":true}]},
-    "research": {"title":"版别研究","subtitle":"自动整理钱文、字体、版式、边齿、铸造工艺和地域研究线索。","items":[{"id":"research_text","name":"钱文与字体","enabled":true},{"id":"research_variety","name":"版式研究","enabled":true},{"id":"research_edge","name":"边齿与工艺","enabled":true},{"id":"research_region","name":"地域研究","enabled":true}]},
-    "services": {"title":"收藏服务","subtitle":"自动整理评级知识、收藏咨询、品相评估和收藏品流通相关公开知识。","items":[{"id":"service_grading","name":"评级服务交流","enabled":true},{"id":"service_advisor","name":"收藏顾问","enabled":true},{"id":"service_flow","name":"收藏品流通","enabled":true}]},
-    "collection": {"title":"藏品展示","subtitle":"以文字资料、研究笔记和藏品档案为主，不依赖外部图片链接。","items":[{"id":"collection_records","name":"藏品资料","enabled":true},{"id":"collection_fujian","name":"福建收藏","enabled":true},{"id":"collection_notes","name":"研究笔记","enabled":true}]},
-    "market": {"title":"钱币行情","subtitle":"自动整理公开市场资讯、拍卖与成交观察；没有可靠成交数据时不虚构价格。","items":[{"id":"market_overview","name":"市场观察","enabled":true}]}
+    "knowledge": {
+      "title": "钱币知识库",
+      "subtitle": "自动整理公开历史、钱文、形制与收藏知识，持续补充古钱币、银元、机制币、纸币、纪念币、金银币资料。",
+      "items": [
+        {
+          "id": "knowledge_ancient",
+          "name": "古钱币",
+          "enabled": true
+        },
+        {
+          "id": "knowledge_silver",
+          "name": "银元",
+          "enabled": true
+        },
+        {
+          "id": "knowledge_machine",
+          "name": "机制币",
+          "enabled": true
+        },
+        {
+          "id": "knowledge_banknote",
+          "name": "纸币",
+          "enabled": true
+        },
+        {
+          "id": "knowledge_commemorative",
+          "name": "纪念币",
+          "enabled": true
+        },
+        {
+          "id": "knowledge_gold",
+          "name": "金银币",
+          "enabled": true
+        }
+      ]
+    },
+    "appraisal": {
+      "title": "在线鉴赏",
+      "subtitle": "以公开资料和可观察特征为基础，自动整理鉴赏、真伪研究与品相分析知识，仅作学习交流参考。",
+      "items": [
+        {
+          "id": "appraisal_features",
+          "name": "特征观察",
+          "enabled": true
+        },
+        {
+          "id": "appraisal_auth",
+          "name": "真伪研究",
+          "enabled": true
+        },
+        {
+          "id": "appraisal_grade",
+          "name": "品相分析",
+          "enabled": true
+        }
+      ]
+    },
+    "research": {
+      "title": "版别研究",
+      "subtitle": "持续建立钱文、版式、铸造工艺、边齿与地域资料索引。",
+      "items": [
+        {
+          "id": "research_text",
+          "name": "钱文与字体",
+          "enabled": true
+        },
+        {
+          "id": "research_variety",
+          "name": "版式研究",
+          "enabled": true
+        },
+        {
+          "id": "research_edge",
+          "name": "边齿与工艺",
+          "enabled": true
+        },
+        {
+          "id": "research_region",
+          "name": "地域研究",
+          "enabled": true
+        }
+      ]
+    },
+    "services": {
+      "title": "收藏服务",
+      "subtitle": "整理评级、收藏咨询、品相评估与藏品流通相关的公开知识，不发布交易导流广告。",
+      "items": [
+        {
+          "id": "service_grading",
+          "name": "评级服务交流",
+          "enabled": true
+        },
+        {
+          "id": "service_advisor",
+          "name": "收藏顾问",
+          "enabled": true
+        },
+        {
+          "id": "service_flow",
+          "name": "收藏品流通",
+          "enabled": true
+        }
+      ]
+    },
+    "collection": {
+      "title": "藏品展示",
+      "subtitle": "以文字资料、版别记录和收藏研究笔记为主，逐步形成可检索的藏品资料库。",
+      "items": [
+        {
+          "id": "collection_records",
+          "name": "藏品资料",
+          "enabled": true
+        },
+        {
+          "id": "collection_fujian",
+          "name": "福建收藏",
+          "enabled": true
+        },
+        {
+          "id": "collection_notes",
+          "name": "收藏研究笔记",
+          "enabled": true
+        }
+      ]
+    },
+    "market": {
+      "title": "钱币行情",
+      "subtitle": "自动整理公开市场资讯、拍卖与成交观察。数字价格仅在具备可靠公开来源时单独收录，默认不将宣传报价当作市场价格。",
+      "items": [
+        {
+          "id": "market_overview",
+          "name": "市场观察",
+          "enabled": true
+        }
+      ]
+    }
   },
-  "serviceSections": []
+  "serviceSections": [],
+  "policy": "不采集第五套人民币资讯；过滤商业广告、买卖导流、联系方式和价格营销；图片不使用外部图床。"
 }
