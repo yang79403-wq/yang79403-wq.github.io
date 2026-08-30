@@ -1,0 +1,32 @@
+[
+  {
+    "id": "银元-da8f4c358813",
+    "date": "2026-08-30",
+    "title": "银元：版式、压力与边齿观察",
+    "note": "银元研究重点包括图文细节、压力表现、边齿状态、磨损和包浆等可观察特征。",
+    "category": "silver",
+    "source": "洪盛集藏资料库",
+    "source_url": "",
+    "images": [],
+    "status": "published",
+    "disclaimer": "公开资料整理，仅供学习、研究与收藏交流参考。",
+    "subcategory": "品相与评级",
+    "section": "collection",
+    "category_title": "银元"
+  },
+  {
+    "id": "knowledge-seed-ancient",
+    "date": "2026-08-30",
+    "title": "钱币知识库自动更新机制已启用",
+    "note": "系统将持续从公开知识、发行资讯、历史研究等内容中筛选钱币资料，并按古钱币、银元、机制币、纸币、纪念币、金银币分类整理。",
+    "category": "silver",
+    "source": "洪盛集藏自动资料库",
+    "source_url": "",
+    "images": [],
+    "status": "published",
+    "disclaimer": "仅供学习、研究与收藏交流参考。",
+    "subcategory": "银元品种",
+    "section": "collection",
+    "category_title": "银元"
+  }
+]
