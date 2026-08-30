@@ -26,8 +26,6 @@ jobs:
         run: python app/unified_collect.py
       - name: 自动筛选-编辑-结构化发布
         run: python app/editorial_pipeline.py
-      - name: 自动采集高清钱币图片与授权信息
-        run: python app/image_collect.py
       - name: 检查并提交网站数据
         run: |
           git config user.name 'Hongsheng Jicang Auto Publisher'
