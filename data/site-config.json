@@ -1,6 +1,6 @@
 {
   "siteName": "洪盛集藏",
-  "updated_at": "2026-08-30T05:17:20+00:00",
+  "updated_at": "2026-08-30T05:26:57+00:00",
   "groups": {
     "knowledge": {
       "title": "钱币知识库",
@@ -61,7 +61,7 @@
     },
     "research": {
       "title": "版别研究",
-      "subtitle": "持续建立钱文、版式、铸造工艺、边齿与地域资料索引。",
+      "subtitle": "持续建立钱文、版式、铸造工艺与边齿资料索引；地域资料统一归入福建钱币等地域专区。",
       "items": [
         {
           "id": "research_text",
@@ -76,11 +76,6 @@
         {
           "id": "research_edge",
           "name": "边齿与工艺",
-          "enabled": true
-        },
-        {
-          "id": "research_region",
-          "name": "地域研究",
           "enabled": true
         }
       ]
@@ -116,13 +111,34 @@
           "enabled": true
         },
         {
-          "id": "collection_fujian",
-          "name": "福建收藏",
+          "id": "collection_notes",
+          "name": "收藏研究笔记",
+          "enabled": true
+        }
+      ]
+    },
+    "fujian": {
+      "title": "福建钱币",
+      "subtitle": "福建地域钱币资料统一入口，集中整理福建、泉州、厦门、漳州、福州及省内各地的钱币历史、流通、版别与收藏文化。",
+      "items": [
+        {
+          "id": "fujian_overview",
+          "name": "福建钱币总览",
           "enabled": true
         },
         {
-          "id": "collection_notes",
-          "name": "收藏研究笔记",
+          "id": "fujian_history",
+          "name": "福建钱币历史",
+          "enabled": true
+        },
+        {
+          "id": "fujian_regions",
+          "name": "泉州·厦门·漳州·福州",
+          "enabled": true
+        },
+        {
+          "id": "fujian_research",
+          "name": "福建地域研究",
           "enabled": true
         }
       ]
@@ -140,5 +156,5 @@
     }
   },
   "serviceSections": [],
-  "policy": "不采集第五套人民币资讯；过滤商业广告、买卖导流、联系方式和价格营销；图片不使用外部图床。"
+  "policy": "地域归档优先：福建相关资料只进入福建钱币；其他普通板块不得重复收录福建地域内容。不采集第五套人民币资讯；过滤商业广告、买卖导流、联系方式和价格营销；图片不使用外部图床。"
 }
