@@ -1,0 +1,14 @@
+{
+  "siteName": "洪盛集藏",
+  "updated_at": "2026-08-30T00:00:00+00:00",
+  "policy": "自动整理公开知识与资讯；过滤商业广告、买卖导流、联系方式和第五套人民币资讯；图片不使用外部图床。",
+  "groups": {
+    "knowledge": {"title":"钱币知识库","subtitle":"自动整理古钱币、银元、机制币、纸币、纪念币、金银币知识。","items":[{"id":"knowledge_auto","name":"最新知识资料","enabled":true}]},
+    "appraisal": {"title":"在线鉴赏","subtitle":"自动整理钱文、形制、边齿、包浆、真伪研究与品相分析资料，仅供学习交流参考。","items":[{"id":"appraisal_auto","name":"鉴赏研究资料","enabled":true}]},
+    "research": {"title":"版别研究","subtitle":"自动整理钱文、字体、版式、边齿、铸造工艺和地域研究线索。","items":[{"id":"research_auto","name":"版别研究资料","enabled":true}]},
+    "services": {"title":"收藏服务","subtitle":"自动整理评级知识、收藏咨询、品相评估和收藏品流通相关公开知识。","items":[{"id":"services_auto","name":"服务知识资料","enabled":true}]},
+    "collection": {"title":"藏品展示","subtitle":"以文字资料、研究笔记和藏品档案为主，不依赖外部图片链接。","items":[{"id":"collection_auto","name":"藏品资料档案","enabled":true}]},
+    "market": {"title":"钱币行情","subtitle":"自动整理公开市场资讯、拍卖与成交观察；没有可靠成交数据时不虚构价格。","items":[{"id":"market_overview","name":"市场观察","enabled":true}]}
+  },
+  "serviceSections": []
+}
