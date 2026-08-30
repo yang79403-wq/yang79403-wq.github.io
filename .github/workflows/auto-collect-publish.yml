@@ -6,6 +6,8 @@ on:
     - cron: '10 6 * * *'
     - cron: '10 12 * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: write
@@ -28,11 +30,13 @@ jobs:
         run: python app/editorial_pipeline.py
       - name: 自动生成知识-鉴赏-版别-服务-藏品-行情板块数据
         run: python app/section_pipeline.py
+      - name: 清理首页资讯展示并设置按需客服二维码
+        run: python app/home_ui_cleanup.py
       - name: 检查并提交网站数据与程序更新
         run: |
           git config user.name 'Hongsheng Jicang Auto Publisher'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/ app/
+          git add data/ app/ index.html
           if git diff --cached --quiet; then
             echo '本次没有新增或变化的资料'
           else
