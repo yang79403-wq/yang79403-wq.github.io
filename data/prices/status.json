@@ -1,0 +1,35 @@
+{
+  "updated_at": "2026-08-30T15:32:08+00:00",
+  "sources": [
+    {
+      "source": "华夏古泉",
+      "url": "https://www.hxguquan.com/",
+      "records": 0,
+      "error": null
+    },
+    {
+      "source": "古泉园地",
+      "url": "https://www.chcoin.com/",
+      "records": 0,
+      "error": null
+    },
+    {
+      "source": "钱币天堂",
+      "url": "https://www.yy11.com/",
+      "records": 0,
+      "error": null
+    },
+    {
+      "source": "一尘网",
+      "url": "http://www.xx007.com/",
+      "records": 0,
+      "error": null
+    },
+    {
+      "source": "钱币价格查",
+      "url": "https://www.qianbicha.com/",
+      "records": 0,
+      "error": null
+    }
+  ]
+}
