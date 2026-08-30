@@ -6,8 +6,6 @@ on:
     - cron: '10 6 * * *'
     - cron: '10 12 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
 
 permissions:
   contents: write
