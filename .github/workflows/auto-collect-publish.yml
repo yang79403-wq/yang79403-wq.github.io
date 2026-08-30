@@ -28,10 +28,10 @@ jobs:
         run: python app/unified_collect.py
       - name: 自动筛选-编辑-结构化发布
         run: python app/editorial_pipeline.py
-      - name: 自动生成知识-鉴赏-版别-服务-藏品-行情-福建板块数据
+      - name: 自动生成各功能板块数据
         run: python app/section_pipeline.py
       - name: 严格按钱币品类重新归档子板块
-        run: python app/category_routing.py
+        run: python app/category_routing_fix.py
       - name: 按钱币品类×功能板块二次归档
         run: python app/section_routing.py
       - name: 整理首页福建唯一入口并清除重复地域内容
@@ -46,6 +46,6 @@ jobs:
           if git diff --cached --quiet; then
             echo '本次没有新增或变化的资料'
           else
-            git commit -m '建立钱币品类与功能板块双重隔离归档'
+            git commit -m '钱币品类直达帖子并严格隔离分类'
             git push
           fi
