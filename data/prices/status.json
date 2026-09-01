@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-01T10:10:11+00:00",
-  "total_records": 0,
+  "updated_at": "2026-09-01T11:35:45+00:00",
+  "total_records": 2,
   "sources": [
     {
       "source": "华夏古泉",
@@ -11,7 +11,7 @@
     {
       "source": "古泉园地",
       "pages_scanned": 6,
-      "records": 0,
+      "records": 2,
       "error": null
     },
     {
