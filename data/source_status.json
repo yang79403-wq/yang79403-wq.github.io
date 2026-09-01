@@ -1,16 +1,23 @@
 {
-  "updated_at": "2026-09-01T04:58:39+00:00",
-  "policy": "后台过滤规则；公开资料索引。",
+  "updated_at": "2026-09-01T10:09:45+00:00",
   "sources": [
     {
       "name": "中国金币网",
-      "url": "https://www.chngc.net/common/homep",
-      "category": "纪念币与行业资讯"
+      "records": 0,
+      "pages_or_links_seen": 1,
+      "error": null
     },
     {
       "name": "爱藏收藏新闻",
-      "url": "https://news.airmb.com/",
-      "category": "收藏行业资讯"
+      "records": 120,
+      "pages_or_links_seen": 121,
+      "error": null
+    },
+    {
+      "name": "古泉园地",
+      "records": 0,
+      "pages_or_links_seen": 1,
+      "error": null
     }
   ]
 }

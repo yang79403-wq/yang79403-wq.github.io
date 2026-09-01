@@ -1,0 +1,36 @@
+{
+  "updated_at": "2026-09-01T10:15:53+00:00",
+  "total_records": 0,
+  "sources": [
+    {
+      "grader": "PCGS",
+      "pages_scanned": 15,
+      "records": 0,
+      "error": null
+    },
+    {
+      "grader": "NGC",
+      "pages_scanned": 0,
+      "records": 0,
+      "error": null
+    },
+    {
+      "grader": "PMG",
+      "pages_scanned": 15,
+      "records": 0,
+      "error": null
+    },
+    {
+      "grader": "华夏评级",
+      "pages_scanned": 2,
+      "records": 0,
+      "error": null
+    },
+    {
+      "grader": "华夏古泉",
+      "pages_scanned": 15,
+      "records": 0,
+      "error": null
+    }
+  ]
+}
