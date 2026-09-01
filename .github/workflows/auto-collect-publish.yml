@@ -45,6 +45,22 @@ jobs:
         run: python app/price_section_merge.py
       - name: 智能分析编写并采集图片到站内
         run: python app/intelligent_content_pipeline.py
+      - name: 自动数据质量检查
+        run: |
+          python - <<'PY'
+          import json, pathlib, sys
+          root=pathlib.Path('.')
+          editorial=json.loads((root/'data/editorial.json').read_text(encoding='utf-8'))
+          prices=json.loads((root/'data/prices/all.json').read_text(encoding='utf-8'))
+          grading=json.loads((root/'data/grading_prices.json').read_text(encoding='utf-8'))
+          news=json.loads((root/'data/news.json').read_text(encoding='utf-8'))
+          print('自动采集检查：news=',len(news.get('items',[])),'editorial=',editorial.get('published_count',0),'prices=',len(prices.get('items',[])),'grading=',len(grading.get('items',[])))
+          if editorial.get('published_count',0) < 1:
+              print('ERROR: 本轮没有可发布的最新资料，停止发布，避免旧数据冒充新内容。')
+              sys.exit(1)
+          if len(prices.get('items',[])) == 0:
+              print('WARNING: 本轮公开成交源未取得可核验成交价，价格数据不伪造、不用估价替代。')
+          PY
       - name: 首页底部补充联系地址
         run: python app/home_address.py
       - name: 清理前台内部规则文字
