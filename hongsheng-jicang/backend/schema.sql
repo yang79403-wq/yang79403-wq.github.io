@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS coins (id TEXT PRIMARY KEY,name TEXT NOT NULL,category TEXT,era TEXT,mint TEXT,variant TEXT,weight REAL,diameter REAL,material TEXT,description TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS evidence (id TEXT PRIMARY KEY,coin_id TEXT,title TEXT,source TEXT,source_url TEXT,published_at TEXT,trust_level TEXT,claim TEXT,content TEXT,FOREIGN KEY(coin_id) REFERENCES coins(id));
+CREATE TABLE IF NOT EXISTS market_records (id TEXT PRIMARY KEY,coin_id TEXT,name TEXT,variant TEXT,grade_company TEXT,grade_score TEXT,condition TEXT,source_type TEXT,source_name TEXT,event_date TEXT,record_date TEXT,price REAL,currency TEXT,result_type TEXT,sample_id TEXT,confidence REAL);
+CREATE TABLE IF NOT EXISTS research (id TEXT PRIMARY KEY,user_id TEXT,question TEXT,intent TEXT,answer TEXT,confidence TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE INDEX IF NOT EXISTS idx_coins_name ON coins(name);
+CREATE INDEX IF NOT EXISTS idx_evidence_coin ON evidence(coin_id);
+CREATE INDEX IF NOT EXISTS idx_market_coin ON market_records(coin_id);
