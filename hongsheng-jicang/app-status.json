@@ -1,0 +1,11 @@
+{
+  "name": "洪盛集藏",
+  "version": "1.0.0",
+  "release": "V8",
+  "status": "production-static",
+  "updated": "2026-09-06",
+  "modules": ["首页","钱币百科","AI研究","行业资讯","交流","我的研究","行情参考"],
+  "data_mode": "public-and-authorized-reference",
+  "transactions": false,
+  "note": "GitHub Pages static production shell. AI and market ingestion backend remain replaceable service interfaces."
+}
