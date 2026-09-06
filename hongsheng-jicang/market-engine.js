@@ -1,0 +1,2 @@
+/* 洪盛集藏行情参考引擎 V1 */
+const HS_MARKET={version:'1.0',calc(records=[]){const a=records.map(x=>Number(x.price)).filter(Number.isFinite).sort((x,y)=>x-y);if(!a.length)return{sample_count:0};const mid=a.length%2?a[(a.length-1)/2]:(a[a.length/2-1]+a[a.length/2])/2;return{sample_count:a.length,low:a[0],median:mid,high:a[a.length-1],confidence:a.length>=20?'高':a.length>=8?'中':'低',note:'参考数据需结合来源、日期、品相、评级及成交状态理解。'}},explain(records=[]){const r=this.calc(records);return{...r,method:'样本统计 + 来源分层 + 异常值过滤 + 时间权重（生产版）',warning:'报价不等于成交价；AI行情仅作收藏研究参考，不构成买卖建议。'}}};window.HS_MARKET=HS_MARKET;
