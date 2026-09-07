@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T08:37:11+00:00",
+  "updated_at": "2026-09-07T12:32:14+00:00",
   "policy": "自动采集公开国际/中国拍卖页面中与中国钱币相关的资讯；不复制整篇正文；保留来源链接；不以公开报价替代真实成交；最终以原始来源为准。",
   "items": [
     {
@@ -94,10 +94,14 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/",
       "category": "国际拍卖·中国钱币",
-      "lot": "1808",
+      "lot": "986",
       "public_price_hint": "",
       "content_type": "auction_information",
-      "keywords": []
+      "keywords": [
+        "china",
+        "yuan shikai",
+        "dollar"
+      ]
     },
     {
       "id": "auction-71737de4b7ef7bebbf",
@@ -107,14 +111,10 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/#e-auctions",
       "category": "国际拍卖·中国钱币",
-      "lot": "1894",
+      "lot": "986",
       "public_price_hint": "",
       "content_type": "auction_information",
-      "keywords": [
-        "china",
-        "yuan shikai",
-        "dollar"
-      ]
+      "keywords": []
     },
     {
       "id": "auction-ea8a36f41adb093a5d",
@@ -134,19 +134,6 @@
       ]
     },
     {
-      "id": "auction-3d2eeabaf54b59e986",
-      "date": "2026-09-07",
-      "title": "Upcoming numismatic auctions",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "MDC Monaco",
-      "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#ajax-content-wrap",
-      "category": "国际拍卖·中国钱币",
-      "lot": "2122",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": []
-    },
-    {
       "id": "auction-dd8d17535b5c4ecce8",
       "date": "2026-09-07",
       "title": "Upcoming numismatic auctions",
@@ -155,6 +142,23 @@
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#slide-out-widget-area",
       "category": "国际拍卖·中国钱币",
       "lot": "1894",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "china",
+        "yuan shikai",
+        "dollar"
+      ]
+    },
+    {
+      "id": "auction-ed85651df9d400f167",
+      "date": "2026-09-07",
+      "title": "Upcoming numismatic auctions",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "MDC Monaco",
+      "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#e-auctions",
+      "category": "国际拍卖·中国钱币",
+      "lot": "1753",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
