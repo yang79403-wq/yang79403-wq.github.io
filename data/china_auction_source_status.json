@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-07T08:17:28+00:00",
+  "updated_at": "2026-09-07T08:37:11+00:00",
   "sources": [
     {
       "name": "Stack's Bowers",
@@ -9,20 +9,26 @@
     },
     {
       "name": "Spink",
-      "records": 36,
-      "pages_or_links_seen": 40,
+      "records": 35,
+      "pages_or_links_seen": 38,
       "error": null
     },
     {
       "name": "MDC Monaco",
-      "records": 11,
-      "pages_or_links_seen": 117,
+      "records": 8,
+      "pages_or_links_seen": 179,
       "error": null
     },
     {
       "name": "Taisei Coins",
       "records": 1,
-      "pages_or_links_seen": 55,
+      "pages_or_links_seen": 56,
+      "error": null
+    },
+    {
+      "name": "泓盛拍卖 HOSANE",
+      "records": 34,
+      "pages_or_links_seen": 109,
       "error": null
     }
   ]

@@ -1,12 +1,27 @@
 {
-  "updated_at": "2026-09-07T08:17:28+00:00",
-  "policy": "自动采集公开的国际拍卖/钱币页面中与中国钱币相关的资讯；不复制整篇正文；保留来源链接；不以公开报价替代真实成交；最终以原始来源为准。",
+  "updated_at": "2026-09-07T08:37:11+00:00",
+  "policy": "自动采集公开国际/中国拍卖页面中与中国钱币相关的资讯；不复制整篇正文；保留来源链接；不以公开报价替代真实成交；最终以原始来源为准。",
   "items": [
+    {
+      "id": "auction-082804f2f690670090",
+      "date": "2026-09-10",
+      "title": "线下预展时间 ：2026-09-10 09:30 开拍时间 ：2026-09-12 10:00 保证金类型 ：比例保证金 保证金 ：￥5,000 / 额度￥50,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/special/detail/N2026091",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "1",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
     {
       "id": "auction-aa072cdd24faedb207",
       "date": "2026-09-07",
       "title": "会社概要 | コインの販売、買取、オークションなら泰星コイン株式会社",
-      "summary": "公开来源：Taisei Coins。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Taisei Coins。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Taisei Coins",
       "url": "https://www.taiseicoins.com/company/",
       "category": "国际拍卖·中国钱币",
@@ -18,70 +33,10 @@
       ]
     },
     {
-      "id": "auction-3e59a48c8540d66b47",
-      "date": "2026-09-07",
-      "title": "lot 1638",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "MDC Monaco",
-      "url": "https://mdc.mc/catalogue/e-auction-19/lot-1638-16/",
-      "category": "国际拍卖·中国钱币",
-      "lot": "1638",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "dollar"
-      ]
-    },
-    {
-      "id": "auction-47c8e92ec410f1079b",
-      "date": "2026-09-07",
-      "title": "lot 1634",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "MDC Monaco",
-      "url": "https://mdc.mc/catalogue/e-auction-19/lot-1634-16/",
-      "category": "国际拍卖·中国钱币",
-      "lot": "1634",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "dollar"
-      ]
-    },
-    {
-      "id": "auction-6d59c8783b255525cd",
-      "date": "2026-09-07",
-      "title": "lot 1633",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "MDC Monaco",
-      "url": "https://mdc.mc/catalogue/e-auction-19/lot-1633-16/",
-      "category": "国际拍卖·中国钱币",
-      "lot": "1633",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "dollar"
-      ]
-    },
-    {
-      "id": "auction-bf88c874ff4740097c",
-      "date": "2026-09-07",
-      "title": "lot 1631",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "MDC Monaco",
-      "url": "https://mdc.mc/catalogue/e-auction-19/lot-1631-16/",
-      "category": "国际拍卖·中国钱币",
-      "lot": "1631",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "dollar"
-      ]
-    },
-    {
       "id": "auction-d29d146ebee767e5bc",
       "date": "2026-09-07",
       "title": "lot 1054",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "MDC Monaco",
       "url": "https://mdc.mc/catalogue/vente-aux-encheres-numismatiques-19/lot-1054-26/",
       "category": "国际拍卖·中国钱币",
@@ -99,7 +54,7 @@
       "id": "auction-0b78e6ea329da8210c",
       "date": "2026-09-07",
       "title": "lot 1054",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "MDC Monaco",
       "url": "https://mdc.mc/catalogue/vente-aux-encheres-numismatiques-19/lot-1054-26/#ajax-content-wrap",
       "category": "国际拍卖·中国钱币",
@@ -117,7 +72,7 @@
       "id": "auction-a89015df496b213e54",
       "date": "2026-09-07",
       "title": "lot 1054",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "MDC Monaco",
       "url": "https://mdc.mc/catalogue/vente-aux-encheres-numismatiques-19/lot-1054-26/#slide-out-widget-area",
       "category": "国际拍卖·中国钱币",
@@ -135,11 +90,24 @@
       "id": "auction-f8b93978df5b4b9a28",
       "date": "2026-09-07",
       "title": "Ventes aux enchères numismatiques à venir",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "MDC Monaco",
       "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/",
       "category": "国际拍卖·中国钱币",
-      "lot": "1753",
+      "lot": "1808",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": []
+    },
+    {
+      "id": "auction-71737de4b7ef7bebbf",
+      "date": "2026-09-07",
+      "title": "Ventes aux enchères numismatiques à venir",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "MDC Monaco",
+      "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/#e-auctions",
+      "category": "国际拍卖·中国钱币",
+      "lot": "1894",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -152,11 +120,11 @@
       "id": "auction-ea8a36f41adb093a5d",
       "date": "2026-09-07",
       "title": "Upcoming numismatic auctions",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/",
       "category": "国际拍卖·中国钱币",
-      "lot": "1894",
+      "lot": "1054",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -169,33 +137,28 @@
       "id": "auction-3d2eeabaf54b59e986",
       "date": "2026-09-07",
       "title": "Upcoming numismatic auctions",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#ajax-content-wrap",
+      "category": "国际拍卖·中国钱币",
+      "lot": "2122",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": []
+    },
+    {
+      "id": "auction-dd8d17535b5c4ecce8",
+      "date": "2026-09-07",
+      "title": "Upcoming numismatic auctions",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "MDC Monaco",
+      "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#slide-out-widget-area",
       "category": "国际拍卖·中国钱币",
       "lot": "1894",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
         "china",
-        "yuan shikai",
-        "dollar"
-      ]
-    },
-    {
-      "id": "auction-ed85651df9d400f167",
-      "date": "2026-09-07",
-      "title": "Upcoming numismatic auctions",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "MDC Monaco",
-      "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#e-auctions",
-      "category": "国际拍卖·中国钱币",
-      "lot": "2119",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "china",
-        "yuan shikai",
         "dollar"
       ]
     },
@@ -203,7 +166,7 @@
       "id": "auction-9a41e6ea7e860fc3bd",
       "date": "2026-09-07",
       "title": "Spink Locations",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/",
       "category": "国际拍卖·中国钱币",
@@ -218,7 +181,7 @@
       "id": "auction-feb3032cb272742657",
       "date": "2026-09-07",
       "title": "Spink Locations",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/#w0-tab3",
       "category": "国际拍卖·中国钱币",
@@ -233,7 +196,7 @@
       "id": "auction-8f9c10542eff2e2103",
       "date": "2026-09-07",
       "title": "Spink China",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/buy-now?location_id=1",
       "category": "国际拍卖·中国钱币",
@@ -248,7 +211,7 @@
       "id": "auction-9b15074d3d8a75de79",
       "date": "2026-09-07",
       "title": "Spink China",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/live?location_id=1",
       "category": "国际拍卖·中国钱币",
@@ -263,7 +226,7 @@
       "id": "auction-8591f4f09fb0c32717",
       "date": "2026-09-07",
       "title": "Saleroom Notices",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/saleroom",
       "category": "国际拍卖·中国钱币",
@@ -278,7 +241,7 @@
       "id": "auction-3908ae5d7d7a5941da",
       "date": "2026-09-07",
       "title": "Saleroom Notices",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/saleroom#aboutCookiesModal",
       "category": "国际拍卖·中国钱币",
@@ -293,24 +256,9 @@
       "id": "auction-c5405ef129f0dab7f0",
       "date": "2026-09-07",
       "title": "Prices Realised",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/prices",
-      "category": "国际拍卖·中国钱币",
-      "lot": "",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "china"
-      ]
-    },
-    {
-      "id": "auction-84e02bb603002f7b65",
-      "date": "2026-09-07",
-      "title": "Prices Realised",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "Spink",
-      "url": "https://www.spink.com/auctions/prices#aboutCookiesModal",
       "category": "国际拍卖·中国钱币",
       "lot": "",
       "public_price_hint": "",
@@ -323,7 +271,7 @@
       "id": "auction-467195fc158a9d4778",
       "date": "2026-09-07",
       "title": "No auctions at this location.",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/buy-now",
       "category": "国际拍卖·中国钱币",
@@ -339,7 +287,7 @@
       "id": "auction-6830c225665c197386",
       "date": "2026-09-07",
       "title": "Live Auctions",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/live",
       "category": "国际拍卖·中国钱币",
@@ -354,7 +302,7 @@
       "id": "auction-f193ae7a38345ec25c",
       "date": "2026-09-07",
       "title": "Live Auctions",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/live?location_id=4",
       "category": "国际拍卖·中国钱币",
@@ -369,7 +317,7 @@
       "id": "auction-5a23ffcac238307219",
       "date": "2026-09-07",
       "title": "Find Lots",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/archive/index",
       "category": "国际拍卖·中国钱币",
@@ -384,7 +332,7 @@
       "id": "auction-26be7fd8505fa078a2",
       "date": "2026-09-07",
       "title": "Find Lots",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/archive/index#aboutCookiesModal",
       "category": "国际拍卖·中国钱币",
@@ -399,7 +347,7 @@
       "id": "auction-a7b24e37e6a3180012",
       "date": "2026-09-07",
       "title": "Buying at Auction",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/buying-at-auction",
       "category": "国际拍卖·中国钱币",
@@ -414,7 +362,7 @@
       "id": "auction-94228e1fe26315270c",
       "date": "2026-09-07",
       "title": "Buying at Auction",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/buying-at-auction#aboutCookiesModal",
       "category": "国际拍卖·中国钱币",
@@ -429,7 +377,7 @@
       "id": "auction-d26d9b57be39158f31",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/index?location_id=1",
       "category": "国际拍卖·中国钱币",
@@ -444,7 +392,7 @@
       "id": "auction-871efcba660a13b7d8",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?location_id=1",
       "category": "国际拍卖·中国钱币",
@@ -459,7 +407,7 @@
       "id": "auction-b98a39bf264ce96aa1",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx",
       "category": "国际拍卖·中国钱币",
@@ -474,7 +422,7 @@
       "id": "auction-c3110bd450a7995f9c",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?location_id=4",
       "category": "国际拍卖·中国钱币",
@@ -489,7 +437,7 @@
       "id": "auction-36117886e06fd75155",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?location_id=5",
       "category": "国际拍卖·中国钱币",
@@ -504,7 +452,7 @@
       "id": "auction-0d1235495673d78bd8",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?location_id=3",
       "category": "国际拍卖·中国钱币",
@@ -520,7 +468,7 @@
       "id": "auction-f1aeb56eb925ff8d95",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?location_id=2",
       "category": "国际拍卖·中国钱币",
@@ -536,7 +484,7 @@
       "id": "auction-67f30e380ff1f19c2c",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?location_id=6",
       "category": "国际拍卖·中国钱币",
@@ -552,7 +500,7 @@
       "id": "auction-94aa08aeeabbc64efc",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/index?location_id=1#aboutCookiesModal",
       "category": "国际拍卖·中国钱币",
@@ -567,7 +515,7 @@
       "id": "auction-62ddbfc46dc4bd4360",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?page=1",
       "category": "国际拍卖·中国钱币",
@@ -582,7 +530,7 @@
       "id": "auction-325b37ca0241c664d0",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?page=2",
       "category": "国际拍卖·中国钱币",
@@ -597,7 +545,7 @@
       "id": "auction-9ffc9d831b63ad5865",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx#aboutCookiesModal",
       "category": "国际拍卖·中国钱币",
@@ -612,7 +560,7 @@
       "id": "auction-2e2d159579648ce3b5",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/by-department?department_id=3",
       "category": "国际拍卖·中国钱币",
@@ -627,7 +575,7 @@
       "id": "auction-2287236e28b581f4bf",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/by-department?department_id=2",
       "category": "国际拍卖·中国钱币",
@@ -642,7 +590,7 @@
       "id": "auction-d6ca6b3b67fb4ca487",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/by-department?department_id=9",
       "category": "国际拍卖·中国钱币",
@@ -657,7 +605,7 @@
       "id": "auction-ccff708009a52e5a9c",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/by-department?department_id=8",
       "category": "国际拍卖·中国钱币",
@@ -672,7 +620,7 @@
       "id": "auction-5485b6936d5b1aca1c",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/auctions/by-department?department_id=10",
       "category": "国际拍卖·中国钱币",
@@ -687,7 +635,7 @@
       "id": "auction-defa7785131ad1afff",
       "date": "2026-09-07",
       "title": "Auction Calendar",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/live-auctions.aspx?location_id=6#aboutCookiesModal",
       "category": "国际拍卖·中国钱币",
@@ -703,7 +651,7 @@
       "id": "auction-00df8837023aeabc3f",
       "date": "2026-09-07",
       "title": "# 6 - Great Britain 1840 One Penny Black Plate 3 QG, very close margins on t... »",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/lot/26018000006",
       "category": "国际拍卖·中国钱币",
@@ -718,7 +666,7 @@
       "id": "auction-dbca6ec95fa8a35878",
       "date": "2026-09-07",
       "title": "# 1341 - USA President Donald Trump One Dollar banknote signed in black felt ti... »",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/lot/26066001341",
       "category": "国际拍卖·中国钱币",
@@ -733,7 +681,7 @@
       "id": "auction-8bf3358a5f4446c0d5",
       "date": "2026-09-07",
       "title": "# 1309 - (China) / Singapore First Opium War 1840 October 27 Entire letter writ... »",
-      "summary": "公开来源：Spink。系统仅提取与中国钱币相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "summary": "公开来源：Spink。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "Spink",
       "url": "https://www.spink.com/lot/26066001309",
       "category": "国际拍卖·中国钱币",
@@ -742,6 +690,509 @@
       "content_type": "auction_information",
       "keywords": [
         "china"
+      ]
+    },
+    {
+      "id": "auction-3d2d729dac86ef439b",
+      "date": "2026-08-28",
+      "title": "开拍时间 ：2026-08-28 11:30 结拍时间 ：2026-09-16 10:00 保证金类型 ：比例保证金 保证金 ：￥1,000 / 额度￥10,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/special/detail/N2026093",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10209",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-b0c6cb0dd2b76b50dc",
+      "date": "2026-08-28",
+      "title": "开拍时间 ：2026-08-28 11:30 结拍时间 ：2026-09-15 10:00 保证金类型 ：比例保证金 保证金 ：￥1,000 / 额度￥10,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/special/detail/N2026092",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10001",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-f2f0b6e03d2cbb8e68",
+      "date": "2026-08-28",
+      "title": "LOT 9 预展中 清民区新中国新、旧票杂集一部，内含各时期新旧邮票数百枚，见有纪69新票1套，特44菊花新票20枚，伦敦版宫门10元限新省贴用加字样票1枚，改2旧票，普5.3万元全戳旧票，以及大量蟠龙及其加盖旧票等，内容丰富，市场价值高，请预览 起拍价 ￥1,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26082396",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "9",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-560c559baae96b4110",
+      "date": "2026-08-28",
+      "title": "LOT 8 预展中 清民区新中国新旧票一组，含大龙3分5分旧票各一枚，小龙慈寿等旧票数枚，蟠龙新票数枚，纪47M盖销1枚，T28奔马新票1套，N1-6巴黎公社新票1套，T82M新票1枚，N57-62熊猫新票1套，T12 医疗四方连新票，特54儿童邮折、舞蹈邮折等，整体保存完好，内容丰富，请预览 起拍价 ￥1,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080037",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "8",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-976a3a5479eb67495e",
+      "date": "2026-08-28",
+      "title": "LOT 7 预展中 清民区新旧票杂集一册，见有清代慈禧寿辰旧票，各书信馆新旧票，民国各版孙像、烈士像、六区、金元、各解放区后期邮票，以及少量早期香港旧票，内容丰富，整体保存完好，请预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081538",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "7",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-7108494a950cbfb81b",
+      "date": "2026-08-28",
+      "title": "LOT 6 预展中 清民区新旧邮票集一部，内含各时期新旧邮票约数百枚，包括小龙，慈寿，各版蟠龙及其加盖旧票，各书信馆票，帆船孙像烈士像全戳票，大量后期解放区新票，新中国早期普改旧票，老纪特旧票等，其中老纪特票含小地名全戳，整体保存完好，内容丰富，市场价值高，请预览 起拍价 ￥1,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080096",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "6",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-468ef17eac00580d83",
+      "date": "2026-08-28",
+      "title": "LOT 5 预展中 清民区新旧邮票集一部，内含有票约千枚，见有慈寿三版原票，伦敦版蟠龙5元新票，蟠龙5分大票幅旧票，大量各面值港版烈士不同版号地方连，带各种加盖版号帆船加盖暂作大方连，带人名边纸华北六区加盖新票方连及单枚，华中解放区加盖河南省人民币成套新票，华中区暂用新票，华中加盖改作改值新票等，内容丰富，整体保存完好，请预览 起拍价 ￥1,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080077",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "5",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-6c9e523b7c7ad097fa",
+      "date": "2026-08-28",
+      "title": "LOT 4 预展中 纪特、文字、JT邮票一组17页，大多为新票，部分成套，含厂铭、数字边，见含文5、文6、纪71、T54、特46、特40，纪109、特62、特44、纪94等成套票，票品不一，大多保存较好，市场价值高，请预览 起拍价 ￥5,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080019",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "4",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-95d29ddb6136a812cd",
+      "date": "2026-08-28",
+      "title": "LOT 3 预展中 解放区邮票新旧混一批约600枚，内少量票为参考品，大多保存较好，欢迎预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080478",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "3",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-2251e11ee6e2087b34",
+      "date": "2026-08-28",
+      "title": "LOT 2 预展中 集邮册3本。其中1本为新中国第一轮生肖新票大全、另有2012-2016年年票定位册、《桃花韵》纪念册各1本。保存较好，欢迎预览 起拍价 ￥1,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081849",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "2",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-b810a2155886c8499f",
+      "date": "2026-08-28",
+      "title": "LOT 10219 竞拍中 1947年华北解放区晋冀鲁豫边区嘉禾版毛像50原有齿新票1枚，上中品，该票有齿票少见 起拍价 ￥1,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081226",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10219",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-4e9462d8b846a68b3e",
+      "date": "2026-08-28",
+      "title": "LOT 10218 竞拍中 1947年华北解放区晋冀鲁豫边区嘉禾版毛像30原有齿新票1枚，上中品，该票有齿票少见 起拍价 ￥1,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081225",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10218",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-2e7eaa11e944450e75",
+      "date": "2026-08-28",
+      "title": "LOT 10217 竞拍中 1949年华东解放区二七建邮纪念5元加盖“紫”邮无齿新票1枚，上品 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26082647",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10217",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-17e2ccbf4eec8b5ef5",
+      "date": "2026-08-28",
+      "title": "LOT 10216 竞拍中 1949年华东解放区进军图新票八方连1套，均带左下直角边厂铭边纸，上中品 起拍价 ￥800",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080322",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10216",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-8c037ec4060c63a841",
+      "date": "2026-08-28",
+      "title": "LOT 10215 竞拍中 1948年东北区庆祝48年关东农业劳模展览大会纪念、十月革命节纪念31周年新票2页，上中品，请预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081442",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10215",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-7afaea94045d58f566",
+      "date": "2026-08-28",
+      "title": "LOT 10214 竞拍中 1950年旅大解放区第二次加盖暂作新票5元改500元新票四方连1件，带右下直角边，上品 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081437",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10214",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-9038121a6477369222",
+      "date": "2026-08-28",
+      "title": "LOT 10213 竞拍中 1942年中信版蓝色无面值母模印样1枚，请预览 起拍价 ￥500",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26082444",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10213",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-3015ffe9cc14384cbe",
+      "date": "2026-08-28",
+      "title": "LOT 10212 竞拍中 1942年中信版孙像1.5元“印样”1件，请预览 起拍价 ￥500",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26082443",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10212",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-61f28c357c29bce8cb",
+      "date": "2026-08-28",
+      "title": "LOT 10210 竞拍中 1912年伦敦版蟠龙加盖宋体中华民国大“国”字新票横双连1件，右侧1枚加盖多墨变体，原胶轻贴，上中品 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26082179",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10210",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-047a5002d1e6b7eb00",
+      "date": "2026-08-28",
+      "title": "LOT 10209 竞拍中 1901-1912年伦敦版蟠龙及其加盖变体票3枚，包括蓝10分旧票1枚，票面多墨；加盖宋体中华民国1分旧票1枚，隔物加盖，国字部分漏盖；加盖宋体中华民国16分新票1枚，原票隔物印刷，局部漏印，整体变体明显，上中品 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080235",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10209",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中华民国"
+      ]
+    },
+    {
+      "id": "auction-9f05f20e28d6032879",
+      "date": "2026-08-28",
+      "title": "LOT 10010 竞拍中 1923年宪法纪念3分销江西大沽塘甲子五月二日单圈三格干支全戳1枚，票背揭薄，邮戳完整，上中品，罕见 起拍价 ￥500",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081265",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10010",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "云南",
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-2fa6b978761ca59f4b",
+      "date": "2026-08-28",
+      "title": "LOT 10009 竞拍中 1901年伦敦版蟠龙5分销山东济南丙午四月十七日双全三格干支全戳，上中品 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081321",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10009",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "云南",
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-4f13de81413afcb419",
+      "date": "2026-08-28",
+      "title": "LOT 10008 竞拍中 1898-1909年清代伦敦版蟠龙，宣统登基各面值旧票及剪片一组32枚，均销上海英汉腰框戳，邮戳日期镶嵌字母，字母从A至O不同，保存较好，收集难度大，请预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080473",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10008",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "宣统",
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-b584e8696fa52dfa72",
+      "date": "2026-08-28",
+      "title": "LOT 10007 竞拍中 1898-1901年伦敦版蟠龙各面值旧票一组15枚，分别销宁波、北海、芜湖、正定、上海、安东、琼州小圆戳、余姚、龙岩、抚州、清河镇、云南腰框戳、江西吴城、福州城内壬子正月十八日、湖北蕲水三格干支戳，整体票品佳，邮戳清，保存完好 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26082398",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10007",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "湖北",
+        "云南",
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-e457be6e2460078e7a",
+      "date": "2026-08-28",
+      "title": "LOT 10006 竞拍中 1897-1901年各面值凸版、伦敦版蟠龙销八卦戳一册，约110枚。分别销各地八卦戳，绝大部分为蟠龙邮票，含工部及客邮票4枚，含蟠龙1元高值，整体戳记清晰完整，保存完好，内容丰富，请预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080614",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10006",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-b47a9085e8d34904ee",
+      "date": "2026-08-28",
+      "title": "LOT 10005 竞拍中 1920-40年代贴各版帆船、孙像、烈士、及其加盖邮票剪片一包，约870枚，销各地戳，见有碑型戳，广九火车邮戳等，海外回流，未经整理，内容丰富，请预览 起拍价 ￥500",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080075",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10005",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-f85f7e75d0747ed734",
+      "date": "2026-08-28",
+      "title": "LOT 10004 竞拍中 民帆船销各式邮戳一组约564枚，大多保存较好，欢迎预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081924",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10004",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "湖北",
+        "云南",
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-bae8bd16d6ab236b22",
+      "date": "2026-08-28",
+      "title": "LOT 10003 竞拍中 1981年湖南省长沙邮票分公司发行——湖南省地名邮戳卡一包，内含106个湖南省各地邮戳卡，保存较好，欢迎预览 起拍价 ￥200",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081016",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10003",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "云南",
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-004b8b2c0d81f21df2",
+      "date": "2026-08-28",
+      "title": "LOT 10002 竞拍中 1960年代贴老纪特、文票剪片一组23件，合计邮票共59枚，包括纪94梅兰芳22分，特57黄山10分，特62工业22分，文1双连，文2.4分双连，文7写作横三连，以及大量文2，文5，文7，文12等单枚票等，均销北京海关戳，整体票品佳，邮戳清，保存完好，内容丰富，请预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080576",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10002",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-5852ba69a15d059b4d",
+      "date": "2026-08-28",
+      "title": "LOT 10001 竞拍中 1936-1949年上海周边邮局领款单30件，分别盖江湾、青浦、川沙、崇明、桥镇、海门、张堰、枫泽、太仓、上海、江苏章练塘、高桥镇、昆山、金山、黄渡、桥镇、中正北二路、吴淞、罗店等各式地名邮戳，邮戳清晰，保存较好，请预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26080474",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "10001",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "湖南"
+      ]
+    },
+    {
+      "id": "auction-02a4577e85b49e74e7",
+      "date": "2026-08-28",
+      "title": "LOT 1 预展中 集邮册一本，内涵清代大龙、红印花、蟠龙等，内容丰富，欢迎预览 起拍价 ￥100",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081056",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "1",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-48071be17ef5520494",
+      "date": "2026-08-26",
+      "title": "结标时间起，每 1 分钟结标一件 结标时间前 1 分钟触发延时 1 分钟",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/special/document?type=content&id=C2026081",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
+      "id": "auction-8f883a1078d9bccabe",
+      "date": "2026-08-26",
+      "title": "2026网拍·8月中国书画专场 62 件拍品 比例 2026-08-26 10:00",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/special/detail/C2026081",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
       ]
     }
   ]
