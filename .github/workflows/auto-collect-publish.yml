@@ -29,6 +29,8 @@ jobs:
         run: python -m compileall -q app
       - name: 采集公开收藏资讯
         run: python app/unified_collect.py
+      - name: 采集国际拍卖中国钱币资讯
+        run: python app/auction_world_collect.py
       - name: 自动筛选-编辑-结构化发布
         run: python app/editorial_pipeline.py
       - name: 每日采集各品种实际成交价格
@@ -54,12 +56,15 @@ jobs:
           prices=json.loads((root/'data/prices/all.json').read_text(encoding='utf-8'))
           grading=json.loads((root/'data/grading_prices.json').read_text(encoding='utf-8'))
           news=json.loads((root/'data/news.json').read_text(encoding='utf-8'))
-          print('自动采集检查：news=',len(news.get('items',[])),'editorial=',editorial.get('published_count',0),'prices=',len(prices.get('items',[])),'grading=',len(grading.get('items',[])))
+          auction=json.loads((root/'data/china_auction_news.json').read_text(encoding='utf-8'))
+          print('自动采集检查：news=',len(news.get('items',[])),'editorial=',editorial.get('published_count',0),'prices=',len(prices.get('items',[])),'grading=',len(grading.get('items',[])),'china_auction=',len(auction.get('items',[])))
           if editorial.get('published_count',0) < 1:
               print('ERROR: 本轮没有可发布的最新资料，停止发布，避免旧数据冒充新内容。')
               sys.exit(1)
           if len(prices.get('items',[])) == 0:
               print('WARNING: 本轮公开成交源未取得可核验成交价，价格数据不伪造、不用估价替代。')
+          if len(auction.get('items',[])) == 0:
+              print('WARNING: 国际拍卖源本轮未取得中国钱币公开资讯；保留历史数据并在下一轮重试。')
           PY
       - name: 首页底部补充联系地址
         run: python app/home_address.py
