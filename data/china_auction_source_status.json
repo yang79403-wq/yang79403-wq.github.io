@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08T04:34:35+00:00",
+  "updated_at": "2026-09-08T11:20:02+00:00",
   "sources": [
     {
       "name": "Stack's Bowers",
@@ -15,7 +15,7 @@
     },
     {
       "name": "MDC Monaco",
-      "records": 8,
+      "records": 9,
       "pages_or_links_seen": 178,
       "error": null
     },
