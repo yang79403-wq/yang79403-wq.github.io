@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T08:41:28+00:00",
+  "updated_at": "2026-09-09T11:17:43+00:00",
   "policy": "自动采集公开收藏资讯，过滤商业广告、交易导流和第五套人民币；仅保留近180天候选资料；随后自动抓取正文、编辑、分类和图片化。",
   "items": [
     {
@@ -15,15 +15,15 @@
       ]
     },
     {
-      "id": "news-e8d2f88df46ede3c",
+      "id": "news-9a4e675f3ff7db35",
       "date": "2026-09-09",
-      "title": "龙纹纪念币 天价钱币",
+      "title": "龙年梅花金银币纯金打造，生肖金币更独特",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20333.html",
+      "url": "http://news.airmb.com/ybk/26810.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "纪念币"
+        "金银币"
       ]
     },
     {
@@ -51,6 +51,18 @@
       ]
     },
     {
+      "id": "news-0be864cee816fad0",
+      "date": "2026-09-09",
+      "title": "首发哈尔滨纪念币航天题材引热议",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/27220.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
       "id": "news-a62806e8f4c18807",
       "date": "2026-09-09",
       "title": "震撼！康银阁关停对于钱币收藏市场有何影响？",
@@ -60,6 +72,18 @@
       "category": "收藏行业资讯",
       "keywords": [
         "钱币收藏"
+      ]
+    },
+    {
+      "id": "news-6c773887c1a088a7",
+      "date": "2026-09-09",
+      "title": "陈浩敏坚持：老精稀是金银币“长青树”",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/20918.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "金银币"
       ]
     },
     {
@@ -87,99 +111,63 @@
       ]
     },
     {
-      "id": "news-410e9e0c7274f2c2",
+      "id": "news-4976f90b8ba99eb3",
       "date": "2026-09-09",
-      "title": "铜元成钱币类收藏中的新热门",
+      "title": "铂金币古代科技发明(1~3组)金银币行情如何",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21125.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "铜元"
-      ]
-    },
-    {
-      "id": "news-5333577f65e7b0d0",
-      "date": "2026-09-09",
-      "title": "钱币收藏要注意哪些问题",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20194.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "钱币收藏"
-      ]
-    },
-    {
-      "id": "news-c4a17c0cab6b3eaa",
-      "date": "2026-09-09",
-      "title": "钱币收藏看门道",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20608.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "钱币收藏"
-      ]
-    },
-    {
-      "id": "news-29c26fd3a0312fe5",
-      "date": "2026-09-09",
-      "title": "钱币收藏火热 民国钞重受收藏者追捧",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/22447.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "钱币收藏"
-      ]
-    },
-    {
-      "id": "news-fdda0bb6d2f05f0f",
-      "date": "2026-09-09",
-      "title": "钱币收藏急升新热或将成为收藏主流",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21168.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "钱币收藏"
-      ]
-    },
-    {
-      "id": "news-bd18e7d2c85d388c",
-      "date": "2026-09-09",
-      "title": "钱币收藏也有风险,收藏钱币注意事项有哪些",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21014.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "钱币收藏"
-      ]
-    },
-    {
-      "id": "news-05a1fc5fbe6349a4",
-      "date": "2026-09-09",
-      "title": "鉴赏中国人实现首次太空行走成功金银币",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20318.html",
+      "url": "http://news.airmb.com/ybk/28024.html",
       "category": "收藏行业资讯",
       "keywords": [
         "金银币"
       ]
     },
     {
-      "id": "news-0f9b37cd8887c3d2",
+      "id": "news-b9f61515443943ce",
       "date": "2026-09-09",
-      "title": "金银币遭遇双重上探瓶颈",
+      "title": "钱币收藏：最具收藏价值的三大类",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20897.html",
+      "url": "http://news.airmb.com/ybk/20365.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "金银币"
+        "钱币收藏"
+      ]
+    },
+    {
+      "id": "news-e4bca2a0a6aa55dd",
+      "date": "2026-09-09",
+      "title": "钱币收藏讲究门道",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/23205.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "钱币收藏"
+      ]
+    },
+    {
+      "id": "news-b0da46c2bf93daa1",
+      "date": "2026-09-09",
+      "title": "钱币收藏的一些小常识",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21144.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "钱币收藏"
+      ]
+    },
+    {
+      "id": "news-dc29fd743867f133",
+      "date": "2026-09-09",
+      "title": "金银纪念币新品种市价高开低走",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21453.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
       ]
     },
     {
@@ -189,6 +177,18 @@
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
       "url": "http://news.airmb.com/ybk/21560.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "金银币"
+      ]
+    },
+    {
+      "id": "news-bc8433f463daf057",
+      "date": "2026-09-09",
+      "title": "金银币的收藏及投资方法",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/23620.html",
       "category": "收藏行业资讯",
       "keywords": [
         "金银币"
@@ -207,12 +207,12 @@
       ]
     },
     {
-      "id": "news-ac3ba23a5e2d6661",
+      "id": "news-5b46eb9963e92651",
       "date": "2026-09-09",
-      "title": "金银币 暴涨少保值多",
+      "title": "金银币上的“中国民俗” 节假日的怀念",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21642.html",
+      "url": "http://news.airmb.com/ybk/21204.html",
       "category": "收藏行业资讯",
       "keywords": [
         "金银币"
@@ -231,39 +231,15 @@
       ]
     },
     {
-      "id": "news-bef6661c0b1beceb",
+      "id": "news-418f6f5fef855948",
       "date": "2026-09-09",
-      "title": "郑成功金银币应该如何进行收藏？",
+      "title": "邮币控：澳元纸币长得太丑遭吐槽",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/27235.html",
+      "url": "http://news.airmb.com/ybk/26753.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-29815efce4b0fad5",
-      "date": "2026-09-09",
-      "title": "通宝钱币成为钱币收藏中的新贵",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20588.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "钱币收藏"
-      ]
-    },
-    {
-      "id": "news-e0317ade0a53e80f",
-      "date": "2026-09-09",
-      "title": "辽宁舰金银币，不管上升的藏品",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/28045.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
+        "纸币"
       ]
     },
     {
@@ -291,16 +267,51 @@
       ]
     },
     {
-      "id": "news-0e8d10b366a6742b",
+      "id": "news-c113bfd01bcc6480",
       "date": "2026-09-09",
-      "title": "袁大头钱币收藏风险较小-钱币收藏",
+      "title": "记忆的保存——2012年贺岁龙纪念币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21332.html",
+      "url": "http://news.airmb.com/ybk/27156.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "钱币收藏",
-        "袁大头"
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-224f82e8352275bc",
+      "date": "2026-09-09",
+      "title": "花钱＂买＂钱为哪般？ 纪念币是否值得收藏？",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/22716.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-9ebd97cff391b907",
+      "date": "2026-09-09",
+      "title": "航天纪念币收藏再升温",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/26680.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-3c038324b5a71f51",
+      "date": "2026-09-09",
+      "title": "老银元20年增价200倍 民国钱币防伪有妙招",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21148.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "银元"
       ]
     },
     {
@@ -316,24 +327,36 @@
       ]
     },
     {
-      "id": "news-cd2b1c759b800fc7",
+      "id": "news-ae8ead98c1f1e2a6",
       "date": "2026-09-09",
-      "title": "经久不衰，熊猫纪念币收藏亮点",
+      "title": "纸钞收藏爱好者为五彩缤纷的图案所痴迷-纸币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/27139.html",
+      "url": "http://news.airmb.com/ybk/20462.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "纪念币"
+        "纸币"
       ]
     },
     {
-      "id": "news-e00ae57a6ec524ba",
+      "id": "news-f42d5d3277cb15cf",
       "date": "2026-09-09",
-      "title": "纸币收藏的重要意义",
+      "title": "纸币收藏有学问 品相完整价值高",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/27210.html",
+      "url": "http://news.airmb.com/ybk/20944.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纸币"
+      ]
+    },
+    {
+      "id": "news-2d7b4ab3fa3df895",
+      "date": "2026-09-09",
+      "title": "纸币收藏你一定要知道的几个数字",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/20525.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纸币"
@@ -352,36 +375,72 @@
       ]
     },
     {
-      "id": "news-2de4dafa8adeb61a",
+      "id": "news-8bb704055fa08653",
       "date": "2026-09-09",
-      "title": "福字币今发行沪上暂难觅 纪念币投资需理性",
+      "title": "纪念币在省城收藏市场成新宠",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/23019.html",
+      "url": "http://news.airmb.com/ybk/23206.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
       ]
     },
     {
-      "id": "news-c68a5f071a8c7a9d",
+      "id": "news-c74400a9b7c86a6d",
       "date": "2026-09-09",
-      "title": "生肖币之07年贺岁猪纪念币",
+      "title": "纪念币充当欧元债券 淄博一老板被骗百万元",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26816.html",
+      "url": "http://news.airmb.com/ybk/21916.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
       ]
     },
     {
-      "id": "news-0ce652fe7af4fe0f",
+      "id": "news-a910d63377624ee6",
       "date": "2026-09-09",
-      "title": "珍稀动物朱鹮纪念币是中国环境保护的标志",
+      "title": "纪念币、纪念钞保存窍门和方法",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26840.html",
+      "url": "http://news.airmb.com/ybk/27017.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-bfe9372065a03268",
+      "date": "2026-09-09",
+      "title": "第三套人民币成纸币收藏主角 一角卖50万",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/20508.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纸币"
+      ]
+    },
+    {
+      "id": "news-9c96495232e8f589",
+      "date": "2026-09-09",
+      "title": "生肖狗纪念币卡传承着生肖文化",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/26864.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-d820e4063f36955e",
+      "date": "2026-09-09",
+      "title": "珍稀动物纪念币收藏价值分析",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/27153.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -412,27 +471,27 @@
       ]
     },
     {
-      "id": "news-516576970c471bb0",
+      "id": "news-741d56395bfecd43",
       "date": "2026-09-09",
-      "title": "猴年马月催热金银币",
+      "title": "猴年贺岁纪念币的收藏价值",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/25440.html",
+      "url": "http://news.airmb.com/ybk/28052.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "金银币"
+        "纪念币"
       ]
     },
     {
-      "id": "news-0bde53817ed50181",
+      "id": "news-9d92e6467c9d59e2",
       "date": "2026-09-09",
-      "title": "猴年金银币周五发行 最重金币10公斤",
+      "title": "猴年贺岁普通纪念币将发行 首批每人限兑5枚",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/22043.html",
+      "url": "http://news.airmb.com/ybk/23266.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "金银币"
+        "纪念币"
       ]
     },
     {
@@ -442,30 +501,6 @@
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
       "url": "http://news.airmb.com/ybk/28096.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-06c650455f3aebbe",
-      "date": "2026-09-09",
-      "title": "猪年纪念币卡币题材好",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/28097.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-25c4d40ef95ab655",
-      "date": "2026-09-09",
-      "title": "熊猫纪念币是否有升值潜力",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/28133.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -484,85 +519,74 @@
       ]
     },
     {
-      "id": "news-31d34f31b8609564",
+      "id": "news-25f2135ad226c3bd",
       "date": "2026-09-09",
-      "title": "河南错版纸币诈骗揭秘 什么是错币有何价值？",
+      "title": "流通纪念币最新行情分享",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20940.html",
+      "url": "http://news.airmb.com/ybk/27114.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-1f816d02c19c32af",
+      "date": "2026-09-09",
+      "title": "民国半元纪念币 教你如何玩转古钱币",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/20939.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "古钱币",
+        "古钱",
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-8b8ed4e42c12dedb",
+      "date": "2026-09-09",
+      "title": "新版熊猫金银币月底或“登陆”台州",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/22467.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "金银币"
+      ]
+    },
+    {
+      "id": "news-97ba4df544e2bc14",
+      "date": "2026-09-09",
+      "title": "新版熊猫金银币月底发行",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/22141.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "金银币"
+      ]
+    },
+    {
+      "id": "news-2cc2704f32b0613d",
+      "date": "2026-09-09",
+      "title": "新版100元发行在即，攒老版纸币能升值吗?",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21190.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纸币"
       ]
     },
     {
-      "id": "news-34e10e254f3c71a6",
+      "id": "news-4eedaf3f90ec2fcd",
       "date": "2026-09-09",
-      "title": "沈阳造币厂纪念币值得收藏",
+      "title": "教你学学如何收藏金银币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26996.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-f7320e3e1bef1f46",
-      "date": "2026-09-09",
-      "title": "江南造船厂150周年金银币为何高开高走",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20421.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-229831c10202ace4",
-      "date": "2026-09-09",
-      "title": "毛主席纪念币收藏技巧分享",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/27132.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-ca98b14b77816c4b",
-      "date": "2026-09-09",
-      "title": "梅花金银币“值得”您拥有的投资品种",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21123.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-01ca8559527371db",
-      "date": "2026-09-09",
-      "title": "有收藏价值的古钱币有哪些",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20941.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "古钱币",
-        "古钱"
-      ]
-    },
-    {
-      "id": "news-1002b7b5646fa713",
-      "date": "2026-09-09",
-      "title": "日月潭金银币收藏价值分享",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/28139.html",
+      "url": "http://news.airmb.com/ybk/21702.html",
       "category": "收藏行业资讯",
       "keywords": [
         "金银币"
@@ -581,6 +605,18 @@
       ]
     },
     {
+      "id": "news-7c19ed5486de2f99",
+      "date": "2026-09-09",
+      "title": "收藏纪念币理财靠谱吗",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/22203.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
       "id": "news-611f09da5c38cd9a",
       "date": "2026-09-09",
       "title": "收藏的金银币 该如何保存保养？",
@@ -593,112 +629,27 @@
       ]
     },
     {
-      "id": "news-561a02e449756090",
+      "id": "news-cd417ade54572a4c",
       "date": "2026-09-09",
-      "title": "收藏界的宠儿——毛泽东诞辰100周年纪念币",
+      "title": "收藏家丁昌谈收藏 金银纪念币需关注题材与发行量",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/27100.html",
+      "url": "http://news.airmb.com/ybk/26065.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
       ]
     },
     {
-      "id": "news-077c840f5bbc424f",
+      "id": "news-d1b379ac3dff283b",
       "date": "2026-09-09",
-      "title": "收藏古钱币破除旧观念",
+      "title": "抗战胜利70周年纪念金币钱币历史起源",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21033.html",
+      "url": "http://news.airmb.com/ybk/28000.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "古钱币",
-        "古钱"
-      ]
-    },
-    {
-      "id": "news-0ed5e748ee334061",
-      "date": "2026-09-09",
-      "title": "收藏“行情火爆” 让金银币“市价大涨”",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20814.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-40d03fa33ee2df77",
-      "date": "2026-09-09",
-      "title": "揭秘脸谱第一组金银币",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/28039.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-2fffddfe72b05e6b",
-      "date": "2026-09-09",
-      "title": "推出500元纸币，现在是最好时机吗？",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21207.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纸币"
-      ]
-    },
-    {
-      "id": "news-0c454286105e85af",
-      "date": "2026-09-09",
-      "title": "探寻国庆50周年纪念币价格上涨的秘密",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/27488.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-ace6811abfef81e9",
-      "date": "2026-09-09",
-      "title": "抗战题材金银币火热 收藏谨防伪劣品",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21433.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-6610716b8d566884",
-      "date": "2026-09-09",
-      "title": "抗战胜利70周年纪念币引藏市关注",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21544.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-51f1a354fd16a087",
-      "date": "2026-09-09",
-      "title": "抗战胜利1元纪念币遭抢兑 被评升值可能性很小",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/22073.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
+        "钱币历史"
       ]
     },
     {
@@ -726,87 +677,51 @@
       ]
     },
     {
-      "id": "news-8646ec8d20f0eb8f",
+      "id": "news-7d5f24a78f68f3e7",
       "date": "2026-09-09",
-      "title": "投资金银币 精品有潜力",
+      "title": "怎样辨别40周年纪念币之中国人民银行建行40周年纪念币真伪",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21666.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-4cf8666dc55d9524",
-      "date": "2026-09-09",
-      "title": "扬子鳄纪念币的市场前景",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26818.html",
+      "url": "http://news.airmb.com/ybk/27129.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
       ]
     },
     {
-      "id": "news-5e4f5b88662f1d86",
+      "id": "news-5893b367c24f6f76",
       "date": "2026-09-09",
-      "title": "康银阁纪念币收藏需要注意什么",
+      "title": "建国纪念币永远坚挺的",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/28203.html",
+      "url": "http://news.airmb.com/ybk/27000.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
       ]
     },
     {
-      "id": "news-dce4128e1d1650c5",
+      "id": "news-9d6eed9f5e042429",
       "date": "2026-09-09",
-      "title": "如何防止你手里的纸币变残币",
+      "title": "庆祝新疆维吾尔自治区成立60周年金银纪念币发行",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20422.html",
+      "url": "http://news.airmb.com/ybk/21224.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "纸币"
+        "纪念币"
       ]
     },
     {
-      "id": "news-36650c888172c151",
+      "id": "news-df35bd21f71a9861",
       "date": "2026-09-09",
-      "title": "如何收藏熊猫金银币",
+      "title": "带你从纪念币上了解朱德将军----朱德康银阁卡币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21415.html",
+      "url": "http://news.airmb.com/ybk/27249.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-4e330fcaa490b8c3",
-      "date": "2026-09-09",
-      "title": "如何判断钱币收藏价值",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21167.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "钱币收藏"
-      ]
-    },
-    {
-      "id": "news-22554bd863165f6b",
-      "date": "2026-09-09",
-      "title": "如何分析2013年蛇年金银币的价值到底大不大",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/27475.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
+        "纪念币"
       ]
     },
     {
@@ -834,51 +749,39 @@
       ]
     },
     {
-      "id": "news-7fe2d4889d889864",
+      "id": "news-987f29a4cc45eb3a",
       "date": "2026-09-09",
-      "title": "央行：单位和个人不得拒收新版百元纸币",
+      "title": "央行将发行新疆维吾尔自治区成立60周年金银纪念币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/22583.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纸币"
-      ]
-    },
-    {
-      "id": "news-acf8a5d38c88b6df",
-      "date": "2026-09-09",
-      "title": "央行：1元纸币和硬币将长时间并存流通",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26681.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纸币"
-      ]
-    },
-    {
-      "id": "news-1c28df72f9d31f0d",
-      "date": "2026-09-09",
-      "title": "大热纪念币之间有何不同",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/23054.html",
+      "url": "http://news.airmb.com/ybk/21073.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
       ]
     },
     {
-      "id": "news-1f3ab7d3a42c1206",
+      "id": "news-56f695bf3e47bd11",
       "date": "2026-09-09",
-      "title": "和字草书纪念币",
+      "title": "央行将发行2015年版100元纸币 旧版人民币成收藏热点",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26867.html",
+      "url": "http://news.airmb.com/ybk/21206.html",
       "category": "收藏行业资讯",
       "keywords": [
-        "纪念币"
+        "纸币"
+      ]
+    },
+    {
+      "id": "news-24b34996aefea263",
+      "date": "2026-09-09",
+      "title": "哪个版本的一分纸币更有收藏价值",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/26299.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纸币"
       ]
     },
     {
@@ -906,6 +809,31 @@
       ]
     },
     {
+      "id": "news-67bc702fa0a97c0a",
+      "date": "2026-09-09",
+      "title": "和字一组纪念币和字篆书文化的奇葩",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/26839.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-9acaaa831cc9182c",
+      "date": "2026-09-09",
+      "title": "合格的钱币收藏者如何收藏袁大头",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21018.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "钱币收藏",
+        "袁大头"
+      ]
+    },
+    {
       "id": "news-c87376a3593aad7e",
       "date": "2026-09-09",
       "title": "台湾敬字亭纪念币",
@@ -930,6 +858,20 @@
       ]
     },
     {
+      "id": "news-ba692251a9c2e356",
+      "date": "2026-09-09",
+      "title": "古钱币的价值大小真假不一 钱币收藏者需谨慎对待",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/20466.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "钱币收藏",
+        "古钱币",
+        "古钱"
+      ]
+    },
+    {
       "id": "news-9043f2def0b46d8e",
       "date": "2026-09-09",
       "title": "古钱币收藏：齐刀币具有非常大的升值空间",
@@ -944,15 +886,77 @@
       ]
     },
     {
-      "id": "news-e93264ea50184fa3",
+      "id": "news-aebe75679532e4e0",
       "date": "2026-09-09",
-      "title": "华裔设计师参与加拿大猴年金银币设计",
+      "title": "古钱币收藏面临的问题",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/23034.html",
+      "url": "http://news.airmb.com/ybk/21296.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "钱币收藏",
+        "古钱币",
+        "古钱"
+      ]
+    },
+    {
+      "id": "news-03f366cc93fc8650",
+      "date": "2026-09-09",
+      "title": "南非纸币上印着“非洲五霸”",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/22905.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纸币"
+      ]
+    },
+    {
+      "id": "news-01e87c2d2e88d722",
+      "date": "2026-09-09",
+      "title": "南昌汉墓两吨多古钱打包清运 造型保持原始状态",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/23493.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "古钱"
+      ]
+    },
+    {
+      "id": "news-138da4f87b76ea89",
+      "date": "2026-09-09",
+      "title": "南宋纸币贬值引发信用危机 政府发行代用币",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/26754.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纸币"
+      ]
+    },
+    {
+      "id": "news-6df785ca34ffa88e",
+      "date": "2026-09-09",
+      "title": "单枚金银币“身价”破千元 大幅上涨",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21592.html",
       "category": "收藏行业资讯",
       "keywords": [
         "金银币"
+      ]
+    },
+    {
+      "id": "news-6dec259fcda95fa0",
+      "date": "2026-09-09",
+      "title": "十里长街送总理周恩来百年诞辰纪念币",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/27262.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
       ]
     },
     {
@@ -962,18 +966,6 @@
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
       "url": "http://news.airmb.com/ybk/28066.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-868053ea819fddab",
-      "date": "2026-09-09",
-      "title": "几种最具收藏与投资价值的纪念币",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21031.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -1004,12 +996,12 @@
       ]
     },
     {
-      "id": "news-7f00c4466be887a2",
+      "id": "news-9ab9cabf5b3416e4",
       "date": "2026-09-09",
-      "title": "何谓之金银纪念币",
+      "title": "你了解和字书法普通纪念币吗？",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20831.html",
+      "url": "http://news.airmb.com/ybk/26890.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -1028,27 +1020,51 @@
       ]
     },
     {
-      "id": "news-d64cac0335c4425d",
+      "id": "news-27e86a6ed13aeb40",
       "date": "2026-09-09",
-      "title": "人民币收藏要强调纸币的观赏性-纸币",
+      "title": "人民币一分纸币的收藏风险",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21420.html",
+      "url": "http://news.airmb.com/ybk/28132.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纸币"
       ]
     },
     {
-      "id": "news-54e7bca015a862c7",
+      "id": "news-1bf9d7b7f0ad22fd",
       "date": "2026-09-09",
-      "title": "二轮羊年纪念币铸造水平精湛又有特色",
+      "title": "二轮羊生肖纪念币真伪究竟怎么看",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/27125.html",
+      "url": "http://news.airmb.com/ybk/27010.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
+      ]
+    },
+    {
+      "id": "news-5624d2d18db5cb0b",
+      "date": "2026-09-09",
+      "title": "二轮生肖羊流通纪念币的价格趋势",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/27016.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-0222d42d5edffa6d",
+      "date": "2026-09-09",
+      "title": "为什么说收藏纸币是老少皆宜",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/20285.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纸币"
       ]
     },
     {
@@ -1060,6 +1076,19 @@
       "url": "http://news.airmb.com/ybk/27246.html",
       "category": "收藏行业资讯",
       "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-74c22f1c58c155df",
+      "date": "2026-09-09",
+      "title": "中国当代金银纪念币具有较高的艺术价值-钱币收藏",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21754.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "钱币收藏",
         "纪念币"
       ]
     },
@@ -1088,12 +1117,24 @@
       ]
     },
     {
-      "id": "news-a1e594746bab8bae",
+      "id": "news-f6cd957b7b87f649",
       "date": "2026-09-09",
-      "title": "世界遗产二组纪念币全世界的财富",
+      "title": "世妇会流通纪念币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26988.html",
+      "url": "http://news.airmb.com/ybk/26964.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-6127d51cf8ad5706",
+      "date": "2026-09-09",
+      "title": "世博纪念币价格圣坛",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/27206.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -1112,62 +1153,12 @@
       ]
     },
     {
-      "id": "news-df6b006cec59e1fd",
-      "date": "2026-09-09",
-      "title": "上半年纸币市场稳定 专家看好第三套人民币潜力币种",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21053.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纸币"
-      ]
-    },
-    {
-      "id": "news-0af84dc897e12674",
-      "date": "2026-09-09",
-      "title": "三类丝绸之路的古钱币各领风骚金银币造假十分猖獗",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21525.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "古钱币",
-        "古钱",
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-38fda2bdb9dab353",
-      "date": "2026-09-09",
-      "title": "三元纸币收藏价值极高 有的售价高达24.3万元",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20709.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纸币"
-      ]
-    },
-    {
       "id": "news-d19041d544dc9077",
       "date": "2026-09-09",
       "title": "一起认识纸币收藏",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
       "url": "http://news.airmb.com/ybk/28091.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纸币"
-      ]
-    },
-    {
-      "id": "news-1c695ea48a3281a6",
-      "date": "2026-09-09",
-      "title": "一版49壹仟元拖拉机纸币的价值",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21562.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纸币"
@@ -1186,39 +1177,27 @@
       ]
     },
     {
-      "id": "news-1dfd271bdc9a44bd",
+      "id": "news-540152dfacb236f8",
       "date": "2026-09-09",
-      "title": "“吉庆有余” 漫谈中国金银币",
+      "title": "“软黄金”你收藏了吗？贵过黄金的纸币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/21575.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "金银币"
-      ]
-    },
-    {
-      "id": "news-b65bb9fe1c31334e",
-      "date": "2026-09-09",
-      "title": "Spink钱币拍卖亮点：光绪三钱六分3.6铜样",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/23319.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "钱币拍卖"
-      ]
-    },
-    {
-      "id": "news-32762d9132d21c5c",
-      "date": "2026-09-09",
-      "title": "99版50元的收藏价值，流通仅三年的稀缺纸币！",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/20980.html",
+      "url": "http://news.airmb.com/ybk/21145.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纸币"
+      ]
+    },
+    {
+      "id": "news-a591f440d082d7dd",
+      "date": "2026-09-09",
+      "title": "‘美猴王’丙申年生肖纪念币上市发布会在京举行",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21828.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
       ]
     },
     {
@@ -1228,6 +1207,18 @@
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
       "url": "http://news.airmb.com/ybk/26822.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-51cfc7555be6cc84",
+      "date": "2026-09-09",
+      "title": "40周年纪念币",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/26872.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -1258,12 +1249,24 @@
       ]
     },
     {
-      "id": "news-ba9fce5933232f14",
+      "id": "news-08cf6de9407be422",
       "date": "2026-09-09",
-      "title": "2016何种纪念币可收藏",
+      "title": "2016猴年贺岁普通纪念币之二三事",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/25439.html",
+      "url": "http://news.airmb.com/ybk/26858.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
+      "id": "news-e7006440cc53d2c3",
+      "date": "2026-09-09",
+      "title": "2016年猴年纪念币具有非常高的收藏价值",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/26735.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -1282,36 +1285,12 @@
       ]
     },
     {
-      "id": "news-edd172195f48c053",
+      "id": "news-aa78105e6a9f3d90",
       "date": "2026-09-09",
-      "title": "2015羊年生肖纪念币发展趋势",
+      "title": "2015版熊猫纪念币逆市抗跌“一枝独秀”",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26834.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-f128dcb7f478f24f",
-      "date": "2026-09-09",
-      "title": "2015羊年10元纪念币",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26967.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-9675f43b2aeb2e60",
-      "date": "2026-09-09",
-      "title": "2015年贺岁羊纪念币",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26878.html",
+      "url": "http://news.airmb.com/ybk/21294.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -1330,6 +1309,18 @@
       ]
     },
     {
+      "id": "news-4e6e3630465e82b3",
+      "date": "2026-09-09",
+      "title": "2015年最后一枚纪念币面市 收藏仍以生肖为首",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/23133.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纪念币"
+      ]
+    },
+    {
       "id": "news-05daf57fae5ee241",
       "date": "2026-09-09",
       "title": "2015年乙未羊年贺岁普通纪念币",
@@ -1339,6 +1330,18 @@
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
+      ]
+    },
+    {
+      "id": "news-0577021544a6bf03",
+      "date": "2026-09-09",
+      "title": "2014马年彩色金银币 你认识几个？",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/21106.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "金银币"
       ]
     },
     {
@@ -1354,24 +1357,12 @@
       ]
     },
     {
-      "id": "news-0dc0118f43b47dc7",
+      "id": "news-6942cb458684a49f",
       "date": "2026-09-09",
-      "title": "2011年贺岁兔纪念币是传统文化的彰显",
+      "title": "2012贺岁龙纪念币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26828.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-bdc286c782ad3017",
-      "date": "2026-09-09",
-      "title": "2011年贺岁兔纪念币",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26905.html",
+      "url": "http://news.airmb.com/ybk/26955.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
@@ -1390,27 +1381,51 @@
       ]
     },
     {
-      "id": "news-fb5c2ea633c7c2ea",
+      "id": "news-931cff313ab0416b",
       "date": "2026-09-09",
-      "title": "2006年生肖狗公斤金银币具体收藏价值",
+      "title": "2010年虎年梅花金银币涨势快速不断突破",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/28010.html",
+      "url": "http://news.airmb.com/ybk/28014.html",
       "category": "收藏行业资讯",
       "keywords": [
         "金银币"
       ]
     },
     {
-      "id": "news-0a43f1f71de1a356",
+      "id": "news-03f7d9a56e549ae7",
       "date": "2026-09-09",
-      "title": "1元生肖纪念币收藏价值解析",
+      "title": "2010年上海世博会纪念币",
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/28072.html",
+      "url": "http://news.airmb.com/ybk/26960.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
+      ]
+    },
+    {
+      "id": "news-6fbbe4cad5be112a",
+      "date": "2026-09-09",
+      "title": "1元纸币几乎不具收藏价值",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/26762.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纸币"
+      ]
+    },
+    {
+      "id": "news-3beae81138356b33",
+      "date": "2026-09-09",
+      "title": "1962年2角纸币价格上升空间大",
+      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
+      "source": "爱藏收藏新闻",
+      "url": "http://news.airmb.com/ybk/28008.html",
+      "category": "收藏行业资讯",
+      "keywords": [
+        "纸币"
       ]
     },
     {
@@ -1432,18 +1447,6 @@
       "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
       "source": "爱藏收藏新闻",
       "url": "http://news.airmb.com/ybk/26959.html",
-      "category": "收藏行业资讯",
-      "keywords": [
-        "纪念币"
-      ]
-    },
-    {
-      "id": "news-9202fd50e25002f7",
-      "date": "2026-09-09",
-      "title": "07年贺岁猪纪念币",
-      "summary": "公开来源：爱藏收藏新闻。采集后进入洪盛集藏自动筛选与编辑流程。",
-      "source": "爱藏收藏新闻",
-      "url": "http://news.airmb.com/ybk/26998.html",
       "category": "收藏行业资讯",
       "keywords": [
         "纪念币"
