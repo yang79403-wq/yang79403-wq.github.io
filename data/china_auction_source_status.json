@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T16:26:53+00:00",
+  "updated_at": "2026-09-11T02:20:07+00:00",
   "sources": [
     {
       "name": "Stack's Bowers",
@@ -15,14 +15,14 @@
     },
     {
       "name": "MDC Monaco",
-      "records": 6,
-      "pages_or_links_seen": 180,
+      "records": 8,
+      "pages_or_links_seen": 181,
       "error": null
     },
     {
       "name": "Taisei Coins",
       "records": 1,
-      "pages_or_links_seen": 58,
+      "pages_or_links_seen": 57,
       "error": null
     },
     {
