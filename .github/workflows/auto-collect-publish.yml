@@ -1,4 +1,4 @@
-name: 洪盛集藏自动采集-智能分析-成交价格-评级币-图片化-发布
+name: 洪盛集藏行业知识采集与数据更新
 
 on:
   schedule:
@@ -9,79 +9,112 @@ on:
   push:
     branches: [main]
 
+# 重要：自动任务只允许更新数据层，不再直接改写前端页面结构。
 permissions:
   contents: write
 
 jobs:
-  collect-edit-publish:
+  collect-and-update-data:
     if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, '自动发布:')
     runs-on: ubuntu-latest
     steps:
       - name: 拉取网站代码
         uses: actions/checkout@v5
+
       - name: 安装 Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+
       - name: 安装采集组件
         run: python -m pip install --upgrade pip requests beautifulsoup4
-      - name: 运行前置 Python 语法检查
+
+      - name: Python 语法检查
         run: python -m compileall -q app
+
       - name: 采集公开收藏资讯
         run: python app/unified_collect.py
+
       - name: 采集国际拍卖中国钱币资讯
         run: python app/auction_world_collect.py
-      - name: 自动筛选-编辑-结构化发布
+
+      - name: 自动筛选编辑结构化资讯
         run: python app/editorial_pipeline.py
-      - name: 每日采集各品种实际成交价格
+
+      - name: 采集公开成交价格
         run: python app/price_pipeline.py
-      - name: 每日采集PMG PCGS NGC 华夏评级成交价格
+
+      - name: 采集评级成交价格
         run: python app/grading_prices_collect.py
-      - name: 自动生成各功能板块数据
+
+      - name: 生成行业知识与数据板块
         run: python app/section_pipeline.py
-      - name: 严格按钱币品类重新归档子板块
+
+      - name: 钱币品类归档
         run: python app/category_routing_fix.py
-      - name: 按钱币品类×功能板块二次归档
+
+      - name: 钱币品类×功能板块归档
         run: python app/section_routing.py
-      - name: 将每日成交价格写入对应分类板块
+
+      - name: 合并成交价格数据
         run: python app/price_section_merge.py
-      - name: 智能分析编写并采集图片到站内
+
+      - name: 智能内容处理
         run: python app/intelligent_content_pipeline.py
-      - name: 自动数据质量检查
+
+      - name: 数据质量检查
         run: |
           python - <<'PY'
           import json, pathlib, sys
-          root=pathlib.Path('.')
-          editorial=json.loads((root/'data/editorial.json').read_text(encoding='utf-8'))
-          prices=json.loads((root/'data/prices/all.json').read_text(encoding='utf-8'))
-          grading=json.loads((root/'data/grading_prices.json').read_text(encoding='utf-8'))
-          news=json.loads((root/'data/news.json').read_text(encoding='utf-8'))
-          auction=json.loads((root/'data/china_auction_news.json').read_text(encoding='utf-8'))
-          print('自动采集检查：news=',len(news.get('items',[])),'editorial=',editorial.get('published_count',0),'prices=',len(prices.get('items',[])),'grading=',len(grading.get('items',[])),'china_auction=',len(auction.get('items',[])))
+          root = pathlib.Path('.')
+          files = {
+              'editorial': root/'data/editorial.json',
+              'prices': root/'data/prices/all.json',
+              'grading': root/'data/grading_prices.json',
+              'news': root/'data/news.json',
+              'auction': root/'data/china_auction_news.json',
+          }
+          for name, path in files.items():
+              if not path.exists():
+                  print(f'ERROR: 缺少数据文件 {path}')
+                  sys.exit(1)
+          editorial=json.loads(files['editorial'].read_text(encoding='utf-8'))
+          prices=json.loads(files['prices'].read_text(encoding='utf-8'))
+          grading=json.loads(files['grading'].read_text(encoding='utf-8'))
+          news=json.loads(files['news'].read_text(encoding='utf-8'))
+          auction=json.loads(files['auction'].read_text(encoding='utf-8'))
+          print('数据检查:', 'news=',len(news.get('items',[])), 'editorial=',editorial.get('published_count',0), 'prices=',len(prices.get('items',[])), 'grading=',len(grading.get('items',[])), 'auction=',len(auction.get('items',[])))
           if editorial.get('published_count',0) < 1:
-              print('ERROR: 本轮没有可发布的最新资料，停止发布，避免旧数据冒充新内容。')
+              print('ERROR: 本轮没有可发布的新资料，停止提交，避免旧数据冒充新内容。')
               sys.exit(1)
-          if len(prices.get('items',[])) == 0:
-              print('WARNING: 本轮公开成交源未取得可核验成交价，价格数据不伪造、不用估价替代。')
-          if len(auction.get('items',[])) == 0:
-              print('WARNING: 国际拍卖源本轮未取得中国钱币公开资讯；保留历史数据并在下一轮重试。')
           PY
-      - name: 首页底部补充联系地址
-        run: python app/home_address.py
-      - name: 清理前台内部规则文字
-        run: python app/remove_public_rules.py
-      - name: 整理首页福建唯一入口并清除重复地域内容
-        run: python app/fujian_ui_cleanup.py
-      - name: 清理首页资讯展示并设置按需客服二维码
-        run: python app/home_ui_cleanup.py
-      - name: 检查并提交网站数据与程序更新
+
+      # 防护栏：自动任务不得修改 AI 前端与核心配置。
+      - name: 检查自动任务修改范围
         run: |
-          git config user.name 'Hongsheng Jicang Auto Publisher'
+          git status --short
+          changed=$(git diff --name-only)
+          blocked=''
+          for f in $changed; do
+            case "$f" in
+              index.html|app.css|app.js|README.md|.github/workflows/*)
+                blocked="$blocked $f" ;;
+            esac
+          done
+          if [ -n "$blocked" ]; then
+            echo "ERROR: 自动采集任务尝试修改受保护文件:$blocked"
+            git restore --worktree --staged -- $blocked || true
+            exit 1
+          fi
+
+      - name: 提交数据层更新
+        run: |
+          git config user.name 'Hongsheng Jicang Data Publisher'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A
+          git add data
           if git diff --cached --quiet; then
-            echo '本次没有新增或变化的资料'
+            echo '本次没有新增数据变化'
           else
-            git commit -m '自动发布: 更新洪盛集藏内容与行情数据'
+            git commit -m '自动发布: 更新洪盛集藏行业知识与行情数据'
             git push
           fi
