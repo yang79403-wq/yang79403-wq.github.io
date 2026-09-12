@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T16:30:12+00:00",
+  "updated_at": "2026-09-12T04:35:54+00:00",
   "sources": [
     {
       "name": "Stack's Bowers",
@@ -15,8 +15,8 @@
     },
     {
       "name": "MDC Monaco",
-      "records": 8,
-      "pages_or_links_seen": 181,
+      "records": 5,
+      "pages_or_links_seen": 180,
       "error": null
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "name": "泓盛拍卖 HOSANE",
-      "records": 34,
+      "records": 33,
       "pages_or_links_seen": 109,
       "error": null
     }
