@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-15T04:54:31+00:00",
+  "updated_at": "2026-09-15T11:47:49+00:00",
   "policy": "自动采集公开国际/中国拍卖页面中与中国钱币相关的资讯；不复制整篇正文；保留来源链接；不以公开报价替代真实成交；最终以原始来源为准。",
   "items": [
     {
@@ -79,7 +79,24 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/",
       "category": "国际拍卖·中国钱币",
-      "lot": "1338",
+      "lot": "972",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "china",
+        "yuan shikai",
+        "dollar"
+      ]
+    },
+    {
+      "id": "auction-71737de4b7ef7bebbf",
+      "date": "2026-09-15",
+      "title": "Ventes aux enchères numismatiques à venir",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "MDC Monaco",
+      "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/#e-auctions",
+      "category": "国际拍卖·中国钱币",
+      "lot": "972",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -96,7 +113,7 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/",
       "category": "国际拍卖·中国钱币",
-      "lot": "972",
+      "lot": "986",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -113,7 +130,7 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#ajax-content-wrap",
       "category": "国际拍卖·中国钱币",
-      "lot": "986",
+      "lot": "1054",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -130,10 +147,14 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#slide-out-widget-area",
       "category": "国际拍卖·中国钱币",
-      "lot": "1753",
+      "lot": "773",
       "public_price_hint": "",
       "content_type": "auction_information",
-      "keywords": []
+      "keywords": [
+        "china",
+        "yuan shikai",
+        "dollar"
+      ]
     },
     {
       "id": "auction-ed85651df9d400f167",
@@ -143,7 +164,7 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#e-auctions",
       "category": "国际拍卖·中国钱币",
-      "lot": "1338",
+      "lot": "986",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -608,21 +629,6 @@
       ]
     },
     {
-      "id": "auction-b0c6cb0dd2b76b50dc",
-      "date": "2026-08-28",
-      "title": "开拍时间 ：2026-08-28 11:30 结拍时间 ：2026-09-15 10:00 保证金类型 ：比例保证金 保证金 ：￥1,000 / 额度￥10,000",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/special/detail/N2026092",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10001",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
-      ]
-    },
-    {
       "id": "auction-50b54c6e441cdb9ea0",
       "date": "2026-08-28",
       "title": "LOT 319 已成交 1980年T54M荷花小型张100枚原封，包装完整，保存完好 起拍价 ￥50,000 成交价 ￥80,500",
@@ -845,159 +851,6 @@
       "content_type": "auction_information",
       "keywords": [
         "中华民国"
-      ]
-    },
-    {
-      "id": "auction-9f05f20e28d6032879",
-      "date": "2026-08-28",
-      "title": "LOT 10010 已成交 1923年宪法纪念3分销江西大沽塘甲子五月二日单圈三格干支全戳1枚，票背揭薄，邮戳完整，上中品，罕见 起拍价 ￥500 成交价 ￥4,600",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26081265",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10010",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-2fa6b978761ca59f4b",
-      "date": "2026-08-28",
-      "title": "LOT 10009 已成交 1901年伦敦版蟠龙5分销山东济南丙午四月十七日双全三格干支全戳，上中品 起拍价 ￥100 成交价 ￥460",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26081321",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10009",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-4f13de81413afcb419",
-      "date": "2026-08-28",
-      "title": "LOT 10008 已成交 1898-1909年清代伦敦版蟠龙，宣统登基各面值旧票及剪片一组32枚，均销上海英汉腰框戳，邮戳日期镶嵌字母，字母从A至O不同，保存较好，收集难度大，请预览 起拍价 ￥100 成交价 ￥1,265",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26080473",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10008",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "宣统",
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-b584e8696fa52dfa72",
-      "date": "2026-08-28",
-      "title": "LOT 10007 已成交 1898-1901年伦敦版蟠龙各面值旧票一组15枚，分别销宁波、北海、芜湖、正定、上海、安东、琼州小圆戳、余姚、龙岩、抚州、清河镇、云南腰框戳、江西吴城、福州城内壬子正月十八日、湖北蕲水三格干支戳，整体票品佳，邮戳清，保存完好 起拍价 ￥100 成交价 ￥1,265",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26082398",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10007",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖北",
-        "云南",
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-e457be6e2460078e7a",
-      "date": "2026-08-28",
-      "title": "LOT 10006 已成交 1897-1901年各面值凸版、伦敦版蟠龙销八卦戳一册，约110枚。分别销各地八卦戳，绝大部分为蟠龙邮票，含工部及客邮票4枚，含蟠龙1元高值，整体戳记清晰完整，保存完好，内容丰富，请预览 起拍价 ￥100 成交价 ￥1,725",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26080614",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10006",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-b47a9085e8d34904ee",
-      "date": "2026-08-28",
-      "title": "LOT 10005 已成交 1920-40年代贴各版帆船、孙像、烈士、及其加盖邮票剪片一包，约870枚，销各地戳，见有碑型戳，广九火车邮戳等，海外回流，未经整理，内容丰富，请预览 起拍价 ￥500 成交价 ￥1,725",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26080075",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10005",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-f85f7e75d0747ed734",
-      "date": "2026-08-28",
-      "title": "LOT 10004 已成交 民帆船销各式邮戳一组约564枚，大多保存较好，欢迎预览 起拍价 ￥100 成交价 ￥2,645",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26081924",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10004",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-bae8bd16d6ab236b22",
-      "date": "2026-08-28",
-      "title": "LOT 10003 已成交 1981年湖南省长沙邮票分公司发行——湖南省地名邮戳卡一包，内含106个湖南省各地邮戳卡，保存较好，欢迎预览 起拍价 ￥200 成交价 ￥230",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26081016",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10003",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-004b8b2c0d81f21df2",
-      "date": "2026-08-28",
-      "title": "LOT 10002 已成交 1960年代贴老纪特、文票剪片一组23件，合计邮票共59枚，包括纪94梅兰芳22分，特57黄山10分，特62工业22分，文1双连，文2.4分双连，文7写作横三连，以及大量文2，文5，文7，文12等单枚票等，均销北京海关戳，整体票品佳，邮戳清，保存完好，内容丰富，请预览 起拍价 ￥100 成交价 ￥4,600",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26080576",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10002",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
-      ]
-    },
-    {
-      "id": "auction-5852ba69a15d059b4d",
-      "date": "2026-08-28",
-      "title": "LOT 10001 已成交 1936-1949年上海周边邮局领款单30件，分别盖江湾、青浦、川沙、崇明、桥镇、海门、张堰、枫泽、太仓、上海、江苏章练塘、高桥镇、昆山、金山、黄渡、桥镇、中正北二路、吴淞、罗店等各式地名邮戳，邮戳清晰，保存较好，请预览 起拍价 ￥100 成交价 ￥690",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26080474",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "10001",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "湖南"
       ]
     },
     {
