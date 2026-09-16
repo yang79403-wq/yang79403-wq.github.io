@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T11:40:24+00:00",
+  "updated_at": "2026-09-16T16:53:59+00:00",
   "policy": "自动采集公开国际/中国拍卖页面中与中国钱币相关的资讯；不复制整篇正文；保留来源链接；不以公开报价替代真实成交；最终以原始来源为准。",
   "items": [
     {
@@ -63,14 +63,50 @@
       ]
     },
     {
-      "id": "auction-71737de4b7ef7bebbf",
+      "id": "auction-d29d146ebee767e5bc",
+      "date": "2026-09-16",
+      "title": "lot 1054",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "MDC Monaco",
+      "url": "https://mdc.mc/catalogue/vente-aux-encheres-numismatiques-19/lot-1054-26/",
+      "category": "国际拍卖·中国钱币",
+      "lot": "1054",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "china",
+        "yuan shikai",
+        "tientsin",
+        "dollar"
+      ]
+    },
+    {
+      "id": "auction-0b78e6ea329da8210c",
+      "date": "2026-09-16",
+      "title": "lot 1054",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "MDC Monaco",
+      "url": "https://mdc.mc/catalogue/vente-aux-encheres-numismatiques-19/lot-1054-26/#ajax-content-wrap",
+      "category": "国际拍卖·中国钱币",
+      "lot": "1054",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "china",
+        "yuan shikai",
+        "tientsin",
+        "dollar"
+      ]
+    },
+    {
+      "id": "auction-f8b93978df5b4b9a28",
       "date": "2026-09-16",
       "title": "Ventes aux enchères numismatiques à venir",
       "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "MDC Monaco",
-      "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/#e-auctions",
+      "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/",
       "category": "国际拍卖·中国钱币",
-      "lot": "2119",
+      "lot": "1054",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -80,6 +116,19 @@
       ]
     },
     {
+      "id": "auction-71737de4b7ef7bebbf",
+      "date": "2026-09-16",
+      "title": "Ventes aux enchères numismatiques à venir",
+      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "MDC Monaco",
+      "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/#e-auctions",
+      "category": "国际拍卖·中国钱币",
+      "lot": "2122",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": []
+    },
+    {
       "id": "auction-ea8a36f41adb093a5d",
       "date": "2026-09-16",
       "title": "Upcoming numismatic auctions",
@@ -87,7 +136,7 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/",
       "category": "国际拍卖·中国钱币",
-      "lot": "2122",
+      "lot": "972",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -104,7 +153,7 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#ajax-content-wrap",
       "category": "国际拍卖·中国钱币",
-      "lot": "1054",
+      "lot": "773",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -121,10 +170,14 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#slide-out-widget-area",
       "category": "国际拍卖·中国钱币",
-      "lot": "1338",
+      "lot": "986",
       "public_price_hint": "",
       "content_type": "auction_information",
-      "keywords": []
+      "keywords": [
+        "china",
+        "yuan shikai",
+        "dollar"
+      ]
     },
     {
       "id": "auction-ed85651df9d400f167",
@@ -134,7 +187,7 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#e-auctions",
       "category": "国际拍卖·中国钱币",
-      "lot": "1338",
+      "lot": "972",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -201,23 +254,6 @@
       "content_type": "auction_information",
       "keywords": [
         "china"
-      ]
-    },
-    {
-      "id": "auction-d29d146ebee767e5bc",
-      "date": "2026-09-16",
-      "title": "See more",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "MDC Monaco",
-      "url": "https://mdc.mc/catalogue/vente-aux-encheres-numismatiques-19/lot-1054-26/",
-      "category": "国际拍卖·中国钱币",
-      "lot": "",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "china",
-        "yuan shikai",
-        "dollar"
       ]
     },
     {
@@ -641,21 +677,6 @@
       "url": "https://www.hosane.com/auction/detail/N26081902",
       "category": "中国拍卖·钱币与收藏",
       "lot": "293",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": [
-        "中国"
-      ]
-    },
-    {
-      "id": "auction-aa8c535cb118a64ac5",
-      "date": "2026-08-28",
-      "title": "LOT 228 已成交 1962年纪94M梅兰芳小型张新票1枚，原胶，上中品 起拍价 ￥30,000 成交价 ￥46,000",
-      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "泓盛拍卖 HOSANE",
-      "url": "https://www.hosane.com/auction/detail/N26081433",
-      "category": "中国拍卖·钱币与收藏",
-      "lot": "228",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
