@@ -32,3 +32,15 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Wait for Pages propagation
+        run: sleep 20
+      - name: Production smoke test
+        run: |
+          set -e
+          base="${{ steps.deployment.outputs.page_url }}"
+          base="${base%/}"
+          for path in / /index.html /app.css /app.js /data/news.json /data/editorial.json /data/grading_prices.json; do
+            echo "Checking ${base}${path}"
+            curl --fail --silent --show-error --location --max-time 20 "${base}${path}" > /dev/null
+          done
+          echo "洪盛集藏 Pages smoke test: PASS"
