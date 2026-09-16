@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-16T01:12:42+00:00",
+  "updated_at": "2026-09-16T04:50:50+00:00",
   "policy": "自动采集公开国际/中国拍卖页面中与中国钱币相关的资讯；不复制整篇正文；保留来源链接；不以公开报价替代真实成交；最终以原始来源为准。",
   "items": [
     {
@@ -79,7 +79,7 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/fr/ventes-aux-encheres-numismatiques-a-venir/",
       "category": "国际拍卖·中国钱币",
-      "lot": "1338",
+      "lot": "773",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -99,11 +99,7 @@
       "lot": "1808",
       "public_price_hint": "",
       "content_type": "auction_information",
-      "keywords": [
-        "china",
-        "yuan shikai",
-        "dollar"
-      ]
+      "keywords": []
     },
     {
       "id": "auction-ea8a36f41adb093a5d",
@@ -113,14 +109,10 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/",
       "category": "国际拍卖·中国钱币",
-      "lot": "972",
+      "lot": "2119",
       "public_price_hint": "",
       "content_type": "auction_information",
-      "keywords": [
-        "china",
-        "yuan shikai",
-        "dollar"
-      ]
+      "keywords": []
     },
     {
       "id": "auction-3d2eeabaf54b59e986",
@@ -130,20 +122,7 @@
       "source": "MDC Monaco",
       "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#ajax-content-wrap",
       "category": "国际拍卖·中国钱币",
-      "lot": "1894",
-      "public_price_hint": "",
-      "content_type": "auction_information",
-      "keywords": []
-    },
-    {
-      "id": "auction-dd8d17535b5c4ecce8",
-      "date": "2026-09-16",
-      "title": "Upcoming numismatic auctions",
-      "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
-      "source": "MDC Monaco",
-      "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#slide-out-widget-area",
-      "category": "国际拍卖·中国钱币",
-      "lot": "1894",
+      "lot": "1054",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -153,14 +132,14 @@
       ]
     },
     {
-      "id": "auction-ed85651df9d400f167",
+      "id": "auction-dd8d17535b5c4ecce8",
       "date": "2026-09-16",
       "title": "Upcoming numismatic auctions",
       "summary": "公开来源：MDC Monaco。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "MDC Monaco",
-      "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#e-auctions",
+      "url": "https://mdc.mc/en/upcoming-numismatic-auctions/#slide-out-widget-area",
       "category": "国际拍卖·中国钱币",
-      "lot": "1054",
+      "lot": "1808",
       "public_price_hint": "",
       "content_type": "auction_information",
       "keywords": [
@@ -655,6 +634,21 @@
       ]
     },
     {
+      "id": "auction-aa8c535cb118a64ac5",
+      "date": "2026-08-28",
+      "title": "LOT 228 已成交 1962年纪94M梅兰芳小型张新票1枚，原胶，上中品 起拍价 ￥30,000 成交价 ￥46,000",
+      "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
+      "source": "泓盛拍卖 HOSANE",
+      "url": "https://www.hosane.com/auction/detail/N26081433",
+      "category": "中国拍卖·钱币与收藏",
+      "lot": "228",
+      "public_price_hint": "",
+      "content_type": "auction_information",
+      "keywords": [
+        "中国"
+      ]
+    },
+    {
       "id": "auction-c52f1e7bd46c749ad5",
       "date": "2026-08-28",
       "title": "LOT 207 已成交 1952年纪20“伟大的苏联十月革命三十五周年”（撤销发行）旧票1套 ，源泰评级VF85，为目前源泰评级错苏联亚军分。 起拍价 ￥20,000 成交价 ￥74,750",
@@ -702,7 +696,7 @@
     {
       "id": "auction-b810a2155886c8499f",
       "date": "2026-08-28",
-      "title": "LOT 10219 竞拍中 1947年华北解放区晋冀鲁豫边区嘉禾版毛像50原有齿新票1枚，上中品，该票有齿票少见 起拍价 ￥1,000",
+      "title": "LOT 10219 已成交 1947年华北解放区晋冀鲁豫边区嘉禾版毛像50原有齿新票1枚，上中品，该票有齿票少见 起拍价 ￥1,000 成交价 ￥1,150",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26081226",
@@ -717,7 +711,7 @@
     {
       "id": "auction-4e9462d8b846a68b3e",
       "date": "2026-08-28",
-      "title": "LOT 10218 竞拍中 1947年华北解放区晋冀鲁豫边区嘉禾版毛像30原有齿新票1枚，上中品，该票有齿票少见 起拍价 ￥1,000",
+      "title": "LOT 10218 已成交 1947年华北解放区晋冀鲁豫边区嘉禾版毛像30原有齿新票1枚，上中品，该票有齿票少见 起拍价 ￥1,000 成交价 ￥1,150",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26081225",
@@ -732,7 +726,7 @@
     {
       "id": "auction-2e7eaa11e944450e75",
       "date": "2026-08-28",
-      "title": "LOT 10217 竞拍中 1949年华东解放区二七建邮纪念5元加盖“紫”邮无齿新票1枚，上品 起拍价 ￥100",
+      "title": "LOT 10217 已成交 1949年华东解放区二七建邮纪念5元加盖“紫”邮无齿新票1枚，上品 起拍价 ￥100 成交价 ￥345",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26082647",
@@ -747,7 +741,7 @@
     {
       "id": "auction-17e2ccbf4eec8b5ef5",
       "date": "2026-08-28",
-      "title": "LOT 10216 竞拍中 1949年华东解放区进军图新票八方连1套，均带左下直角边厂铭边纸，上中品 起拍价 ￥800",
+      "title": "LOT 10216 已成交 1949年华东解放区进军图新票八方连1套，均带左下直角边厂铭边纸，上中品 起拍价 ￥800 成交价 ￥920",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26080322",
@@ -762,7 +756,7 @@
     {
       "id": "auction-8c037ec4060c63a841",
       "date": "2026-08-28",
-      "title": "LOT 10215 竞拍中 1948年东北区庆祝48年关东农业劳模展览大会纪念、十月革命节纪念31周年新票2页，上中品，请预览 起拍价 ￥100",
+      "title": "LOT 10215 已成交 1948年东北区庆祝48年关东农业劳模展览大会纪念、十月革命节纪念31周年新票2页，上中品，请预览 起拍价 ￥100 成交价 ￥1,380",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26081442",
@@ -777,7 +771,7 @@
     {
       "id": "auction-7afaea94045d58f566",
       "date": "2026-08-28",
-      "title": "LOT 10214 竞拍中 1950年旅大解放区第二次加盖暂作新票5元改500元新票四方连1件，带右下直角边，上品 起拍价 ￥100",
+      "title": "LOT 10214 已成交 1950年旅大解放区第二次加盖暂作新票5元改500元新票四方连1件，带右下直角边，上品 起拍价 ￥100 成交价 ￥460",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26081437",
@@ -792,7 +786,7 @@
     {
       "id": "auction-9038121a6477369222",
       "date": "2026-08-28",
-      "title": "LOT 10213 竞拍中 1942年中信版蓝色无面值母模印样1枚，请预览 起拍价 ￥500",
+      "title": "LOT 10213 已流拍 1942年中信版蓝色无面值母模印样1枚，请预览 起拍价 ￥500 成交价 ￥0",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26082444",
@@ -807,7 +801,7 @@
     {
       "id": "auction-3015ffe9cc14384cbe",
       "date": "2026-08-28",
-      "title": "LOT 10212 竞拍中 1942年中信版孙像1.5元“印样”1件，请预览 起拍价 ￥500",
+      "title": "LOT 10212 已流拍 1942年中信版孙像1.5元“印样”1件，请预览 起拍价 ￥500 成交价 ￥0",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26082443",
@@ -822,7 +816,7 @@
     {
       "id": "auction-61f28c357c29bce8cb",
       "date": "2026-08-28",
-      "title": "LOT 10210 竞拍中 1912年伦敦版蟠龙加盖宋体中华民国大“国”字新票横双连1件，右侧1枚加盖多墨变体，原胶轻贴，上中品 起拍价 ￥100",
+      "title": "LOT 10210 已成交 1912年伦敦版蟠龙加盖宋体中华民国大“国”字新票横双连1件，右侧1枚加盖多墨变体，原胶轻贴，上中品 起拍价 ￥100 成交价 ￥345",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26082179",
@@ -837,7 +831,7 @@
     {
       "id": "auction-047a5002d1e6b7eb00",
       "date": "2026-08-28",
-      "title": "LOT 10209 竞拍中 1901-1912年伦敦版蟠龙及其加盖变体票3枚，包括蓝10分旧票1枚，票面多墨；加盖宋体中华民国1分旧票1枚，隔物加盖，国字部分漏盖；加盖宋体中华民国16分新票1枚，原票隔物印刷，局部漏印，整体变体明显，上中品 起拍价 ￥100",
+      "title": "LOT 10209 已成交 1901-1912年伦敦版蟠龙及其加盖变体票3枚，包括蓝10分旧票1枚，票面多墨；加盖宋体中华民国1分旧票1枚，隔物加盖，国字部分漏盖；加盖宋体中华民国16分新票1枚，原票隔物印刷，局部漏印，整体变体明显，上中品 起拍价 ￥100 成交价 ￥345",
       "summary": "公开来源：泓盛拍卖 HOSANE。系统仅提取与中国钱币/收藏相关的公开拍卖资讯标题、拍卖线索与原始链接，详细信息请回到来源页面核验。",
       "source": "泓盛拍卖 HOSANE",
       "url": "https://www.hosane.com/auction/detail/N26080235",
