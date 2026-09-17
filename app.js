@@ -1,39 +1,30 @@
-const q=document.querySelector('#researchInput'),out=document.querySelector('#researchResult');
-
-document.querySelector('#researchBtn')?.addEventListener('click',()=>{
-  const v=q.value.trim();
-  if(!v){q.focus();return;}
-  const safe=v.replace(/[<>]/g,'');
-  out.innerHTML=`研究任务：<b>${safe}</b><br>已建立研究任务。当前网站会优先从公开资料、评级信息与市场证据中匹配相关内容；图像识别和更深层 AI 推理接口仍在接入中。`;
-});
-q?.addEventListener('keydown',e=>{if(e.key==='Enter')document.querySelector('#researchBtn').click()});
-
-(async()=>{
-  const discover=document.querySelector('#discover');
-  if(!discover) return;
-  try{
-    const r=await fetch('/data/realtime_ai.json?t='+Date.now(),{cache:'no-store'});
-    if(!r.ok) throw new Error('data');
-    const d=await r.json();
-    const items=Array.isArray(d.items)?d.items:[];
-    const section=document.createElement('section');
-    section.className='wrap section research-feed';
-    section.id='latestResearch';
-    section.innerHTML=`<h2>01A · 今日研究资料</h2><p class="sub">只把通过主题相关性、正文质量、来源优先级与去重门槛的资料带到首页。</p>`;
-    const grid=document.createElement('div');
-    grid.className='grid';
-    if(!items.length){
-      grid.innerHTML='<article class="card big"><div class="num">NO NEW MATERIAL</div><h3>暂无通过质量门槛的新资料</h3><p>系统会继续从公开来源采集；宁可少发，也不拿低质量内容填充首页。</p></article>';
-    }else{
-      grid.innerHTML=items.slice(0,6).map(x=>{
-        const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-        const badge=(x.evidence_level||'C');
-        return `<article class="card"><div class="num">${esc(x.category||'收藏研究')} · 证据 ${esc(badge)}</div><h3>${esc(x.title||'未命名资料')}</h3><p>${esc((x.summary||'').slice(0,260))}</p><div class="result"><b>研究提示</b><br>${esc((x.analysis||'').slice(0,220))}</div><span class="signal">${esc(x.date||'')} · ${esc(x.source||'公开资料')}</span></article>`;
-      }).join('');
-    }
-    section.appendChild(grid);
-    discover.after(section);
-  }catch(e){
-    // 首页保持可用，数据层故障不影响主页面。
-  }
-})();
+const DATASETS=['/data/editorial.json','/data/news.json','/data/prices/all.json','/data/grading_prices.json','/data/china_auction_news.json'];
+const CATS={ancient:{name:'古钱币',icon:'🏺',desc:'钱文、形制、时代、铸造'},silver:{name:'银元',icon:'🪙',desc:'品种、版别、边齿、品相'},machine:{name:'机制币',icon:'⚙️',desc:'铜元、机制银币、工艺'},banknote:{name:'纸币',icon:'📜',desc:'历史纸币、冠号、水印'},commemorative:{name:'纪念币',icon:'🏅',desc:'发行、主题、规格'},gold:{name:'金银币',icon:'🥇',desc:'金币、银币、材质'},fujian:{name:'福建钱币',icon:'🏮',desc:'泉州、厦门、漳州、福州'}};
+const savedKey='hongsheng_saved_v2';let DATA={editorial:[],news:[],prices:[],grading:[],auction:[]};let deferredInstall=null;
+const $=s=>document.querySelector(s);const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+function itemsOf(v){return Array.isArray(v)?v:(v&&Array.isArray(v.items)?v.items:[])}
+async function getJson(url){try{const r=await fetch(url+'?t='+Date.now(),{cache:'no-store'});return r.ok?await r.json():[]}catch{return []}}
+function dt(v){const s=String(v||'').replace(/[/.年]/g,'-').replace(/月/g,'-').replace(/日/g,'');const d=new Date(s.length===10?s:s.slice(0,10));return Number.isNaN(d.getTime())?new Date(0):d}
+function fmtDate(v){const d=dt(v);return d.getTime()?`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`:''}
+function textOf(x){return [x.title,x.summary,x.note,x.category,x.category_title,x.source,JSON.stringify(x.content||''),JSON.stringify(x.keywords||[])].filter(Boolean).join(' ')}
+function quality(x){if(x.evidence_level==='A')return 'A · 直接证据';if(x.evidence_level==='B')return 'B · 来源资料';if(x.evidence_level==='C')return 'C · 线索资料';if(x.status==='成交'||x.content_type==='auction_information')return '市场记录';return '研究资料'}
+function getSaved(){try{return JSON.parse(localStorage.getItem(savedKey)||'[]')}catch{return []}}
+function setSaved(a){localStorage.setItem(savedKey,JSON.stringify(a));renderSaved();updateSaveCount();renderBrief()}
+function keyFor(x){return x.id||`${x.source||''}|${x.title||''}|${x.date||''}`}
+function toggleSaved(x){const a=getSaved(),k=keyFor(x),i=a.findIndex(y=>y.key===k);if(i>=0)a.splice(i,1);else a.unshift({key:k,title:x.title||'未命名资料',date:x.date||'',type:x.type||x.category||'研究资料',source:x.source||'洪盛集藏资料库'});setSaved(a)}
+function updateSaveCount(){const el=$('#saveCount');if(el)el.textContent=getSaved().length}
+function collectAll(){return [...DATA.editorial.map(x=>({...x,type:'编辑资料'})),...DATA.news.map(x=>({...x,type:'行业资讯'})),...DATA.prices.map(x=>({...x,type:'成交记录'})),...DATA.grading.map(x=>({...x,type:'评级成交'})),...DATA.auction.map(x=>({...x,type:'拍卖观察'}))]}
+function renderMetrics(){const e=DATA.editorial.filter(x=>fmtDate(x.date)===fmtDate(new Date().toISOString().slice(0,10)));$('#metricLatest').textContent=e.length||Math.min(DATA.editorial.length,20);$('#metricDeals').textContent=DATA.prices.length;$('#metricGrading').textContent=DATA.grading.length;$('#metricSources').textContent=new Set(collectAll().map(x=>x.source).filter(Boolean)).size}
+function renderBrief(){const root=$('#dailyBrief');if(!root)return;const arr=[...DATA.editorial].sort((a,b)=>dt(b.date)-dt(a.date)).slice(0,5);if(!arr.length){root.innerHTML='<div class="empty">当前没有通过质量门槛的新资料，系统不会为了凑数量硬塞内容。</div>';return}const saved=getSaved();root.innerHTML=arr.map(x=>{const s=saved.some(y=>y.key===keyFor(x));return `<div class="briefItem"><div class="kind">${esc(x.category||'研究')}</div><div><b>${esc(x.title)}</b><div class="meta">${esc(fmtDate(x.date))} · ${esc(x.source||'公开资料')} · ${esc(quality(x))}</div></div><button class="saveMini ${s?'saved':''}" data-save='${esc(JSON.stringify({id:x.id,title:x.title,date:x.date,type:'编辑资料',source:x.source}))}' title="收藏">${s?'★':'☆'}</button></div>`}).join('');root.querySelectorAll('[data-save]').forEach(b=>b.onclick=()=>toggleSaved(JSON.parse(b.dataset.save)))}
+function renderTopics(){const root=$('#topicGrid');if(!root)return;root.innerHTML=Object.entries(CATS).slice(0,6).map(([k,v])=>`<a class="topic" href="/category.html?cat=${k}"><strong>${v.icon} ${v.name}</strong><span>${v.desc}</span></a>`).join('')}
+function renderCategories(){const root=$('#categoryGrid');if(!root)return;root.innerHTML=Object.entries(CATS).map(([k,v])=>`<a class="catCard" href="/category.html?cat=${k}"><div class="catIcon">${v.icon}</div><strong>${v.name}</strong><span>${v.desc}</span></a>`).join('')}
+function renderDeals(){const root=$('#dealList');if(!root)return;const arr=[...DATA.prices].sort((a,b)=>dt(b.date)-dt(a.date)).slice(0,7);$('#dealStatus').textContent=arr.length?`已整理 ${arr.length} 条`:'等待真实成交数据';if(!arr.length){root.innerHTML='<div class="empty">当前公开成交数据为空。网站不会用估价、起拍价或“多少钱”冒充真实成交。采集链路会继续补充。</div>';return}root.innerHTML=arr.map(x=>`<div class="dealRow"><div><b>${esc(x.title||x.category_title||'成交记录')}</b><small>${esc(fmtDate(x.date))} · ${esc(x.source||'公开来源')} · ${esc(quality(x))}</small></div><div class="price">${x.price!=null?esc(x.price_display||x.price):'—'}${x.currency==='CNY'?' 元':''}</div><div class="status">${esc(x.status||'成交')}</div></div>`).join('')}
+function search(q){q=q.trim().toLowerCase();const result=$('#searchResult');if(!result)return;if(!q){result.innerHTML='';return}const terms=q.split(/\s+/).filter(Boolean);const rows=collectAll().map(x=>{const t=textOf(x).toLowerCase();const score=terms.reduce((n,w)=>n+(t.includes(w)?(String(x.title||'').toLowerCase().includes(w)?5:2):0),0);return {...x,score}}).filter(x=>x.score>0).sort((a,b)=>b.score-a.score||dt(b.date)-dt(a.date)).slice(0,8);if(!rows.length){result.innerHTML=`<div class="resultBox"><b>没有直接匹配的资料</b><div class="meta" style="margin-top:6px">可以试试“袁大头”“光绪元宝”“冠号”“版别”“评级”“成交”等词。当前数据为空的栏目不会虚构结果。</div></div>`;return}result.innerHTML=`<div class="resultBox"><b>研究助手找到 ${rows.length} 条相关记录</b><div class="resultItems">${rows.map(x=>{const s=getSaved().some(y=>y.key===keyFor(x));return `<div class="resultItem"><div class="type">${esc(x.type||'资料')}</div><div><div class="title">${esc(x.title||'未命名')}</div><div class="meta">${esc(fmtDate(x.date))} · ${esc(x.source||'公开资料')} · ${esc(quality(x))}</div></div><button class="saveMini ${s?'saved':''}" data-result-save='${esc(JSON.stringify({id:x.id,title:x.title,date:x.date,type:x.type,source:x.source}))}'>${s?'★':'☆'}</button></div>`}).join('')}</div></div>`;result.querySelectorAll('[data-result-save]').forEach(b=>b.onclick=()=>toggleSaved(JSON.parse(b.dataset.resultSave)))}
+function renderSaved(){const root=$('#savedList');if(!root)return;const a=getSaved();if(!a.length){root.innerHTML='<div class="empty">还没有收藏。先从今天的研究资料开始吧。</div>';return}root.innerHTML=a.slice(0,30).map((x,i)=>`<div class="savedCard"><div class="meta">${esc(x.type)} · ${esc(x.date||'')}</div><b>${esc(x.title)}</b><button data-unsave="${i}">取消收藏</button></div>`).join('');root.querySelectorAll('[data-unsave]').forEach(b=>b.onclick=()=>{const s=getSaved();s.splice(Number(b.dataset.unsave),1);setSaved(s)})}
+function setupInteractions(){const input=$('#siteSearch');const go=()=>search(input?.value||'');$('#searchBtn')?.addEventListener('click',go);input?.addEventListener('keydown',e=>{if(e.key==='Enter')go()});document.querySelectorAll('[data-query]').forEach(b=>b.addEventListener('click',()=>{const q=b.dataset.query||'';if(input){input.value=q;search(q);input.scrollIntoView({behavior:'smooth',block:'center'})}}));$('#clearSaved')?.addEventListener('click',()=>setSaved([]));$('#menuBtn')?.addEventListener('click',()=>$('#mainNav')?.classList.toggle('open'));$('#contactBtn')?.addEventListener('click',openModal);$('#contactBtn2')?.addEventListener('click',openModal);$('#modalClose')?.addEventListener('click',closeModal);$('#contactModal')?.addEventListener('click',e=>{if(e.target.id==='contactModal')closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});$('#shareBtn')?.addEventListener('click',shareSite);$('#installBtn')?.addEventListener('click',installPWA)}
+function openModal(){const m=$('#contactModal');if(m)m.hidden=false}function closeModal(){const m=$('#contactModal');if(m)m.hidden=true}
+async function shareSite(){try{if(navigator.share)await navigator.share({title:'洪盛集藏',text:'AI 钱币收藏研究平台',url:location.href});else{await navigator.clipboard.writeText(location.href);alert('链接已复制')}}catch{}}
+async function installPWA(){if(!deferredInstall)return;deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;const b=$('#installBtn');if(b)b.hidden=true}
+function setupPWA(){window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;const b=$('#installBtn');if(b)b.hidden=false});if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js').catch(()=>{})}
+async function boot(){const [editorial,news,prices,grading,auction]=await Promise.all(DATASETS.map(getJson));DATA={editorial:itemsOf(editorial),news:itemsOf(news),prices:itemsOf(prices),grading:itemsOf(grading),auction:itemsOf(auction)};const upd=[editorial?.updated_at,news?.updated_at,prices?.updated_at,grading?.updated_at,auction?.updated_at].filter(Boolean).sort().pop();if($('#updateTime'))$('#updateTime').textContent=upd?`数据更新 ${String(upd).replace('T',' ').replace('+00:00','')}`:'数据正在同步';renderMetrics();renderBrief();renderTopics();renderCategories();renderDeals();renderSaved();updateSaveCount();setupInteractions();setupPWA();const p=new URLSearchParams(location.search);if(p.get('q')&&$('#siteSearch')){$('#siteSearch').value=p.get('q');search(p.get('q'))}}
+boot();
