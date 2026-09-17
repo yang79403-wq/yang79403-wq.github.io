@@ -6,16 +6,13 @@ on:
     - cron: '10 6 * * *'
     - cron: '10 12 * * *'
   workflow_dispatch:
-  push:
-    branches: [main]
 
-# 重要：自动任务只允许更新数据层，不再直接改写前端页面结构。
+# 自动任务只允许更新数据层，不直接改写前端页面结构。
 permissions:
   contents: write
 
 jobs:
   collect-and-update-data:
-    if: github.event_name != 'push' || !startsWith(github.event.head_commit.message, '自动发布:')
     runs-on: ubuntu-latest
     steps:
       - name: 拉取网站代码
@@ -87,8 +84,7 @@ jobs:
           realtime=json.loads(files['realtime'].read_text(encoding='utf-8'))
           items=editorial.get('items',[]) if isinstance(editorial,dict) else []
           source_count=len({x.get('source') for x in items if x.get('source')})
-          evidence_count=len({x.get('evidence_level') for x in items if x.get('evidence_level')})
-          print('数据检查:', 'news=',len(news.get('items',[])), 'editorial=',editorial.get('published_count',0), 'prices=',len(prices.get('items',[])), 'grading=',len(grading.get('items',[])), 'auction=',len(auction.get('items',[])), 'realtime=',len(realtime.get('items',[])), 'sources=',source_count, 'evidence_levels=',evidence_count)
+          print('数据检查:', 'news=',len(news.get('items',[])), 'editorial=',editorial.get('published_count',0), 'prices=',len(prices.get('items',[])), 'grading=',len(grading.get('items',[])), 'auction=',len(auction.get('items',[])), 'realtime=',len(realtime.get('items',[])), 'sources=',source_count)
           if editorial.get('published_count',0) < 3:
               print('ERROR: 本轮高质量资料少于3条，停止提交，避免低质量内容覆盖现有资料。')
               sys.exit(1)
@@ -104,8 +100,7 @@ jobs:
                   sys.exit(1)
           PY
 
-      # 防护栏：自动任务不得修改 AI 前端与核心配置。
-      - name: 检查自动任务修改范围
+      - name: 防止自动任务修改前端
         run: |
           git status --short
           changed=$(git diff --name-only)
