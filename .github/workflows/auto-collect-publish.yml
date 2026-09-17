@@ -73,6 +73,7 @@ jobs:
               'grading': root/'data/grading_prices.json',
               'news': root/'data/news.json',
               'auction': root/'data/china_auction_news.json',
+              'realtime': root/'data/realtime_ai.json',
           }
           for name, path in files.items():
               if not path.exists():
@@ -83,10 +84,24 @@ jobs:
           grading=json.loads(files['grading'].read_text(encoding='utf-8'))
           news=json.loads(files['news'].read_text(encoding='utf-8'))
           auction=json.loads(files['auction'].read_text(encoding='utf-8'))
-          print('数据检查:', 'news=',len(news.get('items',[])), 'editorial=',editorial.get('published_count',0), 'prices=',len(prices.get('items',[])), 'grading=',len(grading.get('items',[])), 'auction=',len(auction.get('items',[])))
-          if editorial.get('published_count',0) < 1:
-              print('ERROR: 本轮没有可发布的新资料，停止提交，避免旧数据冒充新内容。')
+          realtime=json.loads(files['realtime'].read_text(encoding='utf-8'))
+          items=editorial.get('items',[]) if isinstance(editorial,dict) else []
+          source_count=len({x.get('source') for x in items if x.get('source')})
+          evidence_count=len({x.get('evidence_level') for x in items if x.get('evidence_level')})
+          print('数据检查:', 'news=',len(news.get('items',[])), 'editorial=',editorial.get('published_count',0), 'prices=',len(prices.get('items',[])), 'grading=',len(grading.get('items',[])), 'auction=',len(auction.get('items',[])), 'realtime=',len(realtime.get('items',[])), 'sources=',source_count, 'evidence_levels=',evidence_count)
+          if editorial.get('published_count',0) < 3:
+              print('ERROR: 本轮高质量资料少于3条，停止提交，避免低质量内容覆盖现有资料。')
               sys.exit(1)
+          if source_count < 2:
+              print('ERROR: 本轮来源少于2个，停止提交，避免单一来源主导首页。')
+              sys.exit(1)
+          if not realtime.get('items'):
+              print('ERROR: realtime_ai.json 没有可展示研究资料。')
+              sys.exit(1)
+          for x in items:
+              if not x.get('source') or not x.get('source_url_internal') or x.get('evidence_level') not in {'A','B','C'}:
+                  print('ERROR: 存在缺少来源、链接或证据等级的条目:', x.get('title'))
+                  sys.exit(1)
           PY
 
       # 防护栏：自动任务不得修改 AI 前端与核心配置。
