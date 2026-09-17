@@ -11,9 +11,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: hongsheng-content-update
+  cancel-in-progress: true
+
 jobs:
   collect-and-update-data:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: 拉取网站代码
         uses: actions/checkout@v5
@@ -35,7 +40,7 @@ jobs:
       - name: 采集国际拍卖中国钱币资讯
         run: python app/auction_world_collect.py
 
-      - name: 自动筛选编辑结构化资讯
+      - name: 高质量编辑与证据分级
         run: python app/editorial_pipeline.py
 
       - name: 采集公开成交价格
@@ -62,7 +67,7 @@ jobs:
       - name: 数据质量检查
         run: |
           python - <<'PY'
-          import json, pathlib, sys
+          import json, pathlib, re, sys
           root = pathlib.Path('.')
           files = {
               'editorial': root/'data/editorial.json',
@@ -84,19 +89,35 @@ jobs:
           realtime=json.loads(files['realtime'].read_text(encoding='utf-8'))
           items=editorial.get('items',[]) if isinstance(editorial,dict) else []
           source_count=len({x.get('source') for x in items if x.get('source')})
-          print('数据检查:', 'news=',len(news.get('items',[])), 'editorial=',editorial.get('published_count',0), 'prices=',len(prices.get('items',[])), 'grading=',len(grading.get('items',[])), 'auction=',len(auction.get('items',[])), 'realtime=',len(realtime.get('items',[])), 'sources=',source_count)
+          cats={x.get('category') for x in items if x.get('category')}
+          levels={x.get('evidence_level') for x in items if x.get('evidence_level')}
+          titles=[re.sub(r'\s+','',str(x.get('title','')).lower()) for x in items]
+          print('数据检查:', 'news=',len(news.get('items',[])), 'editorial=',editorial.get('published_count',0), 'prices=',len(prices.get('items',[])), 'grading=',len(grading.get('items',[])), 'auction=',len(auction.get('items',[])), 'realtime=',len(realtime.get('items',[])), 'sources=',source_count, 'evidence_levels=',sorted(levels), 'categories=',sorted(cats))
           if editorial.get('published_count',0) < 3:
-              print('ERROR: 本轮高质量资料少于3条，停止提交，避免低质量内容覆盖现有资料。')
+              print('ERROR: 高质量资料少于3条，停止提交。')
               sys.exit(1)
           if source_count < 2:
-              print('ERROR: 本轮来源少于2个，停止提交，避免单一来源主导首页。')
+              print('ERROR: 独立来源少于2个，停止提交。')
               sys.exit(1)
           if not realtime.get('items'):
               print('ERROR: realtime_ai.json 没有可展示研究资料。')
               sys.exit(1)
+          allowed={'钱币知识','银元研究','机制币研究','纸币研究','纪念币资讯','金银币资讯','评级与市场资料','地域收藏'}
+          if not cats or not cats.issubset(allowed):
+              print('ERROR: 出现未定义的研究分类:', sorted(cats-allowed))
+              sys.exit(1)
+          if len(set(titles)) != len(titles):
+              print('ERROR: 当前批次存在重复标题，停止提交。')
+              sys.exit(1)
           for x in items:
-              if not x.get('source') or not x.get('source_url_internal') or x.get('evidence_level') not in {'A','B','C'}:
-                  print('ERROR: 存在缺少来源、链接或证据等级的条目:', x.get('title'))
+              if not x.get('source') or not x.get('source_url_internal'):
+                  print('ERROR: 条目缺少来源或来源链接:', x.get('title'))
+                  sys.exit(1)
+              if x.get('evidence_level') not in {'A','B','C'}:
+                  print('ERROR: 条目缺少有效证据等级:', x.get('title'))
+                  sys.exit(1)
+              if int(x.get('quality_score',0)) < 125:
+                  print('ERROR: 条目质量分低于门槛:', x.get('title'), x.get('quality_score'))
                   sys.exit(1)
           PY
 
@@ -107,7 +128,7 @@ jobs:
           blocked=''
           for f in $changed; do
             case "$f" in
-              index.html|app.css|app.js|README.md|.github/workflows/*)
+              index.html|app.css|app.js|manifest.webmanifest|sw.js|robots.txt|sitemap.xml|README.md|.github/workflows/*)
                 blocked="$blocked $f" ;;
             esac
           done
@@ -125,6 +146,6 @@ jobs:
           if git diff --cached --quiet; then
             echo '本次没有新增数据变化'
           else
-            git commit -m '自动发布: 更新洪盛集藏行业知识与行情数据'
+            git commit -m '自动发布: 更新洪盛集藏研究资料与市场证据'
             git push
           fi
